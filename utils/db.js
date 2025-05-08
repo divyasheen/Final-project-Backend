@@ -28,5 +28,8 @@ export const connect2DB = async () => {
   }
 };
 
-export const getDB = () => connection
+export const getDB = () => {
+  if (!connection) throw new Error("DB not connected!")
+  return connection;
+}
 

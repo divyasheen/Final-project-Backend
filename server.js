@@ -33,9 +33,8 @@ const startServer = async () => {
       next(createError("Route not defined!", 404));
     });
 
-    app.use((error, req, res) => {
-      if (error) res.status(error.status || 500).json({ msg: error.message });
-      next();
+    app.use((error, req, res, next) => {
+      res.status(error.status || 500).json({ msg: error.message });
     });
 
     /* ------------------- port ------------------- */
