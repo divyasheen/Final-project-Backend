@@ -153,3 +153,69 @@ Create a form with:
 - An email field
 - A password field
 - A submit button labeled “Sign in”
+
+## Lesson 4: CSS - Basics
+
+### Theory
+Now we know the basics of HTML. Great ... the shell of our house is finished. Now it's time to furnish it ... we're learning CSS!
+
+CSS stands for Cascading Style Sheets and is used to design HTML elements: Colours, spacing, fonts, etc.
+
+How to use:
+
+1. Inline: directly inside the tag (not recommended!):
+```html
+<p style="color: red;">Text</p>
+```
+
+2. Im `<style>`tag im `<head>`:
+```html
+<style>
+  p {
+    color: red;
+  }
+</style>
+```
+
+3. In an external `.css` file.
+
+Selectors
+
+Within the CSS, you must first define what you want to style in the HTML. We have to choose the selectors. To do this, you have the option of selecting the element, the class or the ID. 
+If you select the element, all elements of this type on the website will be customised according to the specifications. Classes and IDs are specified by us - when writing the HTML. We can give individual elements the same class in order to style them uniformly. IDs are only used for a specific element. You cannot give an element an ID that has already been applied. 
+
+In html we name the elements with class=‘className’ or id=‘idName’ in the respective tag. In CSS, the classes are displayed with a dot `.className {..}` and IDs with a hashtag `#idName {..}`
+
+Once we have defined the selector, we enter the values we need in the {} to style it the way we want. We will learn an overview of possible properties in the coming lessons. 
+
+### Basic example
+
+HTML
+```html
+<h1>Best heading ever!</h1>
+
+<p class="intro">This is the intro paragraphe!</p>
+
+<p id="outro">This is the outro paragraph!</p>
+```
+
+```css
+h1 {
+    color: blue;
+}
+
+.intro {
+    font-size: 24px;
+}
+
+#outro {
+    background-color: green
+}
+```
+
+### Exercise
+- Create an HTML-Page with `<h1>`, `<p>`and `<div id="box">`
+- Add CSS with the `<style>`-tag:
+    - the text of the h1 should be blue
+    - the p font size should be 18px
+    - the background of the box with `id="box"` should be grey
