@@ -116,4 +116,40 @@ Common & important HTML Tags
 - A link to https://developer.mozilla.org
 - An image with the URL https://picsum.photos/200/300
 
+## Lesson 3: Forms and Inputs
 
+### Theory
+It's hard to believe, but forms can be found on the Internet more often than you might think. Every field in which you can enter something or boxes that you can check are part of forms. You already used one on your own when you registered with Coderealm. 
+That's why it's important to know how to use them. 
+
+Forms consist of a basic structure. This is the `<form>` tag - this consists of an opening and closing tag. All information about this form is written between the two tags. The first step is to define a `<label>...</label>`. This is where you specify which heading or label the following field should have. This is displayed on the web page. 
+After the label comes the most exciting part of the form - now it becomes interactive with the user. This is the `<input ... />`. Within the tag, you define the type, the id and the name. With the type you tell the browser what kind of input it can calculate with. Words, a mail address or numbers. The id and the name are interesting for the styling and the functionality - this comes in the later modules. 
+
+Most important types:
+- text = one line text
+- email
+- password
+- number
+
+Other elements like `<input>`:
+- `<textarea>` = multiline text
+- `<select>` with `<option>`= Dropdown menu
+
+Of course, a form is only really usefull when you can send everything with a `<button> ... </button>` - we'll learn how to send it later, but for now let's create the button. The button must also be given a type so that it knows what to do later when it is pressed. 
+
+### Basic example
+```html
+<form>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="username" />
+
+  <button type="submit">Send</button>
+</form>
+```
+
+### Exercise
+Create a form with:
+- A name field (text)
+- An email field
+- A password field
+- A submit button labeled “Sign in”
