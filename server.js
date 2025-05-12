@@ -2,7 +2,7 @@ import express from "express";
 // import morgan from "morgan";
 import dotenv from "dotenv";
 import cors from "cors";
-// import cookieParser from 'cookie-parser';
+import cookieParser from 'cookie-parser';
 
 import usersRouter from './routers/users.js';
 import { createError } from "./utils/errors.js";
@@ -20,8 +20,8 @@ const startServer = async () => {
     await connect2DB();
 
     /* ---------------- middleware ---------------- */
-    // app.use(cookieParser());
-    app.use(cors({ origin: "http://localhost:5000", credentials: true}));
+    app.use(cookieParser());
+    app.use(cors({ origin: "http://localhost:5173", credentials: true}));
     // app.use(morgan("dev"));
     app.use(express.json());
 
