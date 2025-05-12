@@ -1,7 +1,7 @@
 import express from "express";
 // import morgan from "morgan";
 import dotenv from "dotenv";
-// import cors from "cors";
+import cors from "cors";
 // import cookieParser from 'cookie-parser';
 
 import usersRouter from './routers/users.js';
@@ -21,7 +21,7 @@ const startServer = async () => {
 
     /* ---------------- middleware ---------------- */
     // app.use(cookieParser());
-    // app.use(cors());
+    app.use(cors({ origin: "http://localhost:5000", credentials: true}));
     // app.use(morgan("dev"));
     app.use(express.json());
 
