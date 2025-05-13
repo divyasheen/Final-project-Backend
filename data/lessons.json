@@ -1,9 +1,23 @@
 [
   {
+    "id": 1,
+    "module_id": null,
+    "title": "Intro",
+    "content": "Before we start with the first topic, you should understand what awaits you on your journey into the knowledge of the Coderealm. \n Imagine you are building a house. First you build a shell - the walls, the floor. You can live in it, but it's not pretty or functional yet, so you'll probably lay wooden flooring and paint the walls - and what's a house without furniture? But now you still need electricity, heating and maybe even a whole smart home! Last but not least, there's a shed where you can store things. \n You might be wondering what this is all about. You wanted to create websites, SAVE THE CODEREALM and not build houses. Yes ... you will, but first understand what you will learn. A website is like this house you need a shell, which is the HTML. Then you can style this shell with CSS. You get the functionality with Javascript and you can compare the shed with the backend. \n\n I hope you now understand a little better what to expect. So let's get straight into the adventure ...",
+    "position": 1
+  },
+  {
+    "id": 2,
+    "module_id": null,
+    "title": "HTML-Basics",
+    "content": "Let's start with the basics of the shell. HTML is an abbreviation for HyperText Markup Language. Each HTML file consists of: \n `<!DOCTYPE html>` – Tells the browser that this is an HTML5 document. \n `<html> </html>` – The root element of the page. This includes all information that is to be processed by the browser. \n `<head> </head>` – Contains meta information (not visible content), e.g. title, character encoding, fonts, little picture for the tab. \n `<title> </title>` – Sets the title of the browser tab. \n `<body> </title>` – Contains all visible content. \n \n Important! \n Every tag has an opening and a closing tag. That means everything which is between those tags belongs to them. Opening tags are <head> or <body>. They only contain the name of the tag. Closing tags always have a ‘/’ - </head> or </body>. Special cases are self-closing tags - but we will come to these later.",
+    "position": 2
+  },
+  {
     "id": 3,
     "module_id": null,
-    "title": "Test-Title-3",
-    "content": "Test-Content-3",
-    "position": 3
+    "title": "",
+    "content": "",
+    "position": 0
   }
 ]
