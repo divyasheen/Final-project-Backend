@@ -88,8 +88,13 @@ export const loginUser = async (req, res) => {
             process.env.JWT_SECRET,
             { expiresIn: "1h" }
         )
-
-        res.status(200).json({ message: "Login successful", token })
+        res.cookie('token', token, {
+            httpOnly: true,        // Can't access in JS
+            secure: false,         // Set true in production (HTTPS)
+            sameSite: 'lax',       // Or 'strict'
+            maxAge: 3600000        // 1 hour
+          });
+        res.status(200).json({ message: "Login successful", token,id:user.id })
     } catch (error) {
         console.error(error)
         res.status(500).json({ error: "Internal server error" })
