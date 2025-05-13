@@ -1,10 +1,19 @@
 [
   {
     "id": 1,
-    "lesson_id": null,
-    "title": "varchar",
+    "lesson_id": 1,
+    "title": "EXERCISE 1",
     "description": "text",
     "xp_reward": 10,
-    "difficulty": "varchar"
+    "difficulty": "TOUGH"
+  },
+    {
+    "id": 2,
+    "lesson_id": 2,
+    "title": "EXERCISE 2",
+    "description": "text",
+    "xp_reward": 10,
+    "difficulty": "TOUGH"
   }
+
 ]

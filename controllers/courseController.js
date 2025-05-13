@@ -4,12 +4,12 @@ export const getCoursesWithLessons = async () => {
   const db = getDB();
   
   // Get all courses
-  const [courses] = await db.query('SELECT * FROM courses ORDER BY id');
+  const [courses] = await db.query('SELECT id, title, description FROM courses ORDER BY id');
   
   // Get lessons for each course
   for (const course of courses) {
     const [lessons] = await db.query(
-      'SELECT * FROM lessons WHERE course_id = ? ORDER BY id',
+      'SELECT id, title, content FROM lessons WHERE course_id = ? ORDER BY id', // Removed position
       [course.id]
     );
     course.lessons = lessons;
@@ -30,7 +30,7 @@ export const getExercisesForLesson = async (lessonId) => {
 export const getLessonContent = async (lessonId) => {
   const db = getDB();
   const [lesson] = await db.query(
-    'SELECT * FROM lessons WHERE id = ?',
+    'SELECT id, title, content FROM lessons WHERE id = ?', // Removed position from SELECT *
     [lessonId]
   );
   return lesson[0];
