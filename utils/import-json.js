@@ -18,16 +18,18 @@ const importDataJson = async () => {
 
   // go trough the array and waiting for execute each key from the json-file to be insert inside our db
   for (const lesson of lessons) {
+
     await db.execute(
-      `INSERT INTO lessons (id, module_id, title, content, position) 
-      VALUES (?, ?, ?, ?, ?) 
+      `INSERT INTO lessons (id, module_id, title, content, position, example) 
+      VALUES (?, ?, ?, ?, ?, ?) 
       ON DUPLICATE KEY UPDATE
         id = VALUES(id),
         module_id = VALUES(module_id),
         title = VALUES(title),
         content = VALUES(content),
-        position = VALUES(position)`,
-      [lesson.id, lesson.module_id, lesson.title, lesson.content, lesson.position]
+        position = VALUES(position),
+        example = VALUES(example)`,
+      [lesson.id, lesson.module_id, lesson.title, lesson.content, lesson.position, lesson.example]
     );
   }
 
