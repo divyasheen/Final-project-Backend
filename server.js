@@ -5,6 +5,7 @@ import cors from "cors";
 import cookieParser from 'cookie-parser';
 
 import usersRouter from './routers/users.js';
+import coursesRouter from './routers/courses.js';
 import { createError } from "./utils/errors.js";
 import { connect2DB } from "./utils/db.js";
 
@@ -27,6 +28,7 @@ const startServer = async () => {
 
     /* ------------------ routers ----------------- */
     app.use("/users", usersRouter);
+    app.use("/api/courses", coursesRouter); 
 
     /* --------------- error handler -------------- */
     app.use((req, res, next) => {
