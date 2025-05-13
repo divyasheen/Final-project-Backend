@@ -1,5 +1,7 @@
 // for working with external files - read, write
 import fs from "fs/promises";
+
+// let's connect ... it's like a bookclub. This function and the db will just meet for reading! =D
 import {connect2DB, getDB} from "./db.js";
 
 const importDataJson = async () => {
