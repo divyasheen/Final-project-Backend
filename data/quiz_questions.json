@@ -1,0 +1,9 @@
+[
+  {
+    "id": 1,
+    "quiz_id": null,
+    "question_text": "text",
+    "options": "json",
+    "correct_option": "varchar"
+  }
+]

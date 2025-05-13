@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "lesson_id": null,
+    "title": "varchar",
+    "description": "text",
+    "xp-reward": 1,
+    "test_cases": "json"
+  }
+]
