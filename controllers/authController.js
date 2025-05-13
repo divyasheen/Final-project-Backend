@@ -23,11 +23,33 @@ export const registerUser = async (req, res) => {
             `INSERT INTO users (username, email, password_hash, role, created_at) VALUES (?, ?, ?, ?, ?)`,
             [username, normalizedEmail, hashedPassword, role, new Date()]
         )
+        
+        // create token for auto-login after registration
+        const token = jwt.sign(
+            { id: result.insertId, email: normalizedEmail },
+            process.env.JWT_SECRET,
+            { expiresIn: "1h" }
+        )
+
+        // set as cookie for sessions
+        res.cookie("token", token, {
+            httpOnly: true,
+            sameSite: "lax",
+            secure: false,
+            maxAge: 3600000, // 1hour
+        })
+
+        const user = {
+            id: result.userId,
+            username,
+            role
+        }
 
         res.status(201).json({
             message: "User registered successfully",
-            userId: result.insertId
+            user
         })
+
     } catch (error) {
         if (error.code === "ER_DUP_ENTRY") {
             return res.status(400).json({
