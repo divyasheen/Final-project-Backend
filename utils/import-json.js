@@ -1,39 +1,75 @@
-// for working with external files - read, write
 import fs from "fs/promises";
-
-// let's connect ... it's like a bookclub. This function and the db will just meet for reading! =D
+import path from "path";
+import { fileURLToPath } from "url";
 import { connect2DB, getDB } from "./db.js";
+
+// Setup __dirname for ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Read JSON helper
+const readJsonFile = async (relativePath) => {
+  const filePath = path.join(__dirname, relativePath);
+  const fileContent = await fs.readFile(filePath, "utf-8");
+  return JSON.parse(fileContent);
+};
 
 const importDataJson = async () => {
   await connect2DB();
-
   const db = getDB();
 
-  //read lesson.json as text
-  const file = await fs.readFile("../data/lessons.json", "utf-8");
-
-  //parse data into array
-
-  const lessons = JSON.parse(file);
-
-  // go trough the array and waiting for execute each key from the json-file to be insert inside our db
-  for (const lesson of lessons) {
-
+  // ===== COURSES FIRST =====
+  const courses = await readJsonFile("../data/courses.json");
+  for (const course of courses) {
     await db.execute(
-      `INSERT INTO lessons (id, module_id, title, content, position, example) 
-      VALUES (?, ?, ?, ?, ?, ?) 
+      `INSERT INTO courses (id, title, description)
+      VALUES (?, ?, ?)
       ON DUPLICATE KEY UPDATE
-        id = VALUES(id),
-        module_id = VALUES(module_id),
         title = VALUES(title),
-        content = VALUES(content),
-        position = VALUES(position),
-        example = VALUES(example)`,
-      [lesson.id, lesson.module_id, lesson.title, lesson.content, lesson.position, lesson.example]
+        description = VALUES(description)`,
+      [course.id, course.title, course.description]
     );
   }
 
-  console.log("Import abgeschlossen!");
+  // ===== LESSONS SECOND =====
+  const lessons = await readJsonFile("../data/lessons.json");
+  for (const lesson of lessons) {
+    await db.execute(
+      `INSERT INTO lessons (id, course_id, title, content, example) 
+      VALUES (?, ?, ?, ?, ?) 
+      ON DUPLICATE KEY UPDATE
+        course_id = VALUES(course_id),
+        title = VALUES(title),
+        content = VALUES(content),
+        example = VALUES(example)`,
+      [lesson.id, lesson.course_id, lesson.title, lesson.content, lesson.example]
+    );
+  }
+
+  // ===== EXERCISES THIRD =====
+  const exercises = await readJsonFile("../data/exercises.json");
+  for (const exercise of exercises) {
+    await db.execute(
+      `INSERT INTO exercises (id, lesson_id, title, description, xp_reward, difficulty)
+      VALUES (?, ?, ?, ?, ?, ?)
+      ON DUPLICATE KEY UPDATE
+        lesson_id = VALUES(lesson_id),
+        title = VALUES(title),
+        description = VALUES(description),
+        xp_reward = VALUES(xp_reward),
+        difficulty = VALUES(difficulty)`,
+      [
+        exercise.id,
+        exercise.lesson_id,
+        exercise.title,
+        exercise.description,
+        exercise.xp_reward,
+        exercise.difficulty,
+      ]
+    );
+  }
+
+  console.log("✅ All data imported successfully!");
   await db.end();
 };
 

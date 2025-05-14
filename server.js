@@ -5,6 +5,7 @@ import cors from "cors";
 import cookieParser from 'cookie-parser';
 
 import usersRouter from './routers/users.js';
+import coursesRouter from './routers/courses.js';
 import { createError } from "./utils/errors.js";
 import { connect2DB } from "./utils/db.js";
 
@@ -21,12 +22,13 @@ const startServer = async () => {
 
     /* ---------------- middleware ---------------- */
     app.use(cookieParser());
-    app.use(cors({ origin: "http://localhost:5173", credentials: true}));
+    app.use(cors({ origin: "http://localhost:5173", credentials: true, methods: ['GET', 'POST', 'PUT', 'DELETE']}));
     // app.use(morgan("dev"));
     app.use(express.json());
 
     /* ------------------ routers ----------------- */
     app.use("/users", usersRouter);
+    app.use("/api/courses", coursesRouter); 
 
     /* --------------- error handler -------------- */
     app.use((req, res, next) => {

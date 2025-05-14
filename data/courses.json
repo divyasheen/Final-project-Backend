@@ -1,9 +1,12 @@
 [
   {
     "id": 1,
-    "title": "varchar",
-    "description": "text",
-    "created_by": 1,
-    "created_at": "datetime"
+    "title": "HTML & css",
+    "description": "text"
+  },
+   {
+    "id": 2,
+    "title": "JS",
+    "description": "text"
   }
 ]
