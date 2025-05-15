@@ -58,7 +58,7 @@ const importDataJson = async () => {
         description = VALUES(description),
         xp_reward = VALUES(xp_reward),
         difficulty = VALUES(difficulty),
-        example = VALUE(example)`,
+        example = VALUES(example)`,
       [
         exercise.id,
         exercise.lesson_id,

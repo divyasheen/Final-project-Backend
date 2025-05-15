@@ -6,7 +6,7 @@
     "description": "Create a basic HTML page with: \n - an title that say: 'Save Coderealm!' \n - the page should show 'Hello World!'",
     "xp_reward": 10,
     "difficulty": "Easy",
-    "example": "varchar(255)"
+    "example": "example"
   },
   {
     "id": 2,
