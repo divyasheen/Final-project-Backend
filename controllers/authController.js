@@ -1,6 +1,10 @@
 import { getDB } from "../utils/db.js";
 import { hashPassword, comparePassword } from "../utils/hashPassword.js";
 import jwt from "jsonwebtoken";
+import { OAuth2Client } from 'google-auth-library';
+
+
+const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 export const registerUser = async (req, res) => {
     const { username, email, password, role = "student" } = req.body
@@ -106,3 +110,66 @@ export const logoutUser = (req, res) => {
     // In real life, you'd blacklist the token, but here we just send a message
     res.status(200).json({ message: "User logged out successfully" })
 }
+
+
+
+
+
+//google Login
+
+export const googleLogin = async (req, res) => {
+    const { credential } = req.body;
+
+    try {
+        console.log("Received ID Token:", credential); // This will log the token received in the POST request.
+console.log("Expected Google Client ID:", process.env.GOOGLE_CLIENT_ID); // This logs the client ID from the environment.
+        const ticket = await client.verifyIdToken({
+            idToken: credential,
+            audience: process.env.GOOGLE_CLIENT_ID
+        });
+
+        const payload = ticket.getPayload();
+        const { email, name, picture } = payload;
+
+        const db = getDB();
+        const [existingUsers] = await db.execute(`SELECT * FROM users WHERE email = ?`, [email]);
+
+        let user;
+
+        if (existingUsers.length > 0) {
+            user = existingUsers[0];
+        } else {
+            // If new user, register them automatically
+            const [result] = await db.execute(
+                `INSERT INTO users (username, email, role, created_at) VALUES (?, ?, ?, ?)`,
+                [name, email, "student", new Date()]
+            );
+
+            user = {
+                id: result.insertId,
+                username: name,
+                email,
+                role: "student"
+            };
+        }
+
+        const token = jwt.sign(
+            { id: user.id, email: user.email },
+            process.env.JWT_SECRET,
+            { expiresIn: "1h" }
+        );
+
+        res.cookie("token", token, {
+            httpOnly: true,
+            secure: false, // true in production
+            sameSite: "lax",
+            maxAge: 3600000
+        });
+
+        res.status(200).json({ message: "Google login successful", user });
+
+    } catch (error) {
+        console.error("Google login error:", error);
+        res.status(401).json({ error: "Google login failed" });
+    }
+};
