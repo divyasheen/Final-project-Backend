@@ -50,14 +50,15 @@ const importDataJson = async () => {
   const exercises = await readJsonFile("../data/exercises.json");
   for (const exercise of exercises) {
     await db.execute(
-      `INSERT INTO exercises (id, lesson_id, title, description, xp_reward, difficulty)
-      VALUES (?, ?, ?, ?, ?, ?)
+      `INSERT INTO exercises (id, lesson_id, title, description, xp_reward, difficulty, example)
+      VALUES (?, ?, ?, ?, ?, ?, ?)
       ON DUPLICATE KEY UPDATE
         lesson_id = VALUES(lesson_id),
         title = VALUES(title),
         description = VALUES(description),
         xp_reward = VALUES(xp_reward),
-        difficulty = VALUES(difficulty)`,
+        difficulty = VALUES(difficulty),
+        example = VALUE(example)`,
       [
         exercise.id,
         exercise.lesson_id,
@@ -65,6 +66,7 @@ const importDataJson = async () => {
         exercise.description,
         exercise.xp_reward,
         exercise.difficulty,
+        exercise.example
       ]
     );
   }
