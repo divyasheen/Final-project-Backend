@@ -11,7 +11,7 @@
   {
     "id": 2,
     "lesson_id": 2,
-    "title": "EXERCISE 2",
+    "title": "EXERCISE 1",
     "description": "Create a page with: \n - An `<h1>` with the text 'Learning Topics' \n - A paragraph using <strong> \n - An ordered list with “HTML”, “CSS”, “JavaScript” \n - A link to https://developer.mozilla.org \n - An image with the URL https://picsum.photos/200/300",
     "xp_reward": 10,
     "difficulty": "Easy",
@@ -20,7 +20,7 @@
   {
     "id": 3,
     "lesson_id": 3,
-    "title": "EXERCISE 2",
+    "title": "EXERCISE 1",
     "description": "Create a form with: \n - A name field (text) \n - An email field \n - A password field \n - A submit button labeled “Sign in”",
     "xp_reward": 10,
     "difficulty": "Easy",
@@ -29,7 +29,7 @@
   {
     "id": 4,
     "lesson_id": 4,
-    "title": "EXERCISE 2",
+    "title": "EXERCISE 1",
     "description": "Create an HTML-Page with `<h1>`, `<p>`and `<div id='box'>` \n Add CSS with the `<style>`-tag: \n - the text of the h1 should be blue \n - the p font size should be 18px \n - the background of the box with `id='box'` should be grey",
     "xp_reward": 10,
     "difficulty": "Easy",
