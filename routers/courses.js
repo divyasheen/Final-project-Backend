@@ -1,9 +1,9 @@
 import express from 'express';
-import { 
-  getCoursesWithLessons, 
+import {
+  getCoursesWithLessons,
   getExercisesForLesson,
   getLessonContent,
-  getExerciseById 
+  getExerciseById
 } from '../controllers/courseController.js';
 
 const router = express.Router();
@@ -22,7 +22,6 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-// Get exercises for a lesson
 router.get('/:courseId/lessons/:lessonId/exercises', async (req, res, next) => {
   try {
     const exercises = await getExercisesForLesson(req.params.lessonId);
@@ -36,7 +35,6 @@ router.get('/:courseId/lessons/:lessonId/exercises', async (req, res, next) => {
   }
 });
 
-// Get specific lesson content
 router.get('/lessons/:lessonId', async (req, res, next) => {
   try {
     const lesson = await getLessonContent(req.params.lessonId);
@@ -50,7 +48,7 @@ router.get('/lessons/:lessonId', async (req, res, next) => {
   }
 });
 
-// Get specific exercise by ID
+
 router.get('/exercises/:exerciseId', async (req, res, next) => {
   try {
     const exercise = await getExerciseById(req.params.exerciseId);
