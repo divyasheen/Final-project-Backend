@@ -6,20 +6,12 @@
 4. Modul 4: Backend
 5. Modul 5: Fullstack Webpage
 
-# Module 1: Lesson 6
-# Exercise
-
-1. Create a "<div>" with text
-2. Give the box
-- Padding: 20px
-- Border: 2px, solid, black
-- Margin: 30px
-
-# Module 1: Lesson 7
-# Exercise
-1. Create three "<div class="item">" inside a "<div class="container">
-2. Use felxbox to display them centred next to each other
-3. Give the items a ficed size
-
 # Module 1: Lesson 8
 # Exercise
+1. Give "<body>" by default a white background color
+2. If the screen size reaches less than 600px the background color should switch to yellow
+
+# Module 1: Final
+Create your own small HTML page about a topic of your choice (e.g. your favourite game, an animal, a hobby). The page should:
+1. contain at least one heading, one paragraph, one image, one list, one link and one form,
+2. and have a suitable CSS layout.
