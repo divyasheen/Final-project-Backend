@@ -56,10 +56,10 @@
     "example":"@media (max-width: 600px) {body {background-color: lightyellow;}}"
   },
   {
-    "id": 6,
+    "id": 9,
     "course_id": 1,
-    "title": "",
-    "content": "",
-    "example":""
+    "title": "FINAL",
+    "content": "You now have everything you need to build a small website! \n Plan the structure: \n - title and headings \n - text \n - images \n - links \n - lists \n - forms  \n  \n Style it with CSS: \n - colors, distances \n - flexbox for layout \n - media query for the mobile version",
+    "example":"<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8' /><title>Red Pandas</title><style>body {font-family: Arial, sans-serif; background-color: #f7f5f2; color: #333; padding: 20px;} h1 {color: #d94f30; text-align: center;} img {display: block; margin: 0 auto; width: 300px; border-radius: 8px;} ul {background-color: #fff3e6; padding: 15px; order-radius: 5px; max-width: 400px; margin: 20px auto; } form {background-color: #e0f7fa; padding: 15px; border-radius: 5px; max-width: 400px; margin: 20px auto;} label, input {display: block; margin-bottom: 10px;} a {color: #d94f30; text-decoration: none;} </style></head><body><h1>Red Pandas – The Cutest Animal</h1> <p>Red pandas are small mammals native to the Himalayas. They are known for their reddish fur, long bushy tails, and playful nature.</p> <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/RedPandaFullBody.JPG/800px-RedPandaFullBody.JPG' alt='Red panda standing on a log' /> <ul><li>Live in the Himalayas</li><li>Eat mostly bamboo</li><li>Active at dawn and dusk</li></ul><p>Learn more about red pandas on <a href='https://en.wikipedia.org/wiki/Red_panda' target='blank'>Wikipedia</a>.</p><form><label for='name'>Your Name:</label><input type='text' id='name' name='name' /><label for='email'>Your Email:</label><input type='email id='email' name='email' /><input type='submit' value='Submit' /></form></body></html>"
   }
 ]
