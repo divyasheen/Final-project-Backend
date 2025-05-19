@@ -3,7 +3,7 @@
     "id": 1,
     "course_id": 1,
     "title": "Intro",
-    "content": "Before we start with the first topic, you should understand what awaits you on your journey into the knowledge of the Coderealm. \n Imagine you are building a house. First you build a shell - the walls, the floor. You can live in it, but it's not pretty or functional yet, so you'll probably lay wooden flooring and paint the walls - and what's a house without furniture? But now you still need electricity, heating and maybe even a whole smart home! Last but not least, there's a shed where you can store things. \n You might be wondering what this is all about. You wanted to create websites, SAVE THE CODEREALM and not build houses. Yes ... you will, but first understand what you will learn. A website is like this house you need a shell, which is the HTML. Then you can style this shell with CSS. You get the functionality with Javascript and you can compare the shed with the backend. \n\n I hope you now understand a little better what to expect. So let's get straight into the adventure ...",
+    "content": "Before we start with the first topic, you should understand what awaits you on your journey into the knowledge of the Coderealm. \n Imagine you are building a house. First you build a shell - the walls, the floor. You can live in it, but it's not pretty or functional yet, so you'll probably lay wooden flooring and paint the walls - and what's a house without furniture? But now you still need electricity, heating and maybe even a whole smart home! Last but not least, there's a shed where you can store things. \n You might be wondering what this is all about. You wanted to create websites, SAVE THE CODEREALM and not build houses. Yes ... you will, but first understand what you will learn. A website is like this house you need a shell, which is the HTML. Then you can style this shell with CSS. You get the functionality with Javascript and you can compare the shed with the backend. \n \n I hope you now understand a little better what to expect. So let's get straight into the adventure ...",
     "example": ""
   },
   {
@@ -37,8 +37,29 @@
   {
     "id": 6,
     "course_id": 1,
-    "title": "",
-    "content": "",
-    "example": ""
+    "title": "Box-Model, margin, padding and border",
+    "content": "Each HTML element is displayed in the browser as a box. This box has four areas: \n \n margin \n border \n padding \n content \n \n - content: The actual content (e.g. text or images). \n - padding:  Distance within the box \n - border: frame \n - margin: Distance outside the box",
+    "example": "div {padding: 10px; border: 2px solid black; margin: 20px;}"
+  },
+  {
+    "id": 7,
+    "course_id": 1,
+    "title": "Layout with flexbox",
+    "content": "Flexbox (short for Flexible Box Layout) is a CSS layout module that makes it easier to arrange elements within a container dynamically and efficiently - both in rows and columns. It was developed to solve problems with the alignment and distribution of space in containers. \n \n Basic principles: \n Flexbox consists of two levels: \n 1. flex container - the element on which display: flex is set \n 2. flex items - the direct children of this container \n \n Most important features: \n For flex container: \n - 'display: flex' Makes an element to an flex container \n - 'flex-direction' directions of the axis : row (default), column, row-reverse, column-reverse \n - 'justify-content' Distribution along the main axis (z. B. flex-start, center, - space-between, space-around, space-evenly) \n - 'align-items' Distribution along the cross axis (z. B. stretch, flex-start, center, baseline) \n - 'flex-wrap' line break: nowrap (Standard), wrap, wrap-reverse \n - 'gap' Space between items \n \n For flex items: \n - 'flex-grow' How much an item can grow if space is available \n - 'flex-shrink' How much an item an item can shrink if space isn't available \n - 'flex-basis' Size at the beginning(auto, 0, 100px esc.) \n - 'flex' Shortcut: flex-grow flex-shrink flex-basis (flex: 1 0 200px) \n - 'align-self' Overwright align-items just for this item \n \n When do I use flexbox? \n - If you want to align elements in a single row or column \n - For buttons in a bar, cards next to each other, navigations, centring \n - If you need responsive behaviour without a lot of media queries",
+    "example": ".container {display: flex; justify-content: space-between; align-items: center; height: 200px;} .item {flex: 1; margin: 10px;}"
+  },
+  {
+    "id": 8,
+    "course_id": 1,
+    "title": "Responsive design & media queries",
+    "content": "Responsive design means that websites or web applications are designed in such a way that they automatically adapt to different screen sizes and devices - whether smartphone, tablet, laptop or large desktop screen. \n \n Goal: \n The user interface (UI) should look good and be usable everywhere without having to zoom or scroll to recognise content or operate buttons. \n \n Important principles: \n \n Flexible layouts (fluid grids): \n - Instead of fixed pixel values, relative units such as em, % or vw/vh are used. \n - Example: Instead of width: 600px, use width: 80%. \n \n Flexible images and media: \n - Images and videos adapt to the width of their container. \n - Example: img { max-width: 100%; height: auto; } \n \n Media queries (CSS): \n - This allows you to define styles specifically for certain screen sizes or devices. \n \n Mobile first approach: \n - You first develop for small screens and then expand for larger screens. \n - Advantage: better performance and better user-friendliness on mobile devices.",
+    "example":"@media (max-width: 600px) {body {background-color: lightyellow;}}"
+  },
+  {
+    "id": 9,
+    "course_id": 1,
+    "title": "FINAL",
+    "content": "You now have everything you need to build a small website! \n Plan the structure: \n - title and headings \n - text \n - images \n - links \n - lists \n - forms  \n  \n Style it with CSS: \n - colors, distances \n - flexbox for layout \n - media query for the mobile version",
+    "example":"<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8' /><title>Red Pandas</title><style>body {font-family: Arial, sans-serif; background-color: #f7f5f2; color: #333; padding: 20px;} h1 {color: #d94f30; text-align: center;} img {display: block; margin: 0 auto; width: 300px; border-radius: 8px;} ul {background-color: #fff3e6; padding: 15px; order-radius: 5px; max-width: 400px; margin: 20px auto; } form {background-color: #e0f7fa; padding: 15px; border-radius: 5px; max-width: 400px; margin: 20px auto;} label, input {display: block; margin-bottom: 10px;} a {color: #d94f30; text-decoration: none;} </style></head><body><h1>Red Pandas – The Cutest Animal</h1> <p>Red pandas are small mammals native to the Himalayas. They are known for their reddish fur, long bushy tails, and playful nature.</p> <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/RedPandaFullBody.JPG/800px-RedPandaFullBody.JPG' alt='Red panda standing on a log' /> <ul><li>Live in the Himalayas</li><li>Eat mostly bamboo</li><li>Active at dawn and dusk</li></ul><p>Learn more about red pandas on <a href='https://en.wikipedia.org/wiki/Red_panda' target='blank'>Wikipedia</a>.</p><form><label for='name'>Your Name:</label><input type='text' id='name' name='name' /><label for='email'>Your Email:</label><input type='email id='email' name='email' /><input type='submit' value='Submit' /></form></body></html>"
   }
 ]
