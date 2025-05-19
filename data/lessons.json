@@ -49,6 +49,13 @@
     "example": ".container {display: flex; justify-content: space-between; align-items: center; height: 200px;} .item {flex: 1; margin: 10px;}"
   },
   {
+    "id": 8,
+    "course_id": 1,
+    "title": "Responsive design & media queries",
+    "content": "Responsive design means that websites or web applications are designed in such a way that they automatically adapt to different screen sizes and devices - whether smartphone, tablet, laptop or large desktop screen. \n \n Goal: \n The user interface (UI) should look good and be usable everywhere without having to zoom or scroll to recognise content or operate buttons. \n \n Important principles: \n \n Flexible layouts (fluid grids): \n - Instead of fixed pixel values, relative units such as em, % or vw/vh are used. \n - Example: Instead of width: 600px, use width: 80%. \n \n Flexible images and media: \n - Images and videos adapt to the width of their container. \n - Example: img { max-width: 100%; height: auto; } \n \n Media queries (CSS): \n - This allows you to define styles specifically for certain screen sizes or devices. \n \n Mobile first approach: \n - You first develop for small screens and then expand for larger screens. \n - Advantage: better performance and better user-friendliness on mobile devices.",
+    "example":"@media (max-width: 600px) {body {background-color: lightyellow;}}"
+  },
+  {
     "id": 6,
     "course_id": 1,
     "title": "",
