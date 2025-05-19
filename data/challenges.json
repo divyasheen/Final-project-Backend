@@ -2,9 +2,9 @@
   {
     "id": 1,
     "lesson_id": null,
-    "title": "varchar",
+    "title": "Fix the broken code",
     "description": "text",
-    "xp-reward": 1,
+    "xp-reward": 20,
     "test_cases": "json"
   }
 ]
