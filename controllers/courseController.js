@@ -35,3 +35,12 @@ export const getLessonContent = async (lessonId) => {
   );
   return lesson[0];
 };
+
+export const getExerciseById = async (exerciseId) => {
+  const db = getDB();
+  const [exercise] = await db.query(
+    'SELECT * FROM exercises WHERE id = ?',
+    [exerciseId]
+  );
+  return exercise[0];
+};
