@@ -71,6 +71,28 @@ const importDataJson = async () => {
     );
   }
 
+  // ===== BADGES FOURTH =====
+  const badges = await readJsonFile("../data/badges.json");
+  for (const badge of badges) {
+    await db.execute(
+      `INSERT INTO badges (id, name, description, icon_url, dependency)
+      VALUES (?, ?, ?, ?, ?)
+      ON DUPLICATE KEY UPDATE
+        id = VALUES(id),
+        name = VALUES(name),
+        description = VALUES(description),
+        icon_url = VALUES(icon_url),
+        dependency = VALUES(dependency)`,
+      [
+        badge.id,
+        badge.name,
+        badge.description,
+        badge.icon_url,
+        badge.dependency
+      ]
+    );
+  }
+
   console.log("✅ All data imported successfully!");
   await db.end();
 };

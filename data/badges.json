@@ -3,54 +3,63 @@
     "id": 1,
     "name": "Hello World",
     "description": "Congratz! That was your first step into a new adventure!",
-    "icon_url": ""
+    "icon_url": "",
+    "dependency": "complete_the_first_course"
   },
   {
     "id": 2,
     "name": "HTM'EL - Yeah!",
-    "description": "You’ve linked it all together – like a true &lta&gt ce!",
-    "icon_url": ""
+    "description": "You've linked it all together – like a true &lta&gt ce!",
+    "icon_url": "",
+    "dependency": ""
   },
   {
     "id": 3,
     "name": "The Style awakens",
     "description": "You brought balance to the stylesheet - not chaos.",
-    "icon_url": ""
+    "icon_url": "",
+    "dependency": ""
   },
   {
     "id": 4,
     "name": "Array Sorcerer",
     "description": "You've leveled up - from console.log to code wizardry.",
-    "icon_url": ""
+    "icon_url": "",
+    "dependency": ""
   },
   {
     "id": 5,
     "name": "The Rubber Duck Diplomat",
     "description": "You don't just fix bugs - you mentor the devs who face them.",
-    "icon_url": ""
+    "icon_url": "",
+    "dependency": ""
   },
   {
     "id": 6,
     "name": "Top 20",
     "description": "You are among the top 20 on the leaderboard!",
-    "icon_url": ""
+    "icon_url": "",
+    "dependency": ""
   },
   {
     "id": 7,
     "name": "Top 15",
     "description": "You are among the top 15 on the leaderboard!",
-    "icon_url": ""
+    "icon_url": "",
+    "dependency": ""
   },
   {
     "id": 8,
     "name": "Top 10",
     "description": "You are among the top 10 on the leaderboard!",
-    "icon_url": ""
+    "icon_url": "",
+    "dependency": ""
   },
   {
     "id": 9,
     "name": "Top of the devs",
     "description": "You are at the first place on the leaderboard!",
-    "icon_url": ""
+    "icon_url": "",
+    "dependency": ""
   }
 ]

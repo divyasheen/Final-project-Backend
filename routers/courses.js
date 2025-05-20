@@ -3,7 +3,8 @@ import {
   getCoursesWithLessons,
   getExercisesForLesson,
   getLessonContent,
-  getExerciseById
+  getExerciseById,
+  completeCourse
 } from '../controllers/courseController.js';
 
 const router = express.Router();
@@ -59,6 +60,24 @@ router.get('/exercises/:exerciseId', async (req, res, next) => {
   } catch (error) {
     console.error('Error fetching exercise:', error);
     next(error);
+  }
+});
+
+
+// --- Future Code to fetch dependency for badges Id 1----- 
+router.post('/:courseId/complete', async (req, res) => {
+
+  const userId = req.body.user_id;
+  const lessonId = req.params.lesson_id;
+
+  try {
+    await completeCourse(userId, courseId);
+    res.status(200).json({ message: 'Course completed and badges checked.' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Error completing course.' });
+  } finally {
+    connection.release();
   }
 });
 
