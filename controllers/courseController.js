@@ -45,41 +45,45 @@ export const getExerciseById = async (exerciseId) => {
   return exercise[0];
 };
 
-export const completeCourse = async (userId, lessonId, connection) => {
+export const completeCourse = async (userId, lessonId) => {
   try {
-    await connection.beginTransaction();
 
-    // 1. Kurs speichern (INSERT IGNORE = kein Fehler bei Doppelung)
-    await connection.execute(
+    // JB: Starts transaction - Which means that EVERY DB commands will start - all or none.  
+    await db.beginTransaction();
+
+    // JB: The exercise will be stored inside the user_progress. If the user-lesson-combination already exists, it get ignored and nothing is added in the BE
+    await db.execute(
       `INSERT IGNORE INTO user_progress (user_id, lesson_id) VALUES (?, ?)`,
       [userId, lessonId]
     );
 
-    // 2. Kursanzahl zählen
-    const [rows] = await connection.execute(
+    // JB: The  users get count
+    const [rows] = await db.execute(
       `SELECT COUNT(*) AS count FROM user_progress WHERE user_id = ?`,
       [userId]
     );
+
+    // JB: 
     const completedCount = parseInt(rows[0].count);
 
     // 3. Badge vergeben, wenn 9 lessons gezählt wurden
      if (completedCount === 9) {
-      const [badgeRows] = await connection.execute(
+      const [badgeRows] = await db.execute(
         `SELECT id FROM badges WHERE dependency = '"complete_the_first_course"'`
       );
       const badgeId = badgeRows[0]?.id;
 
       if (badgeId) {
-        await connection.execute(
+        await db.execute(
           `INSERT IGNORE INTO user_badges (user_id, badge_id) VALUES (?, ?)`,
           [userId, badgeId]
         );
       }
     }
 
-    await connection.commit();
+    await db.commit();
   } catch (err) {
-    await connection.rollback();
+    await db.rollback();
     throw err;
   }
 }
