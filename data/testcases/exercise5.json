@@ -1,0 +1,29 @@
+[
+  {
+    "test_id": "ex5-1",
+    "exercise_id": 5,
+    "test_type": "css_property",
+    "selector": "h1",
+    "property": "color",
+    "expected_value": "blue|rgb(0, 0, 255)|#0000ff",
+    "error_message": "h1 text color should be blue"
+  },
+  {
+    "test_id": "ex5-2",
+    "exercise_id": 5,
+    "test_type": "css_property",
+    "selector": "p",
+    "property": "font-size",
+    "expected_value": "18px",
+    "error_message": "Paragraph font size should be 18px"
+  },
+  {
+    "test_id": "ex5-3",
+    "exercise_id": 5,
+    "test_type": "css_property",
+    "selector": "#box",
+    "property": "background-color",
+    "expected_value": "grey|gray|rgb(128, 128, 128)|#808080",
+    "error_message": "The box should have a grey background"
+  }
+]

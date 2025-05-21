@@ -70,6 +70,38 @@ const importDataJson = async () => {
       ]
     );
   }
+    // ===== TEST CASES FOURTH =====
+  const testcases = await readJsonFile("../data/testcases.json");
+  for (const testcase of testcases) {
+    await db.execute(
+      `INSERT INTO testcases 
+        (test_id, exercise_id, test_type, selector, property, expected_value, is_hidden, weight, viewport_size, error_message)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      ON DUPLICATE KEY UPDATE
+        exercise_id = VALUES(exercise_id),
+        test_type = VALUES(test_type),
+        selector = VALUES(selector),
+        property = VALUES(property),
+        expected_value = VALUES(expected_value),
+        is_hidden = VALUES(is_hidden),
+        weight = VALUES(weight),
+        viewport_size = VALUES(viewport_size),
+        error_message = VALUES(error_message)`,
+      [
+        testcase.test_id,
+        testcase.exercise_id,
+        testcase.test_type,
+        testcase.selector,
+        testcase.property || null,          // nullable
+        testcase.expected_value,
+        testcase.is_hidden || false,
+        testcase.weight || 1,
+        testcase.viewport_size || null,     // nullable
+        testcase.error_message
+      ]
+    );
+  }
+
 
   // ===== BADGES FOURTH =====
   const badges = await readJsonFile("../data/badges.json");

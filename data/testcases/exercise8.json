@@ -1,0 +1,22 @@
+[
+  {
+    "test_id": "ex8-1",
+    "exercise_id": 8,
+    "test_type": "css_property",
+    "selector": "body",
+    "property": "background-color",
+    "expected_value": "white|rgb(255, 255, 255)|#ffffff",
+    "viewport_size": 800,
+    "error_message": "Default background should be white"
+  },
+  {
+    "test_id": "ex8-2",
+    "exercise_id": 8,
+    "test_type": "responsive",
+    "selector": "body",
+    "property": "background-color",
+    "expected_value": "yellow|rgb(255, 255, 0)|#ffff00",
+    "viewport_size": 599,
+    "error_message": "Background should turn yellow on screens <600px"
+  }
+]
