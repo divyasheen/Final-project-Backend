@@ -42,7 +42,7 @@
     "description": "Create an HTML-Page with `<h1>`, `<p>`and `<div id='box'>` \n Add CSS with the `<style>`-tag: \n - the text of the h1 should be blue \n - the p font size should be 18px \n - the background of the box with `id='box'` should be grey",
     "xp_reward": 10,
     "difficulty": "Easy",
-    "example": "varchar(255)"
+    "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n\n  <style> \n   h1 \n    {font-size: 24px;}\n\n   .intro \n    {color: red;} \n\n   #outro \n    {background-color: green} \n  </style> \n\n  <body> \n   <h1> Best heading ever! </h1> \n   <p class = 'intro' > This is the intro paragraph! </p> \n   <p id = 'outro' > This is the outro paragraph! </p> \n  </body> \n </html>"
   },
   {
     "id": 6,
