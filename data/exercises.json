@@ -33,7 +33,7 @@
     "description": "Create a form with: \n - A name field (text) \n - An email field \n - A password field \n - A submit button labeled “Sign in”",
     "xp_reward": 10,
     "difficulty": "Easy",
-    "example": "varchar(255)"
+    "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n  <body> \n   <form> \n    <label for = 'name'> Name </label> \n    <input type = 'text' id = 'name' name = 'username'/> \n    <button type = 'submit'> Send </button> \n   </form> \n  </body> \n </html>"
   },
   {
     "id": 5,
