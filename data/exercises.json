@@ -1,5 +1,4 @@
 [
-
   {
     "id": 1,
     "lesson_id": 1,
@@ -13,10 +12,10 @@
     "id": 2,
     "lesson_id": 2,
     "title": "HTML-Basics: EXERCISE 1",
-    "description": "Create a basic HTML page with: \n - an title that say: 'Save Coderealm!' \n - the page should show 'Hello World!'",
+    "description": "Create a basic HTML page with: \n - a title that say: 'Save Coderealm!' \n - the page should show 'Hello World!'",
     "xp_reward": 10,
     "difficulty": "Easy",
-    "example": "example"
+    "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n  <body> \n   Here is some text. \n  </body> \n </html>"
   },
   {
     "id": 3,
@@ -25,7 +24,7 @@
     "description": "Create a page with: \n - An `<h1>` with the text 'Learning Topics' \n - A paragraph using <strong> \n - An ordered list with “HTML”, “CSS”, “JavaScript” \n - A link to https://developer.mozilla.org \n - An image with the URL https://picsum.photos/200/300",
     "xp_reward": 10,
     "difficulty": "Easy",
-    "example": "varchar(255)"
+    "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title>This is the title!</title> \n  </head> \n  <body> \n   <h1> This is the first heading. </h1> \n   <p> This is a paragraph. </p> \n   <h2> This is the second heading, </h2> \n  </body> \n </html>"
   },
   {
     "id": 4,
