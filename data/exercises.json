@@ -51,7 +51,7 @@
     "description": "1. Create a '<div>' with text \n 2. Give the box \n - Padding: 20px \n - Border: 2px, solid, black \n - Margin: 30px",
     "xp_reward": 10,
     "difficulty": "Easy",
-    "example": "varchar(255)"
+    "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n\n  <style> \n   div \n    {padding: 30px; \n    border: 5px dotted red; \n    margin: 50px} \n   </style> \n\n  <body> \n   <h1> Best heading ever! </h1> \n   <div> This ist the div with an awesome text </div> \n  </body> \n </html>"
   },
   {
     "id": 7,
