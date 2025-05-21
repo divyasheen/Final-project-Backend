@@ -69,7 +69,7 @@
     "description": "1. Give '<body>' by default a white background color \n 2. If the screen size reaches less than 600px the background color should switch to yellow",
     "xp_reward": 10,
     "difficulty": "Easy",
-    "example": "varchar(255)"
+    "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n\n  <style> \n   body \n    {color: red;} \n\n   @media (max-width: 800px) \n    {body \n     {color: blue;} \n    } \n  </style> \n\n  <body> \n   <h1> Best heading ever! </h1> \n   <div class = 'wrapper'> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n   </div> \n  </body> \n </html>"
   },
   {
     "id": 9,
