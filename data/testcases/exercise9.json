@@ -1,0 +1,59 @@
+[
+  {
+    "test_id": "ex9-1",
+    "exercise_id": 9,
+    "test_type": "element_count",
+    "selector": "h1, h2, h3, h4, h5, h6",
+    "expected_value": "1+",
+    "error_message": "Include at least one heading"
+  },
+  {
+    "test_id": "ex9-2",
+    "exercise_id": 9,
+    "test_type": "element_count",
+    "selector": "p",
+    "expected_value": "1+",
+    "error_message": "Include at least one paragraph"
+  },
+  {
+    "test_id": "ex9-3",
+    "exercise_id": 9,
+    "test_type": "element_count",
+    "selector": "img",
+    "expected_value": "1+",
+    "error_message": "Include at least one image"
+  },
+  {
+    "test_id": "ex9-4",
+    "exercise_id": 9,
+    "test_type": "element_count",
+    "selector": "ul, ol",
+    "expected_value": "1+",
+    "error_message": "Include at least one list"
+  },
+  {
+    "test_id": "ex9-5",
+    "exercise_id": 9,
+    "test_type": "element_count",
+    "selector": "a",
+    "expected_value": "1+",
+    "error_message": "Include at least one link"
+  },
+  {
+    "test_id": "ex9-6",
+    "exercise_id": 9,
+    "test_type": "element_count",
+    "selector": "form",
+    "expected_value": "1+",
+    "error_message": "Include at least one form"
+  },
+  {
+    "test_id": "ex9-7",
+    "exercise_id": 9,
+    "test_type": "css_property",
+    "selector": "*",
+    "property": "font-family",
+    "expected_value": ".+",
+    "error_message": "Your page should include some CSS styling"
+  }
+]

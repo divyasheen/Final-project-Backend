@@ -3,7 +3,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import cookieParser from 'cookie-parser';
-
+import evaluationsRouter from './routers/evaluations.js';
 import usersRouter from './routers/users.js';
 import coursesRouter from './routers/courses.js';
 import { createError } from "./utils/errors.js";
@@ -29,6 +29,7 @@ const startServer = async () => {
     /* ------------------ routers ----------------- */
     app.use("/users", usersRouter);
     app.use("/api/courses", coursesRouter); 
+    app.use('/api/evaluations', evaluationsRouter);
 
     /* --------------- error handler -------------- */
     app.use((req, res, next) => {

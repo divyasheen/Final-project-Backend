@@ -1,0 +1,253 @@
+[
+  {
+    "test_id": "ex2-1",
+    "exercise_id": 2,
+    "test_type": "html_structure",
+    "selector": "title",
+    "expected_value": "Save Coderealm!",
+    "is_hidden": false,
+    "weight": 0.5,
+    "error_message": "The <title> tag should contain exactly 'Save Coderealm!'"
+  },
+  {
+    "test_id": "ex2-2",
+    "exercise_id": 2,
+    "test_type": "html_content",
+    "selector": "body",
+    "expected_value": "Hello World!",
+    "is_hidden": false,
+    "weight": 0.5,
+    "error_message": "The page must display 'Hello World!' in the body"
+  },
+  {
+    "test_id": "ex3-1",
+    "exercise_id": 3,
+    "test_type": "element_count",
+    "selector": "h1",
+    "expected_value": "1",
+    "error_message": "You need exactly one <h1> heading"
+  },
+  {
+    "test_id": "ex3-2",
+    "exercise_id": 3,
+    "test_type": "html_content",
+    "selector": "h1",
+    "expected_value": "Learning Topics",
+    "error_message": "Your <h1> should say 'Learning Topics'"
+  },
+  {
+    "test_id": "ex3-3",
+    "exercise_id": 3,
+    "test_type": "element_count",
+    "selector": "ol li",
+    "expected_value": "3",
+    "error_message": "You need 3 items in your ordered list"
+  },
+  {
+    "test_id": "ex3-4",
+    "exercise_id": 3,
+    "test_type": "attribute_check",
+    "selector": "a",
+    "property": "href",
+    "expected_value": "https://developer.mozilla.org",
+    "error_message": "The link should point to Mozilla Developer Network"
+  },
+  {
+    "test_id": "ex3-5",
+    "exercise_id": 3,
+    "test_type": "attribute_check",
+    "selector": "img",
+    "property": "src",
+    "expected_value": "https://picsum.photos/200/300",
+    "error_message": "Image source should point to picsum.photos"
+  },
+  {
+    "test_id": "ex4-1",
+    "exercise_id": 4,
+    "test_type": "element_count",
+    "selector": "form input[type='text']",
+    "expected_value": "1",
+    "error_message": "You need one text input for the name"
+  },
+  {
+    "test_id": "ex4-2",
+    "exercise_id": 4,
+    "test_type": "element_count",
+    "selector": "form input[type='email']",
+    "expected_value": "1",
+    "error_message": "You need one email input field"
+  },
+  {
+    "test_id": "ex4-3",
+    "exercise_id": 4,
+    "test_type": "element_count",
+    "selector": "form input[type='password']",
+    "expected_value": "1",
+    "error_message": "You need one password input field"
+  },
+  {
+    "test_id": "ex4-4",
+    "exercise_id": 4,
+    "test_type": "html_content",
+    "selector": "form button, form input[type='submit']",
+    "expected_value": "Sign in",
+    "error_message": "Your submit button should say 'Sign in'"
+  },
+  {
+    "test_id": "ex5-1",
+    "exercise_id": 5,
+    "test_type": "css_property",
+    "selector": "h1",
+    "property": "color",
+    "expected_value": "blue|rgb(0, 0, 255)|#0000ff",
+    "error_message": "h1 text color should be blue"
+  },
+  {
+    "test_id": "ex5-2",
+    "exercise_id": 5,
+    "test_type": "css_property",
+    "selector": "p",
+    "property": "font-size",
+    "expected_value": "18px",
+    "error_message": "Paragraph font size should be 18px"
+  },
+  {
+    "test_id": "ex5-3",
+    "exercise_id": 5,
+    "test_type": "css_property",
+    "selector": "#box",
+    "property": "background-color",
+    "expected_value": "grey|gray|rgb(128, 128, 128)|#808080",
+    "error_message": "The box should have a grey background"
+  },
+  {
+    "test_id": "ex6-1",
+    "exercise_id": 6,
+    "test_type": "css_property",
+    "selector": "div",
+    "property": "padding",
+    "expected_value": "20px",
+    "error_message": "Div should have 20px padding"
+  },
+  {
+    "test_id": "ex6-2",
+    "exercise_id": 6,
+    "test_type": "css_property",
+    "selector": "div",
+    "property": "border",
+    "expected_value": "2px solid black|2px solid rgb(0, 0, 0)|2px solid #000000",
+    "error_message": "Div should have a 2px solid black border"
+  },
+  {
+    "test_id": "ex6-3",
+    "exercise_id": 6,
+    "test_type": "css_property",
+    "selector": "div",
+    "property": "margin",
+    "expected_value": "30px",
+    "error_message": "Div should have 30px margin"
+  },
+  {
+    "test_id": "ex7-1",
+    "exercise_id": 7,
+    "test_type": "css_property",
+    "selector": ".container",
+    "property": "display",
+    "expected_value": "flex",
+    "error_message": "Container should use flexbox"
+  },
+  {
+    "test_id": "ex7-2",
+    "exercise_id": 7,
+    "test_type": "element_count",
+    "selector": ".container .item",
+    "expected_value": "3",
+    "error_message": "You need three items inside the container"
+  },
+  {
+    "test_id": "ex7-3",
+    "exercise_id": 7,
+    "test_type": "css_property",
+    "selector": ".container",
+    "property": "justify-content",
+    "expected_value": "center",
+    "error_message": "Items should be centered horizontally"
+  },
+  {
+    "test_id": "ex8-1",
+    "exercise_id": 8,
+    "test_type": "css_property",
+    "selector": "body",
+    "property": "background-color",
+    "expected_value": "white|rgb(255, 255, 255)|#ffffff",
+    "viewport_size": 800,
+    "error_message": "Default background should be white"
+  },
+  {
+    "test_id": "ex8-2",
+    "exercise_id": 8,
+    "test_type": "responsive",
+    "selector": "body",
+    "property": "background-color",
+    "expected_value": "yellow|rgb(255, 255, 0)|#ffff00",
+    "viewport_size": 599,
+    "error_message": "Background should turn yellow on screens <600px"
+  },
+  {
+    "test_id": "ex9-1",
+    "exercise_id": 9,
+    "test_type": "element_count",
+    "selector": "h1, h2, h3, h4, h5, h6",
+    "expected_value": "1+",
+    "error_message": "Include at least one heading"
+  },
+  {
+    "test_id": "ex9-2",
+    "exercise_id": 9,
+    "test_type": "element_count",
+    "selector": "p",
+    "expected_value": "1+",
+    "error_message": "Include at least one paragraph"
+  },
+  {
+    "test_id": "ex9-3",
+    "exercise_id": 9,
+    "test_type": "element_count",
+    "selector": "img",
+    "expected_value": "1+",
+    "error_message": "Include at least one image"
+  },
+  {
+    "test_id": "ex9-4",
+    "exercise_id": 9,
+    "test_type": "element_count",
+    "selector": "ul, ol",
+    "expected_value": "1+",
+    "error_message": "Include at least one list"
+  },
+  {
+    "test_id": "ex9-5",
+    "exercise_id": 9,
+    "test_type": "element_count",
+    "selector": "a",
+    "expected_value": "1+",
+    "error_message": "Include at least one link"
+  },
+  {
+    "test_id": "ex9-6",
+    "exercise_id": 9,
+    "test_type": "element_count",
+    "selector": "form",
+    "expected_value": "1+",
+    "error_message": "Include at least one form"
+  },
+  {
+    "test_id": "ex9-7",
+    "exercise_id": 9,
+    "test_type": "css_property",
+    "selector": "*",
+    "property": "font-family",
+    "expected_value": ".+",
+    "error_message": "Your page should include some CSS styling"
+  }
+]
