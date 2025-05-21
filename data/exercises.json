@@ -51,7 +51,7 @@
     "description": "1. Create a '<div>' with text \n 2. Give the box \n - Padding: 20px \n - Border: 2px, solid, black \n - Margin: 30px",
     "xp_reward": 10,
     "difficulty": "Easy",
-    "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n\n  <style> \n   div \n    {padding: 30px; \n    border: 5px dotted red; \n    margin: 50px} \n   </style> \n\n  <body> \n   <h1> Best heading ever! </h1> \n   <div> This ist the div with an awesome text </div> \n  </body> \n </html>"
+    "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n\n  <style> \n   div \n    {padding: 30px; \n    border: 5px dotted red; \n    margin: 50px} \n  </style> \n\n  <body> \n   <h1> Best heading ever! </h1> \n   <div> This ist the div with an awesome text </div> \n  </body> \n </html>"
   },
   {
     "id": 7,
@@ -60,7 +60,7 @@
     "description": "1. Create three '<div class='item'>' inside a '<div class='container'>' \n 2. Use felxbox to display them centred next to each other \n 3. Give the items a ficed size",
     "xp_reward": 10,
     "difficulty": "Easy",
-    "example": "varchar(255)"
+    "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n\n  <style> \n   .bestDiv \n    {display: block;} \n  </style> \n\n  <body> \n   <h1> Best heading ever! </h1> \n   <div class = 'wrapper'> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n   </div> \n  </body> \n </html>"
   },
   {
     "id": 8,
