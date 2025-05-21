@@ -3,8 +3,10 @@
     "id": 1,
     "lesson_id": null,
     "title": "Fix the broken code",
-    "description": "text",
+    "description": "You’re a recruit for the CodeRealm Guild, and your first mission is to repair the corrupted portal page to the realm. Without it, no messages can reach allies. The HTML was scrambled during a breach. Now it’s up to you to fix it. \n \n <strong>What you need to do!</strong> \n \n 1. Add the necessary &lt!DOCTYPE html> and root structure. \n 2. Close all open tags and properly nest elements. \n 3. Replace non-semantic-structures with semantic elements (e.g. div -> main, section, etc.). \n 4. Add some CSS (inside &lthead>): \n - center the content \n - add padding \n - use a font like sans-serif \n - make headings stand out ",
+    "code": "<h1>Welcome to CodeRealm<p>The legendary land of developersz<div>z<ul>z<li> Learnz<li> Codez<li> Level upz</ul><section><h2>Guild news<p>New recruits needed! <strong>Are you ready</strong>",
     "xp-reward": 20,
+    "difficulty": "Easy", 
     "test_cases": "json"
   }
 ]

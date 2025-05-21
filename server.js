@@ -8,6 +8,7 @@ import usersRouter from './routers/users.js';
 import coursesRouter from './routers/courses.js';
 import { createError } from "./utils/errors.js";
 import { connect2DB } from "./utils/db.js";
+import chatbotRouter from './routers/chatbot.js';
 
 dotenv.config();
 
@@ -28,8 +29,9 @@ const startServer = async () => {
 
     /* ------------------ routers ----------------- */
     app.use("/users", usersRouter);
-    app.use("/api/courses", coursesRouter); 
+    app.use("/api/courses", coursesRouter);  
     app.use('/api/evaluations', evaluationsRouter);
+    app.use("/chatbot", chatbotRouter); 
 
     /* --------------- error handler -------------- */
     app.use((req, res, next) => {
