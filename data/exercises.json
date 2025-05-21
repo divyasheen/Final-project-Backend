@@ -6,7 +6,7 @@
     "description": "Read the text!",
     "xp_reward": 5,
     "difficulty": "Easy",
-    "example": "varchar(255)"
+    "example": ""
   },
   {
     "id": 2,
@@ -77,7 +77,7 @@
     "title": "FINAL",
     "description": "Create your own small HTML page about a topic of your choice (e.g. your favourite game, an animal, a hobby). The page should: \n 1. contain at least one heading, one paragraph, one image, one list, one link and one form, \n 2. and have a suitable CSS layout.",
     "xp_reward": 25,
-    "difficulty": "Easy",
+    "difficulty": "Medium",
     "example": "<!DOCTYPE html> \n <html> \n  <head> \n    <meta /> \n    <title>Red Pandas</title> \n    <style> \n      body { \n        font-family: Arial, sans-serif; \n        background-color: #f7f5f2; \n        color: #333; \n        padding: 20px; \n      } \n      h1 { \n        color: #d94f30; \n        text-align: center; \n      } \n      img { \n        display: block; \n        margin: 0 auto; \n        width: 300px; \n        border-radius: 8px; \n      } \n      ul { \n        background-color: #fff3e6; \n        padding: 15px; \n        order-radius: 5px; \n        max-width: 400px; \n        margin: 20px auto; \n      } \n      form { \n        background-color: #e0f7fa; \n        padding: 15px; \n        border-radius: 5px; \n        max-width: 400px; \n        margin: 20px auto; \n      } \n      label, \n      input { \n        display: block; \n        margin-bottom: 10px; \n      } \n      a { \n        color: #d94f30; \n        text-decoration: none; \n      } \n    </style> \n  </head> \n  <body> \n    <h1>Red Pandas – The Cutest Animal</h1> \n    <p> \n      Red pandas are small mammals native to the Himalayas. They are known for \n      their reddish fur, long bushy tails, and playful nature. \n    </p> \n    <img \n      src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/RedPandaFullBody.JPG/800px-RedPandaFullBody.JPG' \n      alt='Red panda standing on a log' \n    /> \n    <ul> \n      <li>Live in the Himalayas</li> \n      <li>Eat mostly bamboo</li> \n      <li>Active at dawn and dusk</li> \n    </ul> \n    <p> \n      Learn more about red pandas on \n      <a href='https://en.wikipedia.org/wiki/Red_panda' target='blank'> \n         Wikipedia \n      </a \n      >. \n    </p> \n    <form> \n      <label for='name'> \n       Your Name: \n      </label> \n      <input type='text' id='name' name='name' /> \n      <label for='email'> \n       Your Email: \n      </label> \n      <input type='email id='email' name='email' /> \n      <input type='submit' value='Submit' /> \n    </form> \n  </body> \n </html>"
   }
   
