@@ -2,14 +2,18 @@ import { getDB } from "../utils/db.js";
 import { hashPassword, comparePassword } from "../utils/hashPassword.js";
 import jwt from "jsonwebtoken";
 import { OAuth2Client } from 'google-auth-library';
-import { verifyUserByEmail, passwordResetTemplate } from "../utils/mail.js";
+import {verifyEmailTemplate, verifyUserByEmail, passwordResetTemplate } from "../utils/mail.js";
 
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
+
+
+
+
+
 
 // Register a new user and send a verification email
 export const registerUser = async (req, res) => {
   const { username, email, password, role = "student" } = req.body;
-
   const normalizedEmail = email.trim().toLowerCase();
   console.log("Attempting to register:", normalizedEmail);
 
@@ -17,9 +21,8 @@ export const registerUser = async (req, res) => {
     const hashedPassword = await hashPassword(password);
     const db = getDB();
 
-    // Fix: add backticks and quotes for the query string
     const [existing] = await db.execute(
-      `SELECT id FROM users WHERE email = ?`, 
+      `SELECT id FROM users WHERE email = ?`,
       [normalizedEmail]
     );
 
@@ -28,68 +31,76 @@ export const registerUser = async (req, res) => {
     }
 
     const [result] = await db.execute(
-      `INSERT INTO users (username, email, password_hash, role, created_at) VALUES (?, ?, ?, ?, ?)`,
-      [username, normalizedEmail, hashedPassword, role, new Date()]
+      `INSERT INTO users (username, email, password_hash, role,  created_at, verified) VALUES (?, ?, ?, ?, ?, ?)`,
+      [username, normalizedEmail, hashedPassword, role, new Date(), 0]
     );
 
-    // create token for auto-login after registration
-    const token = jwt.sign(
-      { id: result.insertId, email: normalizedEmail },
+    const userId = result.insertId;
+
+    // Generate verification token
+    const verifyToken = jwt.sign(
+      { id: userId, email: normalizedEmail },
       process.env.JWT_SECRET,
       { expiresIn: "1h" }
     );
 
-    // set as cookie for sessions
-    res.cookie("token", token, {
-      httpOnly: true,
-      sameSite: "lax",
-      secure: false,
-      maxAge: 3600000, // 1 hour
-    });
 
-    const user = {
-      id: result.insertId,  // fix: use insertId instead of userId
-      username,
-      role,
-    };
+    // Send verification email
+    const html = verifyEmailTemplate(username, verifyToken);
+    await verifyUserByEmail(normalizedEmail, "Verify your account", html);
 
     res.status(201).json({
-      message: "User registered successfully",
-      user,
+      message: "User registered. Please check your email to verify your account.",
+    
     });
   } catch (error) {
-    if (error.code === "ER_DUP_ENTRY") {
-      return res.status(400).json({
-        error: "Email already in use",
-      });
-    }
     console.error(error);
-    res.status(500).json({
-      error: "Internal server error",
-    });
+    res.status(500).json({ error: "Internal server error" });
   }
 };
+
+
+
+
+
 
 
 // Email verification endpoint using token from URL params
 export const verifyUser = async (req, res) => {
   const { token } = req.params;
+  console.log("Received token:", token);
+
   const db = getDB();
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+
     if (!decoded) {
       return res.status(400).json({ error: "Invalid token" });
     }
     // Mark user as verified in DB
     await db.execute(`UPDATE users SET verified = 1 WHERE id = ?`, [decoded.id]);
 
-    res.status(200).json({ message: "Email verified successfully" });
+    return res.redirect("http://localhost:5173/verification-success"); // Redirect on successful verification
   } catch (error) {
     console.error("Verification error:", error);
-    res.status(400).json({ error: "Invalid or expired token" });
+    res.redirect("http://localhost:5173/verification-error"); // Redirect on error
   }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Login a user with email & password
 export const loginUser = async (req, res) => {
@@ -104,7 +115,7 @@ export const loginUser = async (req, res) => {
     const user = rows[0];
     
     // Check if email is verified
-    if (!user) return res.status(401).json({ error: "Email not verified" });
+    if (!user.verified) return res.status(401).json({ error: "Email not verified" });
 
     // Check password
     const isMatch = await comparePassword(password, user.password_hash);
@@ -126,6 +137,15 @@ export const loginUser = async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 };
+
+
+
+
+
+
+
+
+
 
 // Log out user (placeholder, no token blacklisting here)
 export const logoutUser = (req, res) => {
@@ -179,6 +199,17 @@ export const googleLogin = async (req, res) => {
   }
 };
 
+
+
+
+
+
+
+
+
+
+
+
 // Send password reset link to user's email
 export const forgotPassword = async (req, res) => {
   const { email } = req.body;
@@ -210,6 +241,13 @@ export const forgotPassword = async (req, res) => {
   }
 };
 
+
+
+
+
+
+
+
 // Handle password reset with a new password and token
 export const resetPassword = async (req, res) => {
   //Getting the token and the new pass
@@ -229,5 +267,46 @@ export const resetPassword = async (req, res) => {
   } catch (error) {
     console.error("Reset error:", error);
     res.status(400).json({ error: "Invalid or expired token" });
+  }
+};
+
+
+
+//Send the user a Verification  button to his/her email
+
+
+
+export const resendVerification = async (req, res) => {
+  const { email } = req.body;
+  const db = getDB();
+  const normalizedEmail = email.trim().toLowerCase();
+
+  try {
+    const [users] = await db.execute(
+      `SELECT id, username, verified FROM users WHERE email = ?`,
+      [normalizedEmail]
+    );
+
+    if (users.length === 0) return res.status(404).json({ error: "User not found" });
+
+    const user = users[0];
+
+    if (user.verified) {
+      return res.status(400).json({ error: "User already verified" });
+    }
+
+    const verifyToken = jwt.sign(
+      { id: user.id, email: normalizedEmail },
+      process.env.JWT_SECRET,
+      { expiresIn: "1h" }
+    );
+
+    const html = verifyEmailTemplate(user.username, verifyToken);
+    await verifyUserByEmail(normalizedEmail, "Verify your account", html);
+
+    res.status(200).json({ message: "Verification email resent" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server error" });
   }
 };
