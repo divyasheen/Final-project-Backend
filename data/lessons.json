@@ -3,13 +3,13 @@
     "id": 1,
     "course_id": 1,
     "title": "Intro",
-    "content": "Before we start with the first topic, you should understand what awaits you on your journey into the knowledge of the Coderealm. \n Imagine you are building a house. First you build a shell - the walls, the floor. You can live in it, but it's not pretty or functional yet, so you'll probably lay wooden flooring and paint the walls - and what's a house without furniture? But now you still need electricity, heating and maybe even a whole smart home! Last but not least, there's a shed where you can store things. \n You might be wondering what this is all about. You wanted to create websites, SAVE THE CODEREALM and not build houses. Yes ... you will, but first understand what you will learn. A website is like this house you need a shell, which is the HTML. Then you can style this shell with CSS. You get the functionality with Javascript and you can compare the shed with the backend. \n \n I hope you now understand a little better what to expect. So let's get straight into the adventure ... \n\n",
+    "content": "Before we start with the first topic, you should understand what awaits you on your journey into the knowledge of the Coderealm. \n \n Imagine you are building a house. First you build a shell - the walls, the floor. You can live in it, but it's not pretty or functional yet, so you'll probably lay wooden flooring and paint the walls - and what's a house without furniture? But now you still need electricity, heating and maybe even a whole smart home! Last but not least, there's a shed where you can store things. \n \n You might be wondering what this is all about. You wanted to create websites, SAVE THE CODEREALM and not build houses. Yes ... you will, but first understand what you will learn. A website is like this house you need a shell, which is the HTML. Then you can style this shell with CSS. You get the functionality with Javascript and you can compare the shed with the backend. \n \n I hope you now understand a little better what to expect. So let's get straight into the adventure ... \n\n",
     "example": ""
   },
   {
     "id": 2,
     "course_id": 1,
-    "title": "HTML-Basics",
+    "title": "HTML Basics",
     "content": "Let's start with the basics of the shell. HTML is an abbreviation for HyperText Markup Language.\n\n <strong>HyperText</strong> refers to the way in which Web pages are linked together. Thus, the link available on a webpage is called 'HyperText'. \n <strong>Markup Language</strong>, which means you use HTML to simple 'mark up' a text document with tags that tell a Web browser how to structure it to display. \n\n Each HTML file consists of: \n \n <strong>&lt;!DOCTYPE html&gt;</strong> – Tells the browser that this is an HTML5 document. \n <strong>&lt;html&gt; ... &lt;/html&gt;</strong> – The root element of the page. This includes all information that is to be processed by the browser. \n <strong>&lt;head&gt; ... &lt;/head&gt;</strong> – Contains meta information (not visible content), e.g. title, character encoding, fonts, little picture for the tab. \n <strong>&lt;title&gt; ... &lt;/title&gt;</strong> – Sets the title of the browser tab. \n <strong>&lt;body&gt; ... &lt;/body&gt;</strong> – Contains all visible content. \n \n Important! \n Every tag has an opening and a closing tag. That means everything which is between those tags belongs to them. Opening tags are <head> or <body>. They only contain the name of the tag. Closing tags always have a ‘/’ - </head> or </body>. Special cases are self-closing tags - but we will come to these later. \n\n",
     "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n  <body> \n   Here is some text. \n  </body> \n </html>"
   },
@@ -51,7 +51,7 @@
   {
     "id": 8,
     "course_id": 1,
-    "title": "FINAL",
+    "title": "FINAL: HTML",
     "content": "Now you know the basics of HTML and it's time to put theory into practice! \n \n Take on the final task. ",
     "example": ""
   },
@@ -65,28 +65,28 @@
   {
     "id": 10,
     "course_id": 2,
-    "title": "Box-Model, margin, padding and border",
+    "title": "Box-Model",
     "content": "In CSS, every HTML element is treated as a rectangular box, and the box model describes how the size of that box is calculated and how its parts interact. \n\n The box model consists of four main parts (from inside out): \n\n <strong>content</strong>: The actual text or image inside the element. \n <strong>padding</strong>:  The space between the content and the border. It pushes the border outward. \n <strong>border</strong>: The frame around the padding (or content, if there's no padding). \n <strong>margin</strong>: The space outside the border, used to separate elements from each other.  \n\n",
     "example": "div \n {padding: 30px; \n border: 5px dotted red; \n margin: 50px}"
   },
   {
     "id": 11,
     "course_id": 2,
-    "title": "Layout with flexbox",
+    "title": "Flexbox",
     "content": "Flexbox (short for Flexible Box Layout) is a CSS layout module that makes it easier to arrange elements within a container dynamically and efficiently - both in rows and columns. It was developed to solve problems with the alignment and distribution of space in containers. \n \n Basic principles: \n Flexbox consists of two levels: \n 1. <strong>flex container</strong> - the element on which display: flex is set \n 2. <strong>flex items</strong> - the direct children of this container \n \n Most important features: \n For flex container: \n - '<strong>display: flex</strong>' Makes an element to an flex container \n - '<strong>flex-direction</strong>' directions of the axis : row (default), column, row-reverse, column-reverse \n - '<strong>justify-content</strong>' Distribution along the main axis (z. B. flex-start, center, - space-between, space-around, space-evenly) \n - '<strong>align-items</strong>' Distribution along the cross axis (z. B. stretch, flex-start, center, baseline) \n - '<strong>flex-wrap</strong>' line break: nowrap (Standard), wrap, wrap-reverse \n - '<strong>gap</strong>' Space between items \n \n For flex items: \n - '<strong>flex-grow</strong>' How much an item can grow if space is available \n - '<strong>flex-shrink</strong>' How much an item an item can shrink if space isn't available \n - '<strong>flex-basis</strong>' Size at the beginning(auto, 0, 100px esc.) \n - '<strong>flex</strong>' Shortcut: flex-grow flex-shrink flex-basis (flex: 1 0 200px) \n - '<strong>align-self</strong>' Overwright align-items just for this item \n \n When do I use flexbox? \n - If you want to align elements in a single row or column \n - For buttons in a bar, cards next to each other, navigations, centring \n - If you need responsive behaviour without a lot of media queries \n\n",
     "example": ".container \n {display: flex; \n justify-content: space-between; \n align-items: center} \n\n.item \n {flex: 1; margin: 10px;}"
   },
   {
     "id": 12,
     "course_id": 2,
-    "title": "Responsive design & media queries",
+    "title": "Media queries",
     "content": "Responsive design means that websites or web applications are designed in such a way that they automatically adapt to different screen sizes and devices - whether smartphone, tablet, laptop or large desktop screen. \n \n Goal: \n The user interface (UI) should look good and be usable everywhere without having to zoom or scroll to recognise content or operate buttons. \n \n Important principles: \n \n Flexible layouts (fluid grids): \n - Instead of fixed pixel values, relative units such as em, % or vw/vh are used. \n - Example: Instead of width: 600px, use width: 80%. \n \n Flexible images and media: \n - Images and videos adapt to the width of their container. \n - Example: img { max-width: 100%; height: auto; } \n \n Media queries (CSS): \n - This allows you to define styles specifically for certain screen sizes or devices. \n \n Mobile first approach: \n - You first develop for small screens and then expand for larger screens. \n - Advantage: better performance and better user-friendliness on mobile devices. \n\n",
     "example": "@media (max-width: 600px) {body {background-color: lightyellow;}}"
   },
   {
     "id": 13,
     "course_id": 2,
-    "title": "FINAL",
+    "title": "FINAL: CSS",
     "content": "You now have everything you need to build a small website! \n\n Plan the structure: \n - title and headings \n - text \n - images \n - links \n - lists \n - forms  \n  \n Style it with CSS: \n - colors, distances \n - flexbox for layout \n - media query for the mobile version \n\n",
     "example": ""
   },

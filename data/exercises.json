@@ -30,31 +30,49 @@
     "id": 4,
     "lesson_id": 4,
     "title": "Attributes",
-    "description": "Practice using an HTML attribute inside a &ltp> (paragraph) element. \n - Create a simple HTML file. \n - Inside the &ltbody>, add a &ltp> element. \n - Use the align attribute to center the paragraph text. \n - Write any short sentence inside the paragraph. \n - The paragraph text should appear centered on the page.",
+    "description": "Practice using an HTML attribute inside a <p> (paragraph) element. \n - Create a simple HTML file. \n - Inside the <body>, add a <p> element. \n - Use the align attribute to center the paragraph text. \n - Write any short sentence inside the paragraph. \n - The paragraph text should appear centered on the page.",
     "xp_reward": 10,
     "difficulty": "Easy",
-    "example": "<!DOCTYPE html> \n<html> \n<head> \n  <title>HTML Attribute Practice</title> \n</head> \n\n<body> \n  <p align='center'>This is a centered paragraph using the align attribute.</p> \n</body> \n</html>"
+    "example": "<!DOCTYPE html> \n<html> \n<head> \n  <title>HTML Attribute Practice</title> \n</head> \n\n<body> \n  <p align='left'>This is a paragraph using the align attribute.</p> \n</body> \n</html>"
   },
   {
     "id": 5,
-    "lesson_id": 6,
-    "title": "Forms and Inputs",
-    "description": "Create a form with: \n - A name field (text) \n - An email field \n - A password field \n - A submit button labeled “Sign in”",
+    "lesson_id": 5,
+    "title": "Lists",
+    "description": "Practice using <ul>, &ltol>, and <li> tags to create unordered and ordered lists. \n\n Create a basic HTML page. Inside the <body>, create: \n - An unordered list of 3 fruits (e.g. Apple, Banana, Orange). \n - An ordered list of 3 daily tasks (e.g. Wake up, Brush teeth, Eat breakfast). \n - The fruit list should appear with bullet points. \n - The task list should appear with letters or numbers, depending on the type.",
     "xp_reward": 10,
     "difficulty": "Easy",
-    "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n  <body> \n   <form> \n    <label for = 'name'> Name </label> \n    <input type = 'text' id = 'name' name = 'username'/> \n    <button type = 'submit'> Send </button> \n   </form> \n  </body> \n </html>"
-  }
-  {
-    "id": 5,
-    "lesson_id": 6,
-    "title": "Forms and Inputs",
-    "description": "Create a form with: \n - A name field (text) \n - An email field \n - A password field \n - A submit button labeled “Sign in”",
-    "xp_reward": 10,
-    "difficulty": "Easy",
-    "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n  <body> \n   <form> \n    <label for = 'name'> Name </label> \n    <input type = 'text' id = 'name' name = 'username'/> \n    <button type = 'submit'> Send </button> \n   </form> \n  </body> \n </html>"
+    "example": "<!DOCTYPE html> \n<html> \n<head> \n  <title>HTML List Practice</title> \n</head> \n<body> \n\n  <h2>Animals</h2> \n  <ul> \n    <li>Dog</li> \n    <li>Cat</li> \n    <li>Mouse</li> \n  </ul> \n\n  <h2>Jobs</h2> \n  <ol> \n  <li>Dentist</li> \n    <li>Webdev</li> \n    <li>Teacher</li> \n  </ol> \n\n</body> \n</html>"
   },
   {
     "id": 6,
+    "lesson_id": 6,
+    "title": "Forms and Inputs",
+    "description": "Create a form with: \n - A name field (text) \n - An email field \n - A password field \n - A submit button labeled “Sign in”",
+    "xp_reward": 10,
+    "difficulty": "Easy",
+    "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n  <body> \n   <form> \n    <label for = 'name'> Name </label> \n    <input type = 'text' id = 'name' name = 'username'/> \n    <button type = 'submit'> Send </button> \n   </form> \n  </body> \n </html>"
+  },
+  {
+    "id": 7,
+    "lesson_id": 7,
+    "title": "Links",
+    "description": "Practice creating clickable links using the anchor (<a>) tag in HTML. Inside the <body>, add the following: \n\n 1. Text Link: \n - Create a clickable text link that leads to https://www.wikipedia.org. \n - The link text should say: 'Visit Wikipedia'. \n - Make it open in a new tab using the target='_blank' attribute. \n\n 2. Image Link: \n - Use a placeholder image from https://placehold.co/150. \n - Wrap the image in a link so that when the image is clicked, it also goes to https://www.wikipedia.org. \n - Open the link in the same tab.",
+    "xp_reward": 10,
+    "difficulty": "Easy",
+    "example": "<!DOCTYPE html> \n<head> \n  <title>HTML Links Practice</title> \n</head> \n<body> \n\n  <h2>Text Link</h2> \n  <a href='https://www.google.com' target='_blank'>Visit Wikipedia</a> \n\n  <h2>Image Link</h2> \n  <a href='https://www.google.com' target='_self'> \n    <img src='https://via.placeholder.com/150' alt='Placeholder image'> \n  </a> \n\n</body> \n</html>"
+  },
+  {
+    "id": 8,
+    "lesson_id": 8,
+    "title": "FINAL: HTML",
+    "description": "Now you know the basics of HTML and it's time to put theory into practice! \n\n Create your own small website. You can choose the topic yourself, it should only include the following points: \n - Give the page a suitable title \n - There should be at least one heading and one paragraph. \n - The paragraph should be align right. \n - Create an organised list on your topic \n - Insert an image that contains a link to the topic \n - For further questions there should be a contact form at the bottom of the page.",
+    "xp_reward": 25,
+    "difficulty": "Easy",
+    "example": "<!DOCTYPE html> \n<head> \n  <meta> \n  <title>My First HTML Page</title> \n</head> \n<body> \n\n  <h1 title='Main Heading'>Welcome to My HTML Page</h1> \n <p align='center'> \n    This is a paragraph with the <strong>align</strong> attribute set to 'center'. \n  </p> \n\n   <h2>My Favorite Fruits</h2> \n  <ul> \n    <li>Apple</li> \n    <li>Banana</li> \n    <li>Cherry</li> \n  </ul> \n\n  <h2>Useful Link</h2> \n  <p> \n    Visit \n    <a href='https://www.example.com' target='_blank' title='Example Website'>Example.com</a> \n    for more information. \n  </p> \n\n  <h2>Random Form</h2> \n  <form> \n    <label for='name'>Name:</label><br> \n    <input type='text' id='name' name='name'><br> \n\n    <label for='email'>Email:</label><br> \n    <input type='email' id='email' name='email'><br><br> \n  </form> \n\n </body> \n</html>"
+  },
+  {
+    "id": 9,
     "lesson_id": 9,
     "title": "CSS basics",
     "description": "Create an HTML-Page with `<h1>`, `<p>`and `<div id='box'>` \n Add CSS with the `<style>`-tag: \n - the text of the h1 should be blue \n - the p font size should be 18px \n - the background of the box with `id='box'` should be grey",
@@ -63,7 +81,7 @@
     "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n\n  <style> \n   h1 \n    {font-size: 24px;}\n\n   .intro \n    {color: red;} \n\n   #outro \n    {background-color: green} \n  </style> \n\n  <body> \n   <h1> Best heading ever! </h1> \n   <p class = 'intro' > This is the intro paragraph! </p> \n   <p id = 'outro' > This is the outro paragraph! </p> \n  </body> \n </html>"
   },
   {
-    "id": 7,
+    "id": 10,
     "lesson_id": 10,
     "title": "Box-model",
     "description": "1. Create a '<div>' with text \n 2. Give the box \n - Padding: 20px \n - Border: 2px, solid, black \n - Margin: 30px",
@@ -72,7 +90,7 @@
     "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n\n  <style> \n   div \n    {padding: 30px; \n    border: 5px dotted red; \n    margin: 50px} \n  </style> \n\n  <body> \n   <h1> Best heading ever! </h1> \n   <div> This ist the div with an awesome text </div> \n  </body> \n </html>"
   },
   {
-    "id": 8,
+    "id": 11,
     "lesson_id": 11,
     "title": "Layout with flexbox",
     "description": "1. Create three '<div class='item'>' inside a '<div class='container'>' \n 2. Use felxbox to display them centred next to each other \n 3. Give the items a ficed size",
@@ -81,7 +99,7 @@
     "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n\n  <style> \n   .bestDiv \n    {display: block;} \n  </style> \n\n  <body> \n   <h1> Best heading ever! </h1> \n   <div class = 'wrapper'> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n   </div> \n  </body> \n </html>"
   },
   {
-    "id": 9,
+    "id": 12,
     "lesson_id": 12,
     "title": "Responsive design & media queries",
     "description": "1. Give '<body>' by default a white background color \n 2. If the screen size reaches less than 600px the background color should switch to yellow",
@@ -90,9 +108,9 @@
     "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n\n  <style> \n   body \n    {color: red;} \n\n   @media (max-width: 800px) \n    {body \n     {color: blue;} \n    } \n  </style> \n\n  <body> \n   <h1> Best heading ever! </h1> \n   <div class = 'wrapper'> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n   </div> \n  </body> \n </html>"
   },
   {
-    "id": 10,
+    "id": 12,
     "lesson_id": 13,
-    "title": "FINAL",
+    "title": "FINAL: CSS",
     "description": "Create your own small HTML page about a topic of your choice (e.g. your favourite game, an animal, a hobby). The page should: \n 1. contain at least one heading, one paragraph, one image, one list, one link and one form, \n 2. and have a suitable CSS layout.",
     "xp_reward": 25,
     "difficulty": "Medium",
