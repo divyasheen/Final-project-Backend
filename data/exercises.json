@@ -89,9 +89,18 @@
     "difficulty": "Easy",
     "example": "h1 { \n    font-size: 2rem; \n}; \n\n.item { \n    color: blue; \n}; \n\n#wrapper { \n    border-color: red; \n};"
   },
-  {
+   {
     "id": 11,
     "lesson_id": 11,
+    "title": "Colors",
+    "description": "1. Style the .keyword class to: \n - Set the text color to green using a keyword. \n - Set the background color to lightgray. \n\n 2. Style the .rgb class to: \n - Set the text color to RGB (255, 0, 0). \n - Set the background color to RGB (230, 230, 230). \n\n 3. Style the .hex class to: \n - Set the text color to #0000ff (blue). \n - Set the background color to #f0f0f0.",
+    "xp_reward": 10,
+    "difficulty": "Easy",
+    "example": "p { \n    color: red; \n    background-color: rgb (255, 255, 0); \n    border-color: #00ff00; \n}"
+  },
+  {
+    "id": 12,
+    "lesson_id": 12,
     "title": "Box-model",
     "description": "1. Create a '<div>' with text \n 2. Give the box \n - Padding: 20px \n - Border: 2px, solid, black \n - Margin: 30px",
     "xp_reward": 10,
@@ -99,8 +108,8 @@
     "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n\n  <style> \n   div \n    {padding: 30px; \n    border: 5px dotted red; \n    margin: 50px} \n  </style> \n\n  <body> \n   <h1> Best heading ever! </h1> \n   <div> This ist the div with an awesome text </div> \n  </body> \n </html>"
   },
   {
-    "id": 12,
-    "lesson_id": 12,
+    "id": 13,
+    "lesson_id": 13,
     "title": "Layout with flexbox",
     "description": "1. Create three '<div class='item'>' inside a '<div class='container'>' \n 2. Use felxbox to display them centred next to each other \n 3. Give the items a ficed size",
     "xp_reward": 10,
@@ -108,8 +117,8 @@
     "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n\n  <style> \n   .bestDiv \n    {display: block;} \n  </style> \n\n  <body> \n   <h1> Best heading ever! </h1> \n   <div class = 'wrapper'> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n   </div> \n  </body> \n </html>"
   },
   {
-    "id": 13,
-    "lesson_id": 13,
+    "id": 14,
+    "lesson_id": 14,
     "title": "Responsive design & media queries",
     "description": "1. Give '<body>' by default a white background color \n 2. If the screen size reaches less than 600px the background color should switch to yellow",
     "xp_reward": 10,
@@ -117,8 +126,8 @@
     "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n\n  <style> \n   body \n    {color: red;} \n\n   @media (max-width: 800px) \n    {body \n     {color: blue;} \n    } \n  </style> \n\n  <body> \n   <h1> Best heading ever! </h1> \n   <div class = 'wrapper'> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n   </div> \n  </body> \n </html>"
   },
   {
-    "id": 14,
-    "lesson_id": 14,
+    "id": 15,
+    "lesson_id": 15,
     "title": "FINAL: CSS",
     "description": "Create your own small HTML page about a topic of your choice (e.g. your favourite game, an animal, a hobby). The page should: \n 1. contain at least one heading, one paragraph, one image, one list, one link and one form, \n 2. and have a suitable CSS layout.",
     "xp_reward": 25,
@@ -145,15 +154,6 @@
   },
   {
     "id": 96,
-    "lesson_id": 16,
-    "title": "",
-    "description": "",
-    "xp_reward": 25,
-    "difficulty": "",
-    "example": ""
-  },
-  {
-    "id": 45,
     "lesson_id": 16,
     "title": "",
     "description": "",
