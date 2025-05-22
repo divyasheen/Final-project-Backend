@@ -18,7 +18,7 @@ const importDataJson = async () => {
   await connect2DB();
   const db = getDB();
 
-  // ===== COURSES FIRST =====
+/*   // ===== COURSES FIRST =====
   const courses = await readJsonFile("../data/courses.json");
   for (const course of courses) {
     await db.execute(
@@ -44,7 +44,7 @@ const importDataJson = async () => {
         example = VALUES(example)`,
       [lesson.id, lesson.course_id, lesson.title, lesson.content, lesson.example]
     );
-  }
+  } */
 
   // ===== EXERCISES THIRD =====
   const exercises = await readJsonFile("../data/exercises.json");
@@ -70,7 +70,7 @@ const importDataJson = async () => {
       ]
     );
   }
-    // ===== TEST CASES FOURTH =====
+/*     // ===== TEST CASES FOURTH =====
   const testcases = await readJsonFile("../data/testcases.json");
   for (const testcase of testcases) {
     await db.execute(
@@ -103,7 +103,7 @@ const importDataJson = async () => {
   }
 
 
-  // ===== BADGES FOURTH =====
+  // ===== BADGES FIFTH =====
   const badges = await readJsonFile("../data/badges.json");
   for (const badge of badges) {
     await db.execute(
@@ -123,7 +123,7 @@ const importDataJson = async () => {
         badge.dependency
       ]
     );
-  }
+  } */
 
   console.log("✅ All data imported successfully!");
   await db.end();
