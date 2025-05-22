@@ -112,6 +112,41 @@
     "example": ""
   },
   {
+    "id": 17,
+    "course_id": 3,
+    "title": "JavaScript basics",
+    "content": "<strong>What is JavaScript?</strong> \n JavaScript is a programming language used to make websites interactive and dynamic. It's one of the core technologies of the web, alongside HTML and CSS. \n\n But JavaScript is much more than just a 'web language': \n - It runs in the browser (e.g., Chrome, Firefox, Safari). \n - It can also run outside the browser, on the server using environments like Node.js. \n - It supports many programming concepts: variables, loops, functions, objects, arrays, events, etc. \n\n <strong>What is the JavaScript Console?</strong> \n The console is a built-in developer tool in web browsers and JavaScript environments. It’s like a 'chat window' between you and your code. \n\n You can: \n - See outputs from your code. \n - Track variables and logic. \n - Catch and understand errors. \n\n <strong>What is console.log()?</strong> \n console.log() is a built-in function in JavaScript that prints messages to the console. \n\n",
+    "example": "console.log('Hello, world!'); \n\n|----- Output -----| \nHello, world!"
+  },
+  {
+    "id": 18,
+    "course_id": 3,
+    "title": "",
+    "content": "",
+    "example": ""
+  },
+  {
+    "id": 19,
+    "course_id": 3,
+    "title": "",
+    "content": "",
+    "example": ""
+  },
+  {
+    "id": 20,
+    "course_id": 3,
+    "title": "",
+    "content": "",
+    "example": ""
+  },
+  {
+    "id": 21,
+    "course_id": 3,
+    "title": "",
+    "content": "",
+    "example": ""
+  },
+  {
     "id": 230,
     "course_id": 4,
     "title": "",

@@ -9,7 +9,12 @@
 < === &lt
 > === &gt
 
-In the .container class: \n - Set display to flex to turn it into a flex container. \n - Set flex-direction to row. \n - Use justify-content: space-between to spread the items. \n - Use align-items: center to vertically center them. \n - Add a gap of 20px between the items.
+
+
+console.log("Hello, world!");
+|----- Output -----|
+Hello, world!
+
 
 
 # PLACEHOLDER HTML

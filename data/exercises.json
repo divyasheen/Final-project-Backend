@@ -144,26 +144,26 @@
     "example": "body { \n font-family: Arial, sans-serif; \n background-color: #f7f5f2; \n color: #333; \n padding: 20px; \n} \n\nh1 { \n color: #d94f30; \n text-align: center; \n} \n\nimg { \n display: block; \n margin: 0 auto; \n width: 300px; \n border-radius: 8px; \n} \n\nul { \n background-color: #fff3e6; \n padding: 15px; \n order-radius: 5px; \n max-width: 400px; \n margin: 20px auto; \n} \n\n form { \n background-color: #e0f7fa; \n padding: 15px; \n border-radius: 5px; \n max-width: 400px; \n margin: 20px auto; \n} \n label, input { \n display: block; \n margin-bottom: 10px; \n}"
   },
   {
-    "id": 84,
-    "lesson_id": 1,
+    "id": 17,
+    "lesson_id": 17,
     "title": "",
     "description": "",
     "xp_reward": 25,
-    "difficulty": "",
-    "example": ""
-  },
-  {
-    "id": 96,
-    "lesson_id": 1,
-    "title": "",
-    "description": "",
-    "xp_reward": 1,
     "difficulty": "",
     "example": ""
   },
   {
     "id": 18,
-    "lesson_id": 1,
+    "lesson_id": 18,
+    "title": "",
+    "description": "",
+    "xp_reward": 1,
+    "difficulty": "",
+    "example": ""
+  },
+  {
+    "id": 19,
+    "lesson_id": 19,
     "title": "",
     "description": "",
     "xp_reward": 25,
@@ -171,11 +171,20 @@
     "example": ""
   },
   {
-    "id": 85,
-    "lesson_id": 1,
+    "id": 20,
+    "lesson_id": 20,
     "title": "",
     "description": "",
     "xp_reward": 1,
+    "difficulty": "",
+    "example": ""
+  },
+  {
+    "id": 21,
+    "lesson_id": 21,
+    "title": "",
+    "description": "",
+    "xp_reward": 25,
     "difficulty": "",
     "example": ""
   },
