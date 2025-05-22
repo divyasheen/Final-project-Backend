@@ -87,7 +87,7 @@
     "id": 13,
     "course_id": 2,
     "title": "Box-Model",
-    "content": "In CSS, every HTML element is treated as a rectangular box, and the box model describes how the size of that box is calculated and how its parts interact. \n\n The box model consists of four main parts (from inside out): \n\n <strong>content</strong>: The actual text or image inside the element. \n <strong>padding</strong>:  The space between the content and the border. It pushes the border outward. \n <strong>border</strong>: The frame around the padding (or content, if there's no padding). \n <strong>margin</strong>: The space outside the border, used to separate elements from each other.  \n\n",
+    "content": "In CSS, every HTML element is treated as a rectangular box, and the box model describes how the size of that box is calculated and how its parts interact. \n\n The box model consists of four main parts (from inside out): \n\n <strong>content</strong>: The actual text or image inside the element. \n <strong>padding</strong>:  The space between the content and the border. It pushes the border outward. \n <strong>border</strong>: The frame around the padding (or content, if there's no padding). \n <strong>margin</strong>: The space outside the border, used to separate elements from each other. \n\n",
     "example": "div \n {padding: 30px; \n border: 5px dotted red; \n margin: 50px}"
   },
   {

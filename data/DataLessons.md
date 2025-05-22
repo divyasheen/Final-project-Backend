@@ -9,9 +9,7 @@
 < === &lt
 > === &gt
 
-1. Style .absolute-heading: \n - Set the font-size to 24pt (absolute unit). \n - Add 10px padding. \n\n 2. Style .relative-heading: \n - Set the font-size to 2em. \n - Add 2rem margin-top. \n\n 3. Style .box-absolute: \n - Set a width of 300px. \n - Set a height of 100px. \n - Use a background color like lightblue. \n\n 4. Style .box-relative: \n - Set a width of 50%. \n - Set a height of 10vh. \n - Use a background color like lightgreen.
-
-p { \n    font-size: 2rem; \n    width: 150px; \n}
+Style the .box class to show all parts of the box model clearly: \n - Add padding of 20px on all sides (space between content and border). \n - Add a solid border of 2px and color it black. \n - Add a margin of 30px around the box (space between this and other elements). \n - Give the box a background color (e.g., lightblue) so the content area is visible. \n - Set a width of 300px to better observe the layout.
 
 # PLACEHOLDER HTML
 
@@ -83,5 +81,18 @@ p { \n    font-size: 2rem; \n    width: 150px; \n}
 </body>
 </html>
 
+# EX 13 - Box-model
 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Box Model Practice</title>
+  <style>
+    /* Write your CSS here */
+  </style>
+</head>
+<body>
+  <div class="box">I am a box!</div>
+</body>
+</html>
 

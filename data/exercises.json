@@ -111,10 +111,10 @@
     "id": 13,
     "lesson_id": 13,
     "title": "Box-model",
-    "description": "1. Create a '<div>' with text \n 2. Give the box \n - Padding: 20px \n - Border: 2px, solid, black \n - Margin: 30px",
+    "description": "Style the .box class to show all parts of the box model clearly: \n - Add padding of 20px on all sides (space between content and border). \n - Add a solid border of 2px and color it black. \n - Add a margin of 30px around the box (space between this and other elements). \n - Give the box a background color (e.g., lightblue) so the content area is visible. \n - Set a width of 300px to better observe the layout.",
     "xp_reward": 10,
     "difficulty": "Easy",
-    "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n\n  <style> \n   div \n    {padding: 30px; \n    border: 5px dotted red; \n    margin: 50px} \n  </style> \n\n  <body> \n   <h1> Best heading ever! </h1> \n   <div> This ist the div with an awesome text </div> \n  </body> \n </html>"
+    "example": "div \n    {padding: 30px; \n    border: 5px dotted red; \n    margin: 50px \n}"
   },
   {
     "id": 14,
