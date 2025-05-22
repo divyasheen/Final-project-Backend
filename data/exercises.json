@@ -68,7 +68,7 @@
     "title": "FINAL: HTML",
     "description": "Now you know the basics of HTML and it's time to put theory into practice! \n\n Create your own small website. You can choose the topic yourself, it should only include the following points: \n - Give the page a suitable title \n - There should be at least one heading and one paragraph. \n - The paragraph should be align right. \n - Create an organised list on your topic \n - Insert an image that contains a link to the topic \n - For further questions there should be a contact form at the bottom of the page.",
     "xp_reward": 25,
-    "difficulty": "Easy",
+    "difficulty": "Medium",
     "example": "<!DOCTYPE html> \n<head> \n  <meta> \n  <title>My First HTML Page</title> \n</head> \n<body> \n\n  <h1 title='Main Heading'>Welcome to My HTML Page</h1> \n <p align='center'> \n    This is a paragraph with the <strong>align</strong> attribute set to 'center'. \n  </p> \n\n   <h2>My Favorite Fruits</h2> \n  <ul> \n    <li>Apple</li> \n    <li>Banana</li> \n    <li>Cherry</li> \n  </ul> \n\n  <h2>Useful Link</h2> \n  <p> \n    Visit \n    <a href='https://www.example.com' target='_blank' title='Example Website'>Example.com</a> \n    for more information. \n  </p> \n\n  <h2>Random Form</h2> \n  <form> \n    <label for='name'>Name:</label><br> \n    <input type='text' id='name' name='name'><br> \n\n    <label for='email'>Email:</label><br> \n    <input type='email' id='email' name='email'><br><br> \n  </form> \n\n </body> \n</html>"
   },
   {
@@ -108,13 +108,84 @@
     "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n\n  <style> \n   body \n    {color: red;} \n\n   @media (max-width: 800px) \n    {body \n     {color: blue;} \n    } \n  </style> \n\n  <body> \n   <h1> Best heading ever! </h1> \n   <div class = 'wrapper'> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n   </div> \n  </body> \n </html>"
   },
   {
-    "id": 12,
+    "id": 13,
     "lesson_id": 13,
     "title": "FINAL: CSS",
     "description": "Create your own small HTML page about a topic of your choice (e.g. your favourite game, an animal, a hobby). The page should: \n 1. contain at least one heading, one paragraph, one image, one list, one link and one form, \n 2. and have a suitable CSS layout.",
     "xp_reward": 25,
     "difficulty": "Medium",
     "example": "<!DOCTYPE html> \n <html> \n  <head> \n    <meta /> \n    <title>Red Pandas</title> \n    <style> \n      body { \n        font-family: Arial, sans-serif; \n        background-color: #f7f5f2; \n        color: #333; \n        padding: 20px; \n      } \n      h1 { \n        color: #d94f30; \n        text-align: center; \n      } \n      img { \n        display: block; \n        margin: 0 auto; \n        width: 300px; \n        border-radius: 8px; \n      } \n      ul { \n        background-color: #fff3e6; \n        padding: 15px; \n        order-radius: 5px; \n        max-width: 400px; \n        margin: 20px auto; \n      } \n      form { \n        background-color: #e0f7fa; \n        padding: 15px; \n        border-radius: 5px; \n        max-width: 400px; \n        margin: 20px auto; \n      } \n      label, \n      input { \n        display: block; \n        margin-bottom: 10px; \n      } \n      a { \n        color: #d94f30; \n        text-decoration: none; \n      } \n    </style> \n  </head> \n  <body> \n    <h1>Red Pandas – The Cutest Animal</h1> \n    <p> \n      Red pandas are small mammals native to the Himalayas. They are known for \n      their reddish fur, long bushy tails, and playful nature. \n    </p> \n    <img \n      src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/RedPandaFullBody.JPG/800px-RedPandaFullBody.JPG' \n      alt='Red panda standing on a log' \n    /> \n    <ul> \n      <li>Live in the Himalayas</li> \n      <li>Eat mostly bamboo</li> \n      <li>Active at dawn and dusk</li> \n    </ul> \n    <p> \n      Learn more about red pandas on \n      <a href='https://en.wikipedia.org/wiki/Red_panda' target='blank'> \n         Wikipedia \n      </a \n      >. \n    </p> \n    <form> \n      <label for='name'> \n       Your Name: \n      </label> \n      <input type='text' id='name' name='name' /> \n      <label for='email'> \n       Your Email: \n      </label> \n      <input type='email id='email' name='email' /> \n      <input type='submit' value='Submit' /> \n    </form> \n  </body> \n </html>"
+  },
+  {
+    "id": 14,
+    "lesson_id": 14,
+    "title": "",
+    "description": "",
+    "xp_reward": 25,
+    "difficulty": "",
+    "example": ""
+  },
+  {
+    "id": 15,
+    "lesson_id": 15,
+    "title": "",
+    "description": "",
+    "xp_reward": 25,
+    "difficulty": "",
+    "example": ""
+  },
+  {
+    "id": 16,
+    "lesson_id": 16,
+    "title": "",
+    "description": "",
+    "xp_reward": 25,
+    "difficulty": "",
+    "example": ""
+  },
+  {
+    "id": 17,
+    "lesson_id": 16,
+    "title": "",
+    "description": "",
+    "xp_reward": 25,
+    "difficulty": "",
+    "example": ""
+  },
+  {
+    "id": 18,
+    "lesson_id": 16,
+    "title": "",
+    "description": "",
+    "xp_reward": 25,
+    "difficulty": "",
+    "example": ""
+  },
+  {
+    "id": 19,
+    "lesson_id": 16,
+    "title": "",
+    "description": "",
+    "xp_reward": 1,
+    "difficulty": "",
+    "example": ""
+  },
+  {
+    "id": 20,
+    "lesson_id": 2,
+    "title": "",
+    "description": "",
+    "xp_reward": 25,
+    "difficulty": "",
+    "example": ""
+  },
+  {
+    "id": 21,
+    "lesson_id": 2,
+    "title": "",
+    "description": "",
+    "xp_reward": 25,
+    "difficulty": "",
+    "example": ""
   }
-  
 ]
