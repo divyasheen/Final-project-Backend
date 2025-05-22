@@ -75,10 +75,10 @@
     "id": 9,
     "lesson_id": 9,
     "title": "CSS basics",
-    "description": "Create an HTML-Page with `<h1>`, `<p>`and `<div id='box'>` \n Add CSS with the `<style>`-tag: \n - the text of the h1 should be blue \n - the p font size should be 18px \n - the background of the box with `id='box'` should be grey",
+    "description": "Write the following style in the correct place in the given HTML - so that it is internal CSS: \n\n h1 {color: red}",
     "xp_reward": 10,
     "difficulty": "Easy",
-    "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n\n  <style> \n   h1 \n    {font-size: 24px;}\n\n   .intro \n    {color: red;} \n\n   #outro \n    {background-color: green} \n  </style> \n\n  <body> \n   <h1> Best heading ever! </h1> \n   <p class = 'intro' > This is the intro paragraph! </p> \n   <p id = 'outro' > This is the outro paragraph! </p> \n  </body> \n </html>"
+    "example": "Code should be inside the editor: \n \n<!DOCTYPE html> \n<html> \n<head> \n  <title>My First CSS Exercise</title> \n</head> \n<body> \n   <h1>Hello CSS!</h1> \n   <p>This is a normal paragraph.</p> \n   <p>This is a special paragraph.</p> \n</body> \n</html>"
   },
   {
     "id": 10,
