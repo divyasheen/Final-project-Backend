@@ -11,7 +11,7 @@
   {
     "id": 2,
     "lesson_id": 2,
-    "title": "HTML-Basics: EXERCISE 1",
+    "title": "HTML-Basics: EXERCISE",
     "description": "Create a basic HTML page with: \n - a title that say: 'Save Coderealm!' \n - the page should show 'Hello World!'",
     "xp_reward": 10,
     "difficulty": "Easy",
@@ -20,7 +20,7 @@
   {
     "id": 3,
     "lesson_id": 3,
-    "title": "First tags: EXERCISE 1",
+    "title": "First tags: EXERCISE",
     "description": "Create a page with: \n - An `<h1>` with the text 'Learning Topics' \n - A paragraph using <strong> \n - An ordered list with “HTML”, “CSS”, “JavaScript” \n - A link to https://developer.mozilla.org \n - An image with the URL https://picsum.photos/200/300",
     "xp_reward": 10,
     "difficulty": "Easy",
@@ -29,7 +29,7 @@
   {
     "id": 4,
     "lesson_id": 4,
-    "title": "Forms and Inputs: EXERCISE 1",
+    "title": "Forms and Inputs: EXERCISE",
     "description": "Create a form with: \n - A name field (text) \n - An email field \n - A password field \n - A submit button labeled “Sign in”",
     "xp_reward": 10,
     "difficulty": "Easy",
@@ -38,7 +38,7 @@
   {
     "id": 5,
     "lesson_id": 5,
-    "title": "CSS basics: EXERCISE 1",
+    "title": "CSS basics: EXERCISE",
     "description": "Create an HTML-Page with `<h1>`, `<p>`and `<div id='box'>` \n Add CSS with the `<style>`-tag: \n - the text of the h1 should be blue \n - the p font size should be 18px \n - the background of the box with `id='box'` should be grey",
     "xp_reward": 10,
     "difficulty": "Easy",
@@ -47,7 +47,7 @@
   {
     "id": 6,
     "lesson_id": 6,
-    "title": "Box-model: EXERCISE 1",
+    "title": "Box-model: EXERCISE",
     "description": "1. Create a '<div>' with text \n 2. Give the box \n - Padding: 20px \n - Border: 2px, solid, black \n - Margin: 30px",
     "xp_reward": 10,
     "difficulty": "Easy",
@@ -56,7 +56,7 @@
   {
     "id": 7,
     "lesson_id": 7,
-    "title": "Layout with flexbox: EXERCISE 1",
+    "title": "Layout with flexbox: EXERCISE",
     "description": "1. Create three '<div class='item'>' inside a '<div class='container'>' \n 2. Use felxbox to display them centred next to each other \n 3. Give the items a ficed size",
     "xp_reward": 10,
     "difficulty": "Easy",
@@ -65,7 +65,7 @@
   {
     "id": 8,
     "lesson_id": 8,
-    "title": "Responsive design & media queries: EXERCISE 1",
+    "title": "Responsive design & media queries: EXERCISE",
     "description": "1. Give '<body>' by default a white background color \n 2. If the screen size reaches less than 600px the background color should switch to yellow",
     "xp_reward": 10,
     "difficulty": "Easy",
