@@ -9,11 +9,26 @@
 < === &lt
 > === &gt
 
-1. Style the .keyword class to: \n - Set the text color to green using a keyword. \n - Set the background color to lightgray. \n\n 2. Style the .rgb class to: \n - Set the text color to RGB (255, 0, 0). \n - Set the background color to RGB (230, 230, 230). \n\n 3. Style the .hex class to: \n - Set the text color to #0000ff (blue). \n - Set the background color to #f0f0f0.
+1. Style .absolute-heading: \n - Set the font-size to 24pt (absolute unit). \n - Add 10px padding. \n\n 2. Style .relative-heading: \n - Set the font-size to 2em. \n - Add 2rem margin-top. \n\n 3. Style .box-absolute: \n - Set a width of 300px. \n - Set a height of 100px. \n - Use a background color like lightblue. \n\n 4. Style .box-relative: \n - Set a width of 50%. \n - Set a height of 10vh. \n - Use a background color like lightgreen.
 
-p { \n    color: red; \n    background-color: rgb (255, 255, 0); \n    border-color: #00ff00; }
+p { \n    font-size: 2rem; \n    width: 150px; \n}
 
 # PLACEHOLDER HTML
+
+# EX 9 - CSS BASICS
+<!DOCTYPE html>
+<head>
+  <meta>
+  <title>CSS Practice</title>
+</head>
+<body>
+  <h1>Welcome to the Exercise</h1>
+  <p class="info">This is an informational paragraph.</p>
+  <p class="info">This is another informational paragraph.</p>
+  <p id="important">This is a very important paragraph!</p>
+</body>
+</html>
+
 
 # EX 10 - SELECTORS
 
@@ -33,12 +48,9 @@ p { \n    color: red; \n    background-color: rgb (255, 255, 0); \n    border-co
 </body>
 </html>
 
-# EX 12 - COLORS
+# EX 11 - COLORS
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
   <title>Color Practice</title>
   <style>
     /* Write your color styles here */
@@ -49,6 +61,25 @@ p { \n    color: red; \n    background-color: rgb (255, 255, 0); \n    border-co
   <p class="keyword">This paragraph uses a color keyword.</p>
   <p class="rgb">This paragraph uses RGB.</p>
   <p class="hex">This paragraph uses a hex color.</p>
+</body>
+</html>
+
+# EX 12 - Units
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Units Practice</title>
+  <style>
+    /* Write your styles here */
+  </style>
+</head>
+<body>
+  <h1 class="absolute-heading">I use absolute units</h1>
+  <h2 class="relative-heading">I use relative units</h2>
+
+  <div class="box-absolute">Box with px width</div>
+  <div class="box-relative">Box with % width</div>
 </body>
 </html>
 
