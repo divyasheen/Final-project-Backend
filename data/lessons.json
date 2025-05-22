@@ -77,35 +77,35 @@
     "example": "p { \n color: red;  \n border-color: rgb(255, 0, 0);\n background-color: #FF0000; \n}"
   },
   {
-    "id": 12,
+    "id": 13,
     "course_id": 2,
-    "title": "Colors",
-    "content": "CSS uses color values to specify a color. Typically, these are used to set a color either for the foreground of an element (i.e. its text) or else for the background of the element. They can also be used to affect the color of borders and other decorative effects. \n\n You can specify your color values in various formats. The most comon are: keywords, RGB and Hex-Codes. \n\n <strong>Keywords</strong> \nCSS supports the color names to be directly passed to the property background-color and color. 140 standard color names are supported by CSS. You can use names like 'black', 'green', 'red' and many more. \n\n <strong>RGB</strong> \n - This color value is specified using the rgb( ) property. \n - It takes three values, one each for RED, GREEN and BLUE. \n - The value can be an integer between 0 and 255 or a percentage. \n <strong>NOTE</strong>: All the browsers does not support rgb() property of color so it is recommended not to use it.\n\n <strong>Hexadecimale Codes</strong> \n A hexadecimal is a 6 digit representation of a color. The first two digits(RR) represent a red value, the next two are a green value(GG), and the last are the blue value(BB). \n Each hexadecimal code will be preceded by a pound or hash sign '#'. Following are the examples of hexadecimal notation. \n <strong>NOTE</strong>: To specify the hexadecimal codes, you can use upper case or lower case letters. \n\n",
-    "example": "p { \n color: red;  \n border-color: rgb(255, 0, 0);\n background-color: #FF0000; \n}"
+    "title": "Units",
+    "content": "CSS Units define the measurement system used to specify the values. CSS offers a number of different units for expressing length and measurement. CSS unit is used to specify the property size for a page element or its content. \n There are a number of ways to specify and measure length in CSS. It is used to specify margins, padding, font size, width, height, border, etc. \n\n For example - font-size: 50px, here number 50 has a suffix px i.e., pixel, it is a CSS measurement unit. \n\n Length units can be categorized into two types: \n\n <strong>Absolute units</strong>: Fixed unit lengths that does not depend on screen width. \n <strong>Relative units</strong>: Responsive unit lengths that changes according to screen width. \n\n <strong>Absolute Length Units</strong> \n These units are categorized as fixed-length units, which means that lengths specified with absolute units maintain an exact, unchanged size on the screen. \n\n These units prove to be very effective when the browser has comprehensive information about the properties of the screen, the printer being used, or other appropriate user agents. \n\n <strong>px</strong> = Pixels (screen dots) \n <strong>pt</strong> = Points (1pt = 1/72 inch) \n <strong>cm</strong> = Centimeters \n <strong>mm</strong> = Millimeters \n <strong>in</strong> = Inches \n\n <strong>Relative units</strong> \n Relative length units are measured in relation to other elements or viewport of the screen. \n Relative units are great for styling responsive websites because they can be adjusted proportionally based on window size or parent elements. These units define lengths relative to other length properties. \n\n <strong>em</strong> = Font-size of the element itself \n <strong>rem</strong> = Font-size of the root element \n <strong>vw</strong> = 1% of viewport width \n <strong>vh</strong> = 1% of viewport height \n\n",
+    "example": "p { \n height: 600px; \n width: 2rem; \n font-size: 1cm; \n}"
   },
   {
-    "id": 13,
+    "id": 14,
     "course_id": 2,
     "title": "Box-Model",
     "content": "In CSS, every HTML element is treated as a rectangular box, and the box model describes how the size of that box is calculated and how its parts interact. \n\n The box model consists of four main parts (from inside out): \n\n <strong>content</strong>: The actual text or image inside the element. \n <strong>padding</strong>:  The space between the content and the border. It pushes the border outward. \n <strong>border</strong>: The frame around the padding (or content, if there's no padding). \n <strong>margin</strong>: The space outside the border, used to separate elements from each other.  \n\n",
     "example": "div \n {padding: 30px; \n border: 5px dotted red; \n margin: 50px}"
   },
   {
-    "id": 14,
+    "id": 15,
     "course_id": 2,
     "title": "Flexbox",
     "content": "Flexbox (short for Flexible Box Layout) is a CSS layout module that makes it easier to arrange elements within a container dynamically and efficiently - both in rows and columns. It was developed to solve problems with the alignment and distribution of space in containers. \n \n Basic principles: \n Flexbox consists of two levels: \n 1. <strong>flex container</strong> - the element on which display: flex is set \n 2. <strong>flex items</strong> - the direct children of this container \n \n Most important features: \n For flex container: \n - '<strong>display: flex</strong>' Makes an element to an flex container \n - '<strong>flex-direction</strong>' directions of the axis : row (default), column, row-reverse, column-reverse \n - '<strong>justify-content</strong>' Distribution along the main axis (z. B. flex-start, center, - space-between, space-around, space-evenly) \n - '<strong>align-items</strong>' Distribution along the cross axis (z. B. stretch, flex-start, center, baseline) \n - '<strong>flex-wrap</strong>' line break: nowrap (Standard), wrap, wrap-reverse \n - '<strong>gap</strong>' Space between items \n \n For flex items: \n - '<strong>flex-grow</strong>' How much an item can grow if space is available \n - '<strong>flex-shrink</strong>' How much an item an item can shrink if space isn't available \n - '<strong>flex-basis</strong>' Size at the beginning(auto, 0, 100px esc.) \n - '<strong>flex</strong>' Shortcut: flex-grow flex-shrink flex-basis (flex: 1 0 200px) \n - '<strong>align-self</strong>' Overwright align-items just for this item \n \n When do I use flexbox? \n - If you want to align elements in a single row or column \n - For buttons in a bar, cards next to each other, navigations, centring \n - If you need responsive behaviour without a lot of media queries \n\n",
     "example": ".container \n {display: flex; \n justify-content: space-between; \n align-items: center} \n\n.item \n {flex: 1; margin: 10px;}"
   },
   {
-    "id": 15,
+    "id": 16,
     "course_id": 2,
     "title": "Media queries",
     "content": "Responsive design means that websites or web applications are designed in such a way that they automatically adapt to different screen sizes and devices - whether smartphone, tablet, laptop or large desktop screen. \n \n Goal: \n The user interface (UI) should look good and be usable everywhere without having to zoom or scroll to recognise content or operate buttons. \n \n Important principles: \n \n Flexible layouts (fluid grids): \n - Instead of fixed pixel values, relative units such as em, % or vw/vh are used. \n - Example: Instead of width: 600px, use width: 80%. \n \n Flexible images and media: \n - Images and videos adapt to the width of their container. \n - Example: img { max-width: 100%; height: auto; } \n \n Media queries (CSS): \n - This allows you to define styles specifically for certain screen sizes or devices. \n \n Mobile first approach: \n - You first develop for small screens and then expand for larger screens. \n - Advantage: better performance and better user-friendliness on mobile devices. \n\n",
     "example": "@media (max-width: 600px) {body {background-color: lightyellow;}}"
   },
   {
-    "id": 16,
+    "id": 17,
     "course_id": 2,
     "title": "FINAL: CSS",
     "content": "You now have everything you need to build a small website! \n\n Plan the structure: \n - title and headings \n - text \n - images \n - links \n - lists \n - forms  \n  \n Style it with CSS: \n - colors, distances \n - flexbox for layout \n - media query for the mobile version \n\n",
