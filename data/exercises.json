@@ -120,19 +120,19 @@
     "id": 14,
     "lesson_id": 14,
     "title": "Layout with flexbox",
-    "description": "1. Create three '<div class='item'>' inside a '<div class='container'>' \n 2. Use felxbox to display them centred next to each other \n 3. Give the items a ficed size",
+    "description": "In the .container class: \n - Set display to flex to turn it into a flex container. \n - Set flex-direction to row. \n - Use justify-content: space-between to spread the items. \n - Use align-items: center to vertically center them. \n - Add a gap of 20px between the items.",
     "xp_reward": 10,
     "difficulty": "Easy",
-    "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n\n  <style> \n   .bestDiv \n    {display: block;} \n  </style> \n\n  <body> \n   <h1> Best heading ever! </h1> \n   <div class = 'wrapper'> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n   </div> \n  </body> \n </html>"
+    "example": ".bestDiv { \n  display: block; \n  justify-content: center; \n  align-items: flex-start; \n}"
   },
   {
     "id": 15,
     "lesson_id": 15,
     "title": "Responsive design & media queries",
-    "description": "1. Give '<body>' by default a white background color \n 2. If the screen size reaches less than 600px the background color should switch to yellow",
+    "description": "1. Give '<body>' by default a white background color \n 2. If the screen size reaches less than 600px the background color should switch to yellow.",
     "xp_reward": 10,
     "difficulty": "Easy",
-    "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n\n  <style> \n   body \n    {color: red;} \n\n   @media (max-width: 800px) \n    {body \n     {color: blue;} \n    } \n  </style> \n\n  <body> \n   <h1> Best heading ever! </h1> \n   <div class = 'wrapper'> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n   </div> \n  </body> \n </html>"
+    "example": "body { \n  color: red; \n} \n\n@media (max-width: 800px) { \n  body { \n   color: green; \n  } \n}"
   },
   {
     "id": 16,

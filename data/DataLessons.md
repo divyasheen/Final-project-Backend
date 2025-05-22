@@ -9,7 +9,8 @@
 < === &lt
 > === &gt
 
-Style the .box class to show all parts of the box model clearly: \n - Add padding of 20px on all sides (space between content and border). \n - Add a solid border of 2px and color it black. \n - Add a margin of 30px around the box (space between this and other elements). \n - Give the box a background color (e.g., lightblue) so the content area is visible. \n - Set a width of 300px to better observe the layout.
+In the .container class: \n - Set display to flex to turn it into a flex container. \n - Set flex-direction to row. \n - Use justify-content: space-between to spread the items. \n - Use align-items: center to vertically center them. \n - Add a gap of 20px between the items.
+
 
 # PLACEHOLDER HTML
 
@@ -93,6 +94,21 @@ Style the .box class to show all parts of the box model clearly: \n - Add paddin
 </head>
 <body>
   <div class="box">I am a box!</div>
+</body>
+</html>
+
+# EX 14 - Media Queries
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Media Queries Practice</title>
+  <style>
+    /* Write your CSS here */
+  </style>
+</head>
+<body>
+  <div>I am a div!</div>
 </body>
 </html>
 
