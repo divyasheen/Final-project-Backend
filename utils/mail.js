@@ -47,3 +47,18 @@ export const passwordResetTemplate = (name, token) => {
       <p>This link will expire in 1 hour.</p>
     `;
   };
+
+
+  export const verifyEmailTemplate = (name, token) => {
+  return `
+       <div style="font-family: Arial, sans-serif; text-align: center; padding: 30px; background-color: #f9f9f9;">
+  <h1 style="color: #333;">Welcome, ${name}!</h1>
+  <p style="font-size: 18px; color: #555;">Please confirm your email address by clicking the button below:</p>
+  <a href="http://localhost:5000/users/verify/${token}" 
+     style="display: inline-block; margin-top: 20px; padding: 12px 24px; font-size: 16px; color: white; background-color: #4CAF50; text-decoration: none; border-radius: 5px;">
+    Confirm Email
+  </a>
+</div>
+
+    `;
+};
