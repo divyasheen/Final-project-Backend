@@ -9,7 +9,10 @@
 < === &lt
 > === &gt
 
-<strong>What is a variable?</strong> \n A variable is a container that stores a value. Think of it like a labeled box that holds a piece of data. You can create variables to store, reuse, or manipulate values in your program. \n In JavaScript, you create variables using let or const. \n\n - <strong>let</strong> = The value might change later \n - <strong>const</strong> = The value should stay constant \n\n <strong>What is a value?</strong> \n In JavaScript, a value is a piece of data. It could be a number like 42, a string of text like "Hello", a true or false value, or even just undefined. \n\n <strong>Primitive Data Types</strong> \n JavaScript has 7 primitive data types. These are the most basic kinds of data. \n\n <strong>1. String</strong> = A sequence of characters, used for text. Enclosed in quotes. \n <em>let city = "Berlin";</em> \n\n <stong>2. Number</strong> = Any numeric value, whether integer or decimal. \n <em>let age = 30; \n let pi = 3.14;</em> \n\n <strong>3. Boolean</strong> = A value that is either true or false. \n <em> let isLoggedIn = true; \n let isFinished = false; </em> \n\n <strong>4. Undefined</strong> = A variable that has been declared but not assigned any value. \n <em>let score; \n console.log(score); // undefined </em> \n\n <strong>5. Null</strong> = A variable that is intentionally set to “no value.” \n\n
+let a = 10; \nlet b = 3; \n\nconsole.log(a + b);  // 13 \nconsole.log(a % b);  // 1 \n\nlet age = 18; \nconsole.log(age >= 18); // true \nconsole.log(age === "18"); // false (number vs string) \n\nlet isAdult = true; \nlet hasID = false; \nconsole.log(isAdult && hasID); // false (both must be true) \nconsole.log(isAdult || hasID); // true (at least one is true) \nconsole.log(!isAdult); // false (reversed)
+
+
+
 
 # PLACEHOLDER HTML
 

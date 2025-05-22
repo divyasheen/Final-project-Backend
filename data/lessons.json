@@ -128,9 +128,9 @@
   {
     "id": 19,
     "course_id": 3,
-    "title": "",
-    "content": "",
-    "example": ""
+    "title": "Operators",
+    "content": "<strong>What is an expression?</strong> \n In JavaScript, an expression is any valid piece of code that produces a value. For example: \n\n <code><pre>3 + 4 \n'Hello' + 'World' \n5 > 2</pre></code> \n All of these are expressions — they use <strong>operators</strong> to calculate or evaluate something. \n\n <strong>1. Arithmetic Operators</strong> \n These are used to perform basic math operations. \n <strong>+</strong> => Addition \n <strong>-</strong> => Subtraction \n <strong>*</strong> => Multiplication \n <strong>/</strong> => Division \n <strong>%</strong> => Modulo / Remainder \n <strong>**</strong> => Exponentiation \n\n <strong>2. Comparison Operators</strong> \n These operators compare two values and return a boolean: true or false. \n <strong>==</strong> => Equal (loose) \n <strong>===</strong> => Equal (strict, same type) \n <strong>!=</strong> => Not equal (loose) \n <strong>!==</strong> => Not equal (strict) \n <strong><</strong> => Less than \n <strong>></strong> => Greater than \n <strong><=</strong> => Less than or equal \n <strong>>=</strong> => Greater than or equal \n\n <strong>Note:</strong> \n == only compares values, not types. So 5 == '5' is true. \n === compares both value and type. So 5 === '5' is false. \n\n <strong>3. Logical Operators</strong> \n These are used to combine or invert boolean values. \n <strong>&&</strong> => AND Returns true if both conditions are true \n <strong>!</strong> => NOT Reverses a condition (true -> false, false -> true) \n\n",
+    "example": "let a = 10; \nlet b = 3; \nconsole.log(a + b);  // 13 \nconsole.log(a % b);  // 1 \n\nlet age = 18; \nconsole.log(age >= 18); // true \nconsole.log(age === '18'); // false (number vs string) \n\nlet isAdult = true; \nlet hasID = false; \nconsole.log(isAdult && hasID); // false (both must be true) \nconsole.log(isAdult || hasID); // true (at least one is true) \nconsole.log(!isAdult); // false (reversed)"
   },
   {
     "id": 20,
