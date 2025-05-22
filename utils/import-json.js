@@ -46,7 +46,7 @@ const importDataJson = async () => {
     );
   }
 
-/*  // ===== EXERCISES THIRD =====
+  // ===== EXERCISES THIRD =====
   const exercises = await readJsonFile("../data/exercises.json");
   for (const exercise of exercises) {
     await db.execute(
@@ -70,7 +70,8 @@ const importDataJson = async () => {
       ]
     );
   }
-     // ===== TEST CASES FOURTH =====
+
+/*     // ===== TEST CASES FOURTH =====
   const testcases = await readJsonFile("../data/testcases.json");
   for (const testcase of testcases) {
     await db.execute(

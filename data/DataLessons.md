@@ -9,3 +9,4 @@
 < === &lt
 > === &gt
 
+<!DOCTYPE html> \n<html> \n<head> \n  <title>HTML Attribute Practice</title> \n</head> \n\n<body> \n  <p align='center'>This is a centered paragraph using the align attribute.</p> \n</body> \n</html>
