@@ -1,15 +1,13 @@
 # Overview
 
-1. Modul 1: HTML & CSS
-2. Modul 2: Programming Basics
-3. Modul 3: SPA
-4. Modul 4: Backend
-5. Modul 5: Fullstack Webpage
+1. Modul 1: HTML
+2. Modul 2: CSS
+3. Modul 3: JS
 
 < === &lt
 > === &gt
 
-let a = 10; \nlet b = 3; \n\nconsole.log(a + b);  // 13 \nconsole.log(a % b);  // 1 \n\nlet age = 18; \nconsole.log(age >= 18); // true \nconsole.log(age === "18"); // false (number vs string) \n\nlet isAdult = true; \nlet hasID = false; \nconsole.log(isAdult && hasID); // false (both must be true) \nconsole.log(isAdult || hasID); // true (at least one is true) \nconsole.log(!isAdult); // false (reversed)
+// ------if-statement------ \nlet age = 16; \n\n if (age >= 18) { \n  console.log("You can vote."); \n} else { \n  console.log("You are too young to vote."); \n} \n\n// ------else-if-statement------ \nlet score = 75; \n\nif (score >= 90) { \n  console.log("Grade: A"); \n} else if (score >= 80) { \n  console.log("Grade: B"); \n} else { \n  console.log("Grade: F"); \n} \n\n// ------switch-statement------ /nlet color = "blue"; /n/nswitch (color) { /n  case "red": /n    console.log("Stop"); /n    break; /n  case "green": /n    console.log("Go"); /n    break; /n  default: /n    console.log("Unknown color"); /n}
 
 
 

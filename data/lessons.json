@@ -135,9 +135,9 @@
   {
     "id": 20,
     "course_id": 3,
-    "title": "",
-    "content": "",
-    "example": ""
+    "title": "Conditions",
+    "content": "<strong>What are conditions in programming?</strong> \n In programming, conditions let your code make decisions. You can tell the program: \n\n <em>“If this is true, do this. Otherwise, do something else.” </em> \n\n Conditions allow your code to be dynamic and responsive, not just a list of instructions. \n\n <strong>The if Statement</strong> \n The if statement checks whether a condition is true. If it is, the code inside the block runs. \n\n <strong>Syntax:</strong> \n <code><pre>if (condition) { \n  // this code runs if condition is true \n}</pre></code> \n\n <strong>The else Statement</strong> \n The else block runs if the condition is not true. \n\n <strong>Syntax:</strong> \n <code><pre>if (condition) { \n  // if true \n} else { \n  // if false \n}</pre></code> \n\n <strong>The else if Statement</strong> \n You can check multiple conditions using else if. \n\n <strong>Syntax:</strong> \n <code><pre>if (condition1) { \n  // if condition1 is true \n} else if (condition2) { \n  // if condition1 is false, but condition2 is true \n} else { \n  // if none are true \n} </pre></code>\n\n <strong>The switch Statement</strong> \n The switch statement is another way to handle multiple choices — especially when you're comparing the same value multiple times. \n\n <strong>Syntax:</strong> \n <code><pre>switch (value) { \n  case option1: \n    // code if value === option1 \n    break; \n  case option2: \n    // code if value === option2 \n    break; \n  default: \n    // code if none match \n}",
+    "example": "// ------if-statement------ \nlet age = 16; \n\n if (age >= 18) { \n  console.log('You can vote.'); \n} else { \n  console.log('You are too young to vote.'); \n} \n\n // ------else-if-statement------ \nlet score = 75; \n\nif (score >= 90) { \n  console.log('Grade: A'); \n} else if (score >= 80) { \n  console.log('Grade: B'); \n} else { \n  console.log('Grade: F'); \n} \n\n // ------switch-statement------ /nlet color = 'blue'; /n/nswitch (color) { /n  case 'red': /n    console.log('Stop'); /n    break; /n  case 'green': /n    console.log('Go'); /n    break; /n  default: /n    console.log('Unknown color'); /n}"
   },
   {
     "id": 21,
