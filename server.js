@@ -9,9 +9,11 @@ import coursesRouter from './routers/courses.js';
 import { createError } from "./utils/errors.js";
 import { connect2DB } from "./utils/db.js";
 import chatbotRouter from './routers/chatbot.js';
-
+import path from 'path';
+import { fileURLToPath } from 'url';
 dotenv.config();
-
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 /* ------------ create application ------------ */
 const app = express();
 
@@ -32,6 +34,8 @@ const startServer = async () => {
     app.use("/api/courses", coursesRouter);  
     app.use('/api/evaluations', evaluationsRouter);
     app.use("/chatbot", chatbotRouter); 
+  
+
 
     /* --------------- error handler -------------- */
     app.use((req, res, next) => {
