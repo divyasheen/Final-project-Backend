@@ -83,6 +83,15 @@
   {
     "id": 10,
     "lesson_id": 10,
+    "title": "Selectors",
+    "description": "1. Use a tag selector to make all <p> elements have the font Arial and a font size of 16px. \n \n 2. Use a class selector to style all elements with the class info: \n - Text color: blue \n - Background color: #e0f0ff \n\n 3. Use an ID selector to style the element with the ID important: \n - Text color: white \n - Background color: red \n - Font weight: bold",
+    "xp_reward": 10,
+    "difficulty": "Easy",
+    "example": "h1 { \n    font-size: 2rem; \n}; \n\n.item { \n    color: blue; \n}; \n\n#wrapper { \n    border-color: red; \n};"
+  },
+  {
+    "id": 11,
+    "lesson_id": 11,
     "title": "Box-model",
     "description": "1. Create a '<div>' with text \n 2. Give the box \n - Padding: 20px \n - Border: 2px, solid, black \n - Margin: 30px",
     "xp_reward": 10,
@@ -90,8 +99,8 @@
     "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n\n  <style> \n   div \n    {padding: 30px; \n    border: 5px dotted red; \n    margin: 50px} \n  </style> \n\n  <body> \n   <h1> Best heading ever! </h1> \n   <div> This ist the div with an awesome text </div> \n  </body> \n </html>"
   },
   {
-    "id": 11,
-    "lesson_id": 11,
+    "id": 12,
+    "lesson_id": 12,
     "title": "Layout with flexbox",
     "description": "1. Create three '<div class='item'>' inside a '<div class='container'>' \n 2. Use felxbox to display them centred next to each other \n 3. Give the items a ficed size",
     "xp_reward": 10,
@@ -99,8 +108,8 @@
     "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n\n  <style> \n   .bestDiv \n    {display: block;} \n  </style> \n\n  <body> \n   <h1> Best heading ever! </h1> \n   <div class = 'wrapper'> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n   </div> \n  </body> \n </html>"
   },
   {
-    "id": 12,
-    "lesson_id": 12,
+    "id": 13,
+    "lesson_id": 13,
     "title": "Responsive design & media queries",
     "description": "1. Give '<body>' by default a white background color \n 2. If the screen size reaches less than 600px the background color should switch to yellow",
     "xp_reward": 10,
@@ -108,8 +117,8 @@
     "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n\n  <style> \n   body \n    {color: red;} \n\n   @media (max-width: 800px) \n    {body \n     {color: blue;} \n    } \n  </style> \n\n  <body> \n   <h1> Best heading ever! </h1> \n   <div class = 'wrapper'> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n    <div class = 'bestDiv'> This ist the div with an awesome text </div> \n   </div> \n  </body> \n </html>"
   },
   {
-    "id": 13,
-    "lesson_id": 13,
+    "id": 14,
+    "lesson_id": 14,
     "title": "FINAL: CSS",
     "description": "Create your own small HTML page about a topic of your choice (e.g. your favourite game, an animal, a hobby). The page should: \n 1. contain at least one heading, one paragraph, one image, one list, one link and one form, \n 2. and have a suitable CSS layout.",
     "xp_reward": 25,
@@ -117,7 +126,7 @@
     "example": "<!DOCTYPE html> \n <html> \n  <head> \n    <meta /> \n    <title>Red Pandas</title> \n    <style> \n      body { \n        font-family: Arial, sans-serif; \n        background-color: #f7f5f2; \n        color: #333; \n        padding: 20px; \n      } \n      h1 { \n        color: #d94f30; \n        text-align: center; \n      } \n      img { \n        display: block; \n        margin: 0 auto; \n        width: 300px; \n        border-radius: 8px; \n      } \n      ul { \n        background-color: #fff3e6; \n        padding: 15px; \n        order-radius: 5px; \n        max-width: 400px; \n        margin: 20px auto; \n      } \n      form { \n        background-color: #e0f7fa; \n        padding: 15px; \n        border-radius: 5px; \n        max-width: 400px; \n        margin: 20px auto; \n      } \n      label, \n      input { \n        display: block; \n        margin-bottom: 10px; \n      } \n      a { \n        color: #d94f30; \n        text-decoration: none; \n      } \n    </style> \n  </head> \n  <body> \n    <h1>Red Pandas – The Cutest Animal</h1> \n    <p> \n      Red pandas are small mammals native to the Himalayas. They are known for \n      their reddish fur, long bushy tails, and playful nature. \n    </p> \n    <img \n      src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/RedPandaFullBody.JPG/800px-RedPandaFullBody.JPG' \n      alt='Red panda standing on a log' \n    /> \n    <ul> \n      <li>Live in the Himalayas</li> \n      <li>Eat mostly bamboo</li> \n      <li>Active at dawn and dusk</li> \n    </ul> \n    <p> \n      Learn more about red pandas on \n      <a href='https://en.wikipedia.org/wiki/Red_panda' target='blank'> \n         Wikipedia \n      </a \n      >. \n    </p> \n    <form> \n      <label for='name'> \n       Your Name: \n      </label> \n      <input type='text' id='name' name='name' /> \n      <label for='email'> \n       Your Email: \n      </label> \n      <input type='email id='email' name='email' /> \n      <input type='submit' value='Submit' /> \n    </form> \n  </body> \n </html>"
   },
   {
-    "id": 14,
+    "id": 75,
     "lesson_id": 14,
     "title": "",
     "description": "",
@@ -126,7 +135,7 @@
     "example": ""
   },
   {
-    "id": 15,
+    "id": 84,
     "lesson_id": 15,
     "title": "",
     "description": "",
@@ -135,7 +144,7 @@
     "example": ""
   },
   {
-    "id": 16,
+    "id": 96,
     "lesson_id": 16,
     "title": "",
     "description": "",
@@ -144,7 +153,7 @@
     "example": ""
   },
   {
-    "id": 17,
+    "id": 45,
     "lesson_id": 16,
     "title": "",
     "description": "",
@@ -162,7 +171,7 @@
     "example": ""
   },
   {
-    "id": 19,
+    "id": 85,
     "lesson_id": 16,
     "title": "",
     "description": "",
@@ -171,16 +180,7 @@
     "example": ""
   },
   {
-    "id": 20,
-    "lesson_id": 2,
-    "title": "",
-    "description": "",
-    "xp_reward": 25,
-    "difficulty": "",
-    "example": ""
-  },
-  {
-    "id": 21,
+    "id": 33,
     "lesson_id": 2,
     "title": "",
     "description": "",

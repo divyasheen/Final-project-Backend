@@ -9,4 +9,25 @@
 < === &lt
 > === &gt
 
-<!DOCTYPE html> \n<html> \n<head> \n  <title>My First CSS Exercise</title> \n</head> \n<body> \n   <h1>Hello CSS!</h1> \n   <p>This is a normal paragraph.</p> \n   <p>This is a special paragraph.</p> \n</body> \n</html>
+
+
+PLACEHOLDER HTML
+
+EX 10 - Selectors
+<!DOCTYPE html>
+<head>
+  <meta>
+  <title>Selector Practice</title>
+  <style>
+    /* Write your code here */
+  </style>
+</head>
+<body>
+  <h1>Welcome to the Exercise</h1>
+  <p class="info">This is an informational paragraph.</p>
+  <p class="info">This is another informational paragraph.</p>
+  <p id="important">This is a very important paragraph!</p>
+</body>
+</html>
+
+
