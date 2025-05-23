@@ -12,6 +12,7 @@ export const getCoursesWithLessons = async () => {
       'SELECT id, title, content FROM lessons WHERE course_id = ? ORDER BY id', // Removed position
       [course.id]
     );
+   
     course.lessons = lessons;
   }
   
