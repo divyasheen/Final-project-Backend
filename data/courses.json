@@ -1,12 +1,17 @@
 [
   {
     "id": 1,
-    "title": "HTML & css",
+    "title": "HTML",
     "description": "text"
   },
    {
     "id": 2,
-    "title": "JS",
+    "title": "CSS",
     "description": "text"
-  }
+  },
+  {
+   "id": 3,
+   "title": "JavaScript",
+   "description": "text"
+ }
 ]

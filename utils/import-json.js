@@ -29,7 +29,7 @@ const importDataJson = async () => {
         description = VALUES(description)`,
       [course.id, course.title, course.description]
     );
-  }
+  }*/
 
   // ===== LESSONS SECOND =====
   const lessons = await readJsonFile("../data/lessons.json");
@@ -44,7 +44,7 @@ const importDataJson = async () => {
         example = VALUES(example)`,
       [lesson.id, lesson.course_id, lesson.title, lesson.content, lesson.example]
     );
-  } */
+  }
 
   // ===== EXERCISES THIRD =====
   const exercises = await readJsonFile("../data/exercises.json");
@@ -70,6 +70,7 @@ const importDataJson = async () => {
       ]
     );
   }
+
 /*     // ===== TEST CASES FOURTH =====
   const testcases = await readJsonFile("../data/testcases.json");
   for (const testcase of testcases) {
