@@ -146,10 +146,10 @@
   {
     "id": 17,
     "lesson_id": 17,
-    "title": "",
-    "description": "",
-    "xp_reward": 25,
-    "difficulty": "",
+    "title": "JavaScript basics",
+    "description": "Type the following in the editor and press 'Run': \n\n  console.log('Hello, CodeRealm!')",
+    "xp_reward": 10,
+    "difficulty": "EASY",
     "example": ""
   },
   {
