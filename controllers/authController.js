@@ -74,8 +74,6 @@ export const verifyUser = async (req, res) => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
-
     if (!decoded) {
       return res.status(400).json({ error: "Invalid token" });
     }
@@ -163,7 +161,6 @@ export const googleLogin = async (req, res) => {
       idToken: credential,
       audience: process.env.GOOGLE_CLIENT_ID
     });
-
     const payload = ticket.getPayload();
     const { email, name } = payload;
 
