@@ -164,20 +164,20 @@
   {
     "id": 19,
     "lesson_id": 19,
-    "title": "",
-    "description": "",
-    "xp_reward": 25,
-    "difficulty": "",
-    "example": ""
+    "title": "Operators",
+    "description": "Console.log() each solution of: \n\n 5+5 \n 20-4 \n 3*7 \n 8/2 \n 10%2 \n 2**3 ",
+    "xp_reward": 10,
+    "difficulty": "EASY",
+    "example": "console.log(10+30) \n\nconsole.log(60*3)"
   },
   {
     "id": 20,
     "lesson_id": 20,
-    "title": "",
-    "description": "",
+    "title": "Conditions",
+    "description": "Create a programm that checks the temperature and gives a message.",
     "xp_reward": 1,
     "difficulty": "",
-    "example": ""
+    "example": "let age = 15 \n\nif (age < 18) {\n console.log('You are a kid!') \n} else if (age = 18) { \n console.log('You are an adult now!) \n} else { \n console.log('You are an adult!') \n} \n\n// -> You are a kid!"
   },
   {
     "id": 21,
