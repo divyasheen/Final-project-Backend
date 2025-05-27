@@ -155,11 +155,11 @@
   {
     "id": 18,
     "lesson_id": 18,
-    "title": "",
-    "description": "",
-    "xp_reward": 1,
-    "difficulty": "",
-    "example": ""
+    "title": "Variables and values",
+    "description": "1. Create a string variable to store your favorite city. Use console.log() to log it. \n 2. Create two number variables: one for your age and one for your height in cm. Use console.log() to log it.  \n 3. Create a boolean variable to say whether you like chocolate. Use console.log() to log it.",
+    "xp_reward": 10,
+    "difficulty": "EASY",
+    "example": "let favoriteColor = 'blue'; \nconsole.log(favoriteColor);\n\nlet day = 25; \nlet hour = 170; \nconsole.log(day, hour); \n\nlet likesBlue = true; \nconsole.log(likesBlue);"
   },
   {
     "id": 19,
