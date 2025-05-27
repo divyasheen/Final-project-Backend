@@ -175,23 +175,79 @@
     "lesson_id": 20,
     "title": "Conditions",
     "description": "Create a programm that checks the temperature and gives a message.",
-    "xp_reward": 1,
-    "difficulty": "",
+    "xp_reward": 10,
+    "difficulty": "EASY",
     "example": "let age = 15 \n\nif (age < 18) {\n console.log('You are a kid!') \n} else if (age = 18) { \n console.log('You are an adult now!) \n} else { \n console.log('You are an adult!') \n} \n\n// -> You are a kid!"
   },
   {
     "id": 21,
     "lesson_id": 21,
-    "title": "",
+    "title": "Loops 1",
     "description": "",
-    "xp_reward": 25,
+    "xp_reward": 10,
     "difficulty": "",
     "example": ""
   },
   {
-    "id": 33,
-    "lesson_id": 1,
-    "title": "",
+    "id": 22,
+    "lesson_id": 22,
+    "title": "Loops 2",
+    "description": "",
+    "xp_reward": 10,
+    "difficulty": "",
+    "example": ""
+  },
+  {
+    "id": 23,
+    "lesson_id": 23,
+    "title": "Functions 1",
+    "description": "",
+    "xp_reward": 10,
+    "difficulty": "",
+    "example": ""
+  },
+  {
+    "id": 24,
+    "lesson_id": 24,
+    "title": "Functions 2",
+    "description": "",
+    "xp_reward": 10,
+    "difficulty": "",
+    "example": ""
+  },
+  {
+    "id": 25,
+    "lesson_id": 25,
+    "title": "Arrays",
+    "description": "",
+    "xp_reward": 10,
+    "difficulty": "",
+    "example": ""
+  },
+  {
+    "id": 26,
+    "lesson_id": 26,
+    "title": "Objects",
+    "description": "",
+    "xp_reward": 10,
+    "difficulty": "",
+    "example": ""
+  }
+  ,
+  {
+    "id": 27,
+    "lesson_id": 27,
+    "title": "Classes",
+    "description": "",
+    "xp_reward": 10,
+    "difficulty": "",
+    "example": ""
+  }
+  ,
+  {
+    "id": 28,
+    "lesson_id": 28,
+    "title": "JavaScript: FINAL",
     "description": "",
     "xp_reward": 25,
     "difficulty": "",
