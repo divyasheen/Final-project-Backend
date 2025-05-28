@@ -1,10 +1,46 @@
 // backend/evaluators/js-evaluator.js
 import axios from 'axios';
-import { getTestCases } from './html-css-evaluator.js';
+
+// import DB connection
+import { getDB } from "../utils/db.js" 
 
 const JUDGE0_API = 'https://judge0-ce.p.rapidapi.com';
 
+export async function getJavaScriptTestCases(exerciseId) {
+    try {
+
+        // Maps DB column "input_value" to "input" for evaluator
+        // Maps DB column "expected_value" to "expected_output" for evaluator
+
+        const query = `
+        SELECT
+            input_value AS input, 
+            expected_value AS expected_output,
+            time_limit
+        FROM
+            testcases
+        WHERE
+            exercise_id = ?
+        AND
+            test_type = "javascript";
+        `
+
+        const result = await getDB.query(query, [exerciseId.Id])
+
+        return result.rows.map(row => ({
+            input: row.input,
+            expected_output: row.expected_output,
+            time_limit: row.time_limit || 1
+        }))
+    } catch (error) {
+        console.error(`Error getting getJavaScriptTestCases for exercise ${exerciseId}:`, error)
+        return []
+    }
+}
+
 export async function evaluateJavaScript(code, exerciseId) {
+
+    // 
     const testCases = await getTestCases(exerciseId);
     const submissions = testCases.map(testCase => ({
         source_code: code,
