@@ -7,11 +7,12 @@
 < === &lt
 > === &gt
 
-let food = ["taccos", "soup", "sandwiches"] \n\nconsole.log(food[1]) \n\nfood[2] = "pasta" \nconsole.log(food); \n\nconsole.log(food.length);
+
 
 # PLACEHOLDER HTML
 
-# EX 9 - CSS BASICS
+# EX 9 - CSS BASIC
+
 <!DOCTYPE html>
 <head>
   <meta>

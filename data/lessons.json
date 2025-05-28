@@ -150,8 +150,8 @@
     "id": 22,
     "course_id": 3,
     "title": "Objects",
-    "content": "",
-    "example": ""
+    "content": "In JavaScript, an object is a data structure used to store data in the form of key-value pairs. It allows you to group related data and functions together in a single, organized unit. Objects are one of the most important and flexible parts of the JavaScript language. \n Each key in an object is called a property name, and it is always a string (or can be treated as one). The value assigned to that property can be anything: a number, a string, a boolean, an array, another object, or even a function. \n\n <strong>Creating an Object</strong> \n The most common way to create an object is by using curly braces {}. \n <code>let person = { \n  name: 'Alice', \n  age: 30, \n  city: 'Berlin' \n}; \n In this example, the object person has three properties: \n - 'name' with the value 'Alice' \n - 'age' with the value 30 \n - 'city' with the value 'Berlin' \n\n <strong>Accessing Object Properties</strong> \n You can access the values of object properties in two ways: \n\n 1. Dot notation: \n <code>console.log(person.name); // 'Alice'</code> \n 2. Bracket notation (useful when the property name is dynamic or has special characters): \n <code>console.log(person['city']); // 'Berlin'</code> \n\n <strong>Changing Property Values</strong> \n You can update the value of a property just by assigning a new value: \n <code>person.age = 31; </code> \n Now, person.age is 31. \n\n <strong>Adding New Properties</strong> \n You can also add new properties to an object at any time: \n <code>person.job = 'developer';</code> \n The object now also contains a 'job' property. \n\n",
+    "example": "let person = { \n  name: 'Alice', \n  age: 30, \n  city: 'Berlin' \n};"
   },
   {
     "id": 23,
