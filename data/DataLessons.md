@@ -7,6 +7,9 @@
 < === &lt
 > === &gt
 
+// ---- if-else ---- \nif (score >= 90) { \n  console.log("Excellent!"); \n} else if (score >= 75) { \n  console.log("Good job!"); \n} else { \n  console.log("Keep practicing."); \n} \n\n // ---- while ---- \nlet i = 0; \nwhile (i < 5) { \n  console.log("Number: " + i); \n  i++; \n} \n\n// ---- for ----- \nfor (let i = 0; i < 5; i++) { \n  console.log("Step " + i); \n}
+
+
 
 
 # PLACEHOLDER HTML
