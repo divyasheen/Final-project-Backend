@@ -7,7 +7,7 @@
 < === &lt
 > === &gt
 
-
+let book = { \n    title: "The book", \n    author: "Stephanie Queen", \n    prize: 200 \n} \n\nconsole.log(book.author) \n\nbook.title = "The best book" \nconsole.log(book.title); \n\nbook.isbn = 123456789 \n\nconsole.log(book.title + " is written by " + book.author + " and costs " + book.prize + " €.");
 
 # PLACEHOLDER HTML
 

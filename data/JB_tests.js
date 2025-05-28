@@ -1,9 +1,14 @@
-let food = ["taccos", "soup", "sandwiches"]
+let book = {
+    title: "The book",
+    author: "Stephanie Queen",
+    prize: 200
+}
 
-console.log(food[1])
+console.log(book.author)
 
-food[2] = "pasta"
-console.log(food);
+book.title = "The best book"
+console.log(book.title);
 
+book.isbn = 123456789
 
-console.log(food.length);
+console.log(book.title + " is written by " + book.author + " and costs " + book.prize + " €.");

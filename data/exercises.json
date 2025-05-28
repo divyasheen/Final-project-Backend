@@ -192,10 +192,10 @@
     "id": 22,
     "lesson_id": 22,
     "title": "Objects",
-    "description": "",
+    "description": "You are writing code for a coffee shop system. \n 1. Create an object called coffeeOrder with the following properties: \n <code>customerName: 'Emma' \ndrink: 'Latte' \nsize: 'Medium'</code> \n 2. Print out the customer's name and drink using dot notation. \n 3. The customer changes their mind and wants a 'Large' instead of a 'Medium' drink. \n 4. Update the size property. \n 5. Add a new property called extraShot and set it to true. \n 6. Print the full updated order like this: 'Emma ordered a Large Latte with an extra shot: true'",
     "xp_reward": 10,
-    "difficulty": "",
-    "example": ""
+    "difficulty": "EASY",
+    "example": "let book = { \n    title: 'The book', \n    author: 'Stephanie Queen', \n    prize: 200 \n} \n\nconsole.log(book.author) \n\nbook.title = 'The best book' \nconsole.log(book.title); \n\nbook.isbn = 123456789 \n\nconsole.log(book.title + ' is written by ' + book.author + ' and costs ' + book.prize + ' €.');"
   },
   {
     "id": 23,
