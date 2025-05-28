@@ -7,9 +7,8 @@
 < === &lt
 > === &gt
 
-ex für loop 1
 
-let name = "Otto"; \n\nif (name === "Anna") { \n    console.log("Hello Anna"); \n} else if (name === "Jack") { \n    console.log("Hello Jack") \n} else { \n    console.log("Hello stranger"); \n} \n\n// -> Hello stranger
+
 
 
 # PLACEHOLDER HTML
@@ -112,3 +111,12 @@ let name = "Otto"; \n\nif (name === "Anna") { \n    console.log("Hello Anna"); \
 </body>
 </html>
 
+# EX 24 - Loops 2
+
+let inventory = {
+  apples: 10,
+  bananas: 5,
+  oranges: 8
+};
+
+let cart = ["bananas", "oranges"];

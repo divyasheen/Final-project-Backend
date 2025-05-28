@@ -210,10 +210,10 @@
     "id": 24,
     "lesson_id": 24,
     "title": "Loops 2",
-    "description": "",
+    "description": "Imagine you’re working on a simple online store. \n 1. You have an object called inventory that stores the quantity of products in stock. \n\n let inventory = { \n   apples: 10, \n   bananas: 5, \n   oranges: 8 \n}; \n\n 2. You also have a shopping cart, represented by an array. \n\n let cart = ['bananas', 'oranges']; \n\n Task: \n- Use a for-in loop to print out each product in the inventory and its quantity. \n - Then use a for-of loop to go through the shopping cart, and for each item print a message like 'You added bananas to your cart.'",
     "xp_reward": 10,
-    "difficulty": "",
-    "example": ""
+    "difficulty": "EASY",
+    "example": "// ----- for-in-loop ----- \nconst person = { \n  name: 'Alice', \n  age: 30, \n  city: 'Berlin' \n}; \n\nfor (let key in person) { \n  console.log(key + ': ' + person[key]); \n} \n\n// -> name: Alice \n// -> age: 30 \n// -> city: Berlin \n\n// ---- for-of-loop ---- \nconst colors = ['red', 'green', 'blue']; \n\nfor (let color of colors) { \n  console.log(color); \n} \n\n// -> red // -> green // -> blue"
   },
   {
     "id": 25,
