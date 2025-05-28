@@ -71,7 +71,7 @@ const importDataJson = async () => {
     );
   }
 
-/*     // ===== TEST CASES FOURTH =====
+    // ===== TEST CASES FOURTH =====
   const testcases = await readJsonFile("../data/testcases.json");
   for (const testcase of testcases) {
     await db.execute(
@@ -104,7 +104,7 @@ const importDataJson = async () => {
   }
 
 
-  // ===== BADGES FIFTH =====
+ /* // ===== BADGES FIFTH =====
   const badges = await readJsonFile("../data/badges.json");
   for (const badge of badges) {
     await db.execute(

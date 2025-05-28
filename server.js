@@ -6,6 +6,7 @@ import cookieParser from 'cookie-parser';
 import evaluationsRouter from './routers/evaluations.js';
 import usersRouter from './routers/users.js';
 import coursesRouter from './routers/courses.js';
+import userRoutes from './routers/userRoutes.js';
 import { createError } from "./utils/errors.js";
 import { connect2DB } from "./utils/db.js";
 import chatbotRouter from './routers/chatbot.js';
@@ -33,6 +34,7 @@ const startServer = async () => {
     app.use("/users", usersRouter);
     app.use("/api/courses", coursesRouter);  
     app.use('/api/evaluations', evaluationsRouter);
+    app.use('/api/user', userRoutes);
     app.use("/chatbot", chatbotRouter); 
   
 

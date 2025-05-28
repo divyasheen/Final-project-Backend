@@ -4,8 +4,10 @@ import {
   getExercisesForLesson,
   getLessonContent,
   getExerciseById,
+  trackExerciseCompletion, getNextIncompleteExercise, getUserExerciseProgress,
   completeCourse
 } from '../controllers/courseController.js';
+import { authenticateUser } from '../middlewares/authMiddleware.js';
 
 const router = express.Router();
 
@@ -62,7 +64,33 @@ router.get('/exercises/:exerciseId', async (req, res, next) => {
     next(error);
   }
 });
+router.post('/exercises/:id/complete', authenticateUser, async (req, res) => {
+  try {
+    await trackExerciseCompletion(req.user.id, req.params.id);
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
 
+router.get('/exercises/:id/next', authenticateUser, async (req, res) => {
+  try {
+    const nextExerciseId = await getNextIncompleteExercise(req.user.id, req.params.id);
+    res.json({ nextExerciseId });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Get lesson progress
+router.get('/lessons/:lessonId/progress', authenticateUser, async (req, res) => {
+  try {
+    const progress = await getUserExerciseProgress(req.user.id, req.params.lessonId);
+    res.json(progress);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
 
 // --- Future Code to fetch dependency for badges Id 1----- 
 router.post('/:courseId/complete', async (req, res) => {

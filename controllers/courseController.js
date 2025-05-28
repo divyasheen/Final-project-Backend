@@ -12,6 +12,7 @@ export const getCoursesWithLessons = async () => {
       'SELECT id, title, content, example FROM lessons WHERE course_id = ? ORDER BY id', // Removed position
       [course.id]
     );
+   
     course.lessons = lessons;
   }
   
@@ -43,6 +44,138 @@ export const getExerciseById = async (exerciseId) => {
     [exerciseId]
   );
   return exercise[0];
+};
+
+export const trackExerciseCompletion = async (userId, exerciseId) => {
+  const db = getDB();
+  
+  try {
+    await db.beginTransaction();
+    
+    // Mark exercise as completed
+    await db.execute(
+      `INSERT INTO user_exercise_progress 
+       (user_id, exercise_id, is_completed, completed_at) 
+       VALUES (?, ?, TRUE, NOW())
+       ON DUPLICATE KEY UPDATE is_completed = TRUE, completed_at = NOW()`,
+      [userId, exerciseId]
+    );
+    
+    // Get exercise details to award XP
+    const [exercise] = await db.execute(
+      `SELECT xp_reward, lesson_id FROM exercises WHERE id = ?`,
+      [exerciseId]
+    );
+    
+    if (exercise.length > 0) {
+      const xpReward = exercise[0].xp_reward;
+      const lessonId = exercise[0].lesson_id;
+      
+      // Update user's total XP (assuming you have a users table with xp column)
+      await db.execute(
+        `UPDATE users SET xp = xp + ? WHERE id = ?`,
+        [xpReward, userId]
+      );
+      
+      // Mark lesson as completed if all exercises are done
+      const [allExercises] = await db.execute(
+        `SELECT id FROM exercises WHERE lesson_id = ?`,
+        [lessonId]
+      );
+      
+      const [completedExercises] = await db.execute(
+        `SELECT COUNT(*) AS count FROM user_exercise_progress 
+         WHERE user_id = ? AND exercise_id IN 
+         (SELECT id FROM exercises WHERE lesson_id = ?) AND is_completed = TRUE`,
+        [userId, lessonId]
+      );
+      
+      if (completedExercises[0].count === allExercises.length) {
+        await db.execute(
+          `INSERT INTO user_progress (user_id, lesson_id, xp_earned, completed_at)
+           VALUES (?, ?, ?, NOW())
+           ON DUPLICATE KEY UPDATE xp_earned = VALUES(xp_earned), completed_at = NOW()`,
+          [userId, lessonId, xpReward * allExercises.length]
+        );
+      }
+    }
+    
+    await db.commit();
+  } catch (err) {
+    await db.rollback();
+    throw err;
+  }
+};
+
+export const getUserExerciseProgress = async (userId, lessonId) => {
+  const db = getDB();
+  
+  const [progress] = await db.execute(
+    `SELECT e.id, e.title, uep.is_completed, uep.completed_at
+     FROM exercises e
+     LEFT JOIN user_exercise_progress uep ON e.id = uep.exercise_id AND uep.user_id = ?
+     WHERE e.lesson_id = ?
+     ORDER BY e.id`,
+    [userId, lessonId]
+  );
+  
+  return progress;
+};
+
+export const getNextIncompleteExercise = async (userId, currentExerciseId) => {
+  const db = getDB();
+  
+  // Get current exercise's lesson and course
+  const [currentExercise] = await db.execute(
+    `SELECT e.lesson_id, l.course_id 
+     FROM exercises e
+     JOIN lessons l ON e.lesson_id = l.id
+     WHERE e.id = ?`,
+    [currentExerciseId]
+  );
+  
+  if (currentExercise.length === 0) return null;
+  
+  const lessonId = currentExercise[0].lesson_id;
+  const courseId = currentExercise[0].course_id;
+  
+  // Find next incomplete exercise in same lesson
+  const [nextExercise] = await db.execute(
+    `SELECT e.id 
+     FROM exercises e
+     LEFT JOIN user_exercise_progress uep ON e.id = uep.exercise_id AND uep.user_id = ?
+     WHERE e.lesson_id = ? AND (uep.is_completed IS NULL OR uep.is_completed = FALSE)
+     ORDER BY e.id
+     LIMIT 1`,
+    [userId, lessonId]
+  );
+  
+  if (nextExercise.length > 0) {
+    return nextExercise[0].id;
+  }
+  
+  // If all exercises in lesson are completed, find next lesson's first exercise
+  const [nextLesson] = await db.execute(
+    `SELECT l.id 
+     FROM lessons l
+     WHERE l.course_id = ? AND l.id > ?
+     ORDER BY l.id
+     LIMIT 1`,
+    [courseId, lessonId]
+  );
+  
+  if (nextLesson.length > 0) {
+    const [firstExercise] = await db.execute(
+      `SELECT id FROM exercises WHERE lesson_id = ? ORDER BY id LIMIT 1`,
+      [nextLesson[0].id]
+    );
+    
+    if (firstExercise.length > 0) {
+      return firstExercise[0].id;
+    }
+  }
+  
+  return null; // No more exercises
 };
 
 export const completeCourse = async (userId, lessonId) => {
