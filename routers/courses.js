@@ -4,7 +4,7 @@ import {
   getExercisesForLesson,
   getLessonContent,
   getExerciseById,
-  trackExerciseCompletion, getNextIncompleteExercise,
+  trackExerciseCompletion, getNextIncompleteExercise, getUserExerciseProgress,
   completeCourse
 } from '../controllers/courseController.js';
 import { authenticateUser } from '../middlewares/authMiddleware.js';
@@ -81,60 +81,12 @@ router.get('/exercises/:id/next', authenticateUser, async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
-// Get user progress summary
-router.get('/api/user/progress', authenticateUser, async (req, res) => {
-  try {
-    const db = getDB();
-    
-    // Get total exercises count
-    const [total] = await db.execute(
-      `SELECT COUNT(*) AS count FROM exercises`
-    );
-    
-    // Get completed exercises count
-    const [completed] = await db.execute(
-      `SELECT COUNT(*) AS count FROM user_exercise_progress 
-       WHERE user_id = ? AND is_completed = TRUE`,
-      [req.user.id]
-    );
-    
-    // Get next incomplete exercise
-    const [nextExercise] = await db.execute(
-      `SELECT e.id, e.title 
-       FROM exercises e
-       LEFT JOIN user_exercise_progress uep ON e.id = uep.exercise_id AND uep.user_id = ?
-       WHERE uep.is_completed IS NULL OR uep.is_completed = FALSE
-       ORDER BY e.id
-       LIMIT 1`,
-      [req.user.id]
-    );
-    
-    res.json({
-      totalExercises: total[0].count,
-      completedExercises: completed[0].count,
-      nextExercise: nextExercise[0] || null
-    });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
 
 // Get lesson progress
 router.get('/lessons/:lessonId/progress', authenticateUser, async (req, res) => {
   try {
-    const db = getDB();
-    
-    const [exercises] = await db.execute(
-      `SELECT e.id, e.title, 
-              CASE WHEN uep.is_completed THEN 1 ELSE 0 END AS completed
-       FROM exercises e
-       LEFT JOIN user_exercise_progress uep ON e.id = uep.exercise_id AND uep.user_id = ?
-       WHERE e.lesson_id = ?
-       ORDER BY e.id`,
-      [req.user.id, req.params.lessonId]
-    );
-    
-    res.json(exercises);
+    const progress = await getUserExerciseProgress(req.user.id, req.params.lessonId);
+    res.json(progress);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
