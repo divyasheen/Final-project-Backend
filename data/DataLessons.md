@@ -7,7 +7,7 @@
 < === &lt
 > === &gt
 
-// ------if-statement------ \nlet age = 16; \n\n if (age >= 18) { \n  console.log("You can vote."); \n} else { \n  console.log("You are too young to vote."); \n} \n\n// ------else-if-statement------ \nlet score = 75; \n\nif (score >= 90) { \n  console.log("Grade: A"); \n} else if (score >= 80) { \n  console.log("Grade: B"); \n} else { \n  console.log("Grade: F"); \n} \n\n// ------switch-statement------ /nlet color = "blue"; /n/nswitch (color) { /n  case "red": /n    console.log("Stop"); /n    break; /n  case "green": /n    console.log("Go"); /n    break; /n  default: /n    console.log("Unknown color"); /n}
+// ---- if-else ---- \nif (score >= 90) { \n  console.log("Excellent!"); \n} else if (score >= 75) { \n  console.log("Good job!"); \n} else { \n  console.log("Keep practicing."); \n} \n\n // ---- while ---- \nlet i = 0; \nwhile (i < 5) { \n  console.log("Number: " + i); \n  i++; \n} \n\n// ---- for ----- \nfor (let i = 0; i < 5; i++) { \n  console.log("Step " + i); \n}
 
 
 

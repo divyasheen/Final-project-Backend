@@ -146,52 +146,108 @@
   {
     "id": 17,
     "lesson_id": 17,
-    "title": "",
-    "description": "",
-    "xp_reward": 25,
-    "difficulty": "",
+    "title": "JavaScript basics",
+    "description": "Type the following in the editor and press 'Run': \n\n  console.log('Hello, CodeRealm!')",
+    "xp_reward": 10,
+    "difficulty": "EASY",
     "example": ""
   },
   {
     "id": 18,
     "lesson_id": 18,
-    "title": "",
-    "description": "",
-    "xp_reward": 1,
-    "difficulty": "",
-    "example": ""
+    "title": "Variables and values",
+    "description": "1. Create a string variable to store your favorite city. Use console.log() to log it. \n 2. Create two number variables: one for your age and one for your height in cm. Use console.log() to log it.  \n 3. Create a boolean variable to say whether you like chocolate. Use console.log() to log it.",
+    "xp_reward": 10,
+    "difficulty": "EASY",
+    "example": "let favoriteColor = 'blue'; \nconsole.log(favoriteColor);\n\nlet day = 25; \nlet hour = 170; \nconsole.log(day, hour); \n\nlet likesBlue = true; \nconsole.log(likesBlue);"
   },
   {
     "id": 19,
     "lesson_id": 19,
-    "title": "",
-    "description": "",
-    "xp_reward": 25,
-    "difficulty": "",
-    "example": ""
+    "title": "Operators",
+    "description": "Console.log() each solution of: \n\n 5+5 \n 20-4 \n 3*7 \n 8/2 \n 10%2 \n 2**3 ",
+    "xp_reward": 10,
+    "difficulty": "EASY",
+    "example": "console.log(10+30) \n\nconsole.log(60*3)"
   },
   {
     "id": 20,
     "lesson_id": 20,
-    "title": "",
-    "description": "",
-    "xp_reward": 1,
-    "difficulty": "",
-    "example": ""
+    "title": "Conditions",
+    "description": "Create a programm that checks the temperature and gives a message.",
+    "xp_reward": 10,
+    "difficulty": "EASY",
+    "example": "let age = 15 \n\nif (age < 18) {\n console.log('You are a kid!') \n} else if (age = 18) { \n console.log('You are an adult now!) \n} else { \n console.log('You are an adult!') \n} \n\n// -> You are a kid!"
   },
   {
     "id": 21,
     "lesson_id": 21,
-    "title": "",
+    "title": "Loops 1",
     "description": "",
-    "xp_reward": 25,
+    "xp_reward": 10,
     "difficulty": "",
     "example": ""
   },
   {
-    "id": 33,
-    "lesson_id": 1,
-    "title": "",
+    "id": 22,
+    "lesson_id": 22,
+    "title": "Loops 2",
+    "description": "",
+    "xp_reward": 10,
+    "difficulty": "",
+    "example": ""
+  },
+  {
+    "id": 23,
+    "lesson_id": 23,
+    "title": "Functions 1",
+    "description": "",
+    "xp_reward": 10,
+    "difficulty": "",
+    "example": ""
+  },
+  {
+    "id": 24,
+    "lesson_id": 24,
+    "title": "Functions 2",
+    "description": "",
+    "xp_reward": 10,
+    "difficulty": "",
+    "example": ""
+  },
+  {
+    "id": 25,
+    "lesson_id": 25,
+    "title": "Arrays",
+    "description": "",
+    "xp_reward": 10,
+    "difficulty": "",
+    "example": ""
+  },
+  {
+    "id": 26,
+    "lesson_id": 26,
+    "title": "Objects",
+    "description": "",
+    "xp_reward": 10,
+    "difficulty": "",
+    "example": ""
+  }
+  ,
+  {
+    "id": 27,
+    "lesson_id": 27,
+    "title": "Classes",
+    "description": "",
+    "xp_reward": 10,
+    "difficulty": "",
+    "example": ""
+  }
+  ,
+  {
+    "id": 28,
+    "lesson_id": 28,
+    "title": "JavaScript: FINAL",
     "description": "",
     "xp_reward": 25,
     "difficulty": "",
