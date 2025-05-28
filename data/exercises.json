@@ -183,10 +183,10 @@
     "id": 21,
     "lesson_id": 21,
     "title": "Arrays",
-    "description": "",
+    "description": "You are building a simple to-do list app. \n 1. Create an array called tasks with the following items: 'Do homework', 'Wash dishes', and 'Buy groceries'. \n 2. Print out the first task in the list using its index. \n 3. You realize that instead of 'Wash dishes', you meant to write 'Clean the kitchen'. Log the new list. \n 4. Change that task in the array.  \n 5. Print the number of tasks you have now using the length property.",
     "xp_reward": 10,
-    "difficulty": "",
-    "example": ""
+    "difficulty": "EASY",
+    "example": "let food = ['taccos', 'soup', 'sandwiches'] \n\nconsole.log(food[1]) \n\nfood[2] = 'pasta' \nconsole.log(food); \n\nconsole.log(food.length);"
   },
   {
     "id": 22,

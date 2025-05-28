@@ -1,9 +1,9 @@
-let name = "Otto";
+let food = ["taccos", "soup", "sandwiches"]
 
-if (name === "Anna") {
-    console.log("Hello Anna");
-} else if (name === "Jack") {
-    console.log("Hello Jack")
-} else {
-    console.log("Hello stranger");
-}
+console.log(food[1])
+
+food[2] = "pasta"
+console.log(food);
+
+
+console.log(food.length);
