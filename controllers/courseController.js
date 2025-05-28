@@ -199,7 +199,7 @@ export const completeCourse = async (userId, lessonId) => {
     // JB: 
     const completedCount = parseInt(rows[0].count);
 
-    // 3. Badge vergeben, wenn 9 lessons gezählt wurden
+    // 
      if (completedCount === 9) {
       const [badgeRows] = await db.execute(
         `SELECT id FROM badges WHERE dependency = '"complete_the_first_course"'`

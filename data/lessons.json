@@ -142,14 +142,56 @@
   {
     "id": 21,
     "course_id": 3,
-    "title": "",
+    "title": "Loops 1",
+    "content": "In programming, we often want to make decisions or repeat actions. JavaScript gives us tools to do both: \n\n - if-else is used for making decisions. \n - while and for are used for repeating (looping) actions. \n\n Let’s explore them in depth. \n\n <strong>1. The if-else Statement – Making Decisions</strong> \n The if-else structure lets your code choose between different paths based on a condition. You can also add multiple conditions using else if. \n <strong>Be careful!</strong> \n If the condition never becomes false, the loop runs forever! This is called an infinite loop, and it can crash your browser or program.\n\n <strong>Syntax:</strong> \n <code>if\n(condition) { \n  // do this \n} else { \n  // do this \n}</code> \n <strong>When to use:</strong> \n - Use if-else when you want your program to make a choice or take different actions based on some logic. \n\n <strong>2. The while Loop – Repeat Until False</strong> \n A while loop repeats a block of code as long as the condition is true. \n\n <strong>Syntax: </strong> \n <code>while (condition) { \n  // code to run again and again \n}</code> \n <strong>When to use:</strong> \n Use while when you don’t know exactly how many times you’ll need to repeat something — you just know the condition. \n\n <strong>3. The for Loop – Count and Repeat </strong> \n The for loop is a counting loop. It’s perfect when you know in advance how many times you want to repeat something. \n\n <strong>Syntax:</strong> \n <code>for (initialization; condition; update) { \n  // code to run in each loop \n}</code> \n\n <strong>When to use:</strong> \n Use for when you know how many times you need to loop. It’s compact and easy to read. \n\n",
+    "example": "// ---- if-else ---- \nif (score >= 90) { \n  console.log('Excellent!'); \n} else if (score >= 75) { \n  console.log('Good job!'); \n} else { \n  console.log('Keep practicing.'); \n} \n\n // ---- while ---- \nlet i = 0; \nwhile (i < 5) { \n  console.log('Number: ' + i); \n  i++; \n} \n\n// ---- for ----- \nfor (let i = 0; i < 5; i++) { \n  console.log('Step ' + i); \n}"
+  },
+  {
+    "id": 22,
+    "course_id": 3,
+    "title": "Loops 2",
     "content": "",
     "example": ""
   },
   {
-    "id": 230,
-    "course_id": 4,
-    "title": "",
+    "id": 23,
+    "course_id": 3,
+    "title": "Functions 1",
+    "content": "",
+    "example": ""
+  },
+  {
+    "id": 24,
+    "course_id": 3,
+    "title": "Functions 2",
+    "content": "",
+    "example": ""
+  },
+  {
+    "id": 25,
+    "course_id": 3,
+    "title": "Arrays",
+    "content": "",
+    "example": ""
+  },
+  {
+    "id": 26,
+    "course_id": 3,
+    "title": "Objects",
+    "content": "",
+    "example": ""
+  },
+  {
+    "id": 27,
+    "course_id": 3,
+    "title": "Classes",
+    "content": "",
+    "example": ""
+  },
+  {
+    "id": 28,
+    "course_id": 3,
+    "title": "JavaScript: FINAL",
     "content": "",
     "example": ""
   }
