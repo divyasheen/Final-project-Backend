@@ -142,42 +142,42 @@
   {
     "id": 21,
     "course_id": 3,
+    "title": "Arrays",
+    "content": "In JavaScript, an array is a special kind of object that allows you to store and manage multiple values in a single variable. Instead of creating many separate variables to hold related data, you can group them together inside one array. This makes it easier to organize, access, and manipulate the data. \n An array can hold values of any type, including numbers, strings, booleans, objects, other arrays, or even mixed types. Each value in the array is called an element, and every element has an associated index, which starts at 0. This means the first element is at position 0, the second at position 1, and so on. \n\n <strong>Creating an Array</strong> \n There are a few ways to create an array. The most common way is by using square brackets []. For example: \n <code>let colors = ['red', 'green', 'blue'];</code> \n This array has three elements. 'red' is at index 0, 'green' at index 1, and 'blue' at index 2. \n\n You can also create an empty array and add elements later: \n <code>let fruits = []; \nfruits[0] = 'apple'; \nfruits[1] = 'banana';</code> \n\n <strong>Accessing Array Elements</strong> \n To access a specific value in an array, you use its index: \n <code>let firstColor = colors[0]; // 'red' </code> \n If you try to access an index that doesn't exist, JavaScript returns undefined.\n\n <strong>Changing Array Elements</strong> \n You can change the value of an element by assigning a new value to its index: \n <code>colors[1] = 'yellow'; // colors is now ['red', 'yellow', 'blue'] \n\n <strong>Array Length </strong> \n Every array has a length property, which tells you how many elements are in the array: \n <code>let count = colors.length; // 3 </code> \n Note that the highest index in the array is always one less than the length. \n\n",
+    "example": "let colors = ['red', 'green', 'blue']; \n\nlet fruits = []; \nfruits[0] = 'apple'; \nfruits[1] = 'banana';"
+  },
+  {
+    "id": 22,
+    "course_id": 3,
+    "title": "Objects",
+    "content": "In JavaScript, an object is a data structure used to store data in the form of key-value pairs. It allows you to group related data and functions together in a single, organized unit. Objects are one of the most important and flexible parts of the JavaScript language. \n Each key in an object is called a property name, and it is always a string (or can be treated as one). The value assigned to that property can be anything: a number, a string, a boolean, an array, another object, or even a function. \n\n <strong>Creating an Object</strong> \n The most common way to create an object is by using curly braces {}. \n <code>let person = { \n  name: 'Alice', \n  age: 30, \n  city: 'Berlin' \n}; \n In this example, the object person has three properties: \n - 'name' with the value 'Alice' \n - 'age' with the value 30 \n - 'city' with the value 'Berlin' \n\n <strong>Accessing Object Properties</strong> \n You can access the values of object properties in two ways: \n\n 1. Dot notation: \n <code>console.log(person.name); // 'Alice'</code> \n 2. Bracket notation (useful when the property name is dynamic or has special characters): \n <code>console.log(person['city']); // 'Berlin'</code> \n\n <strong>Changing Property Values</strong> \n You can update the value of a property just by assigning a new value: \n <code>person.age = 31; </code> \n Now, person.age is 31. \n\n <strong>Adding New Properties</strong> \n You can also add new properties to an object at any time: \n <code>person.job = 'developer';</code> \n The object now also contains a 'job' property. \n\n",
+    "example": "let person = { \n  name: 'Alice', \n  age: 30, \n  city: 'Berlin' \n};"
+  },
+  {
+    "id": 23,
+    "course_id": 3,
     "title": "Loops 1",
     "content": "In programming, we often want to make decisions or repeat actions. JavaScript gives us tools to do both: \n\n - if-else is used for making decisions. \n - while and for are used for repeating (looping) actions. \n\n Let’s explore them in depth. \n\n <strong>1. The if-else Statement – Making Decisions</strong> \n The if-else structure lets your code choose between different paths based on a condition. You can also add multiple conditions using else if. \n <strong>Be careful!</strong> \n If the condition never becomes false, the loop runs forever! This is called an infinite loop, and it can crash your browser or program.\n\n <strong>Syntax:</strong> \n <code>if\n(condition) { \n  // do this \n} else { \n  // do this \n}</code> \n <strong>When to use:</strong> \n - Use if-else when you want your program to make a choice or take different actions based on some logic. \n\n <strong>2. The while Loop – Repeat Until False</strong> \n A while loop repeats a block of code as long as the condition is true. \n\n <strong>Syntax: </strong> \n <code>while (condition) { \n  // code to run again and again \n}</code> \n <strong>When to use:</strong> \n Use while when you don’t know exactly how many times you’ll need to repeat something — you just know the condition. \n\n <strong>3. The for Loop – Count and Repeat </strong> \n The for loop is a counting loop. It’s perfect when you know in advance how many times you want to repeat something. \n\n <strong>Syntax:</strong> \n <code>for (initialization; condition; update) { \n  // code to run in each loop \n}</code> \n\n <strong>When to use:</strong> \n Use for when you know how many times you need to loop. It’s compact and easy to read. \n\n",
     "example": "// ---- if-else ---- \nif (score >= 90) { \n  console.log('Excellent!'); \n} else if (score >= 75) { \n  console.log('Good job!'); \n} else { \n  console.log('Keep practicing.'); \n} \n\n // ---- while ---- \nlet i = 0; \nwhile (i < 5) { \n  console.log('Number: ' + i); \n  i++; \n} \n\n// ---- for ----- \nfor (let i = 0; i < 5; i++) { \n  console.log('Step ' + i); \n}"
   },
   {
-    "id": 22,
+    "id": 24,
     "course_id": 3,
     "title": "Loops 2",
-    "content": "",
-    "example": ""
+    "content": "In JavaScript, the for-in and for-of loops are both used to iterate through elements of a data structure, but they work in different ways and are used for different types of iteration. \n\n <strong>1. For in loop</strong> \n The for-in loop is primarily used for iterating over the enumerable properties of an object. When you use a for-in loop, JavaScript will iterate over all the keys in the object. \n For example, if you have an object representing a person, with properties like name, age, and city, the for-in loop will go through each of these property names as strings. Inside the loop, you can access the value associated with each property by using bracket notation (e.g., object[key]). \n\n <strong>Syntax</strong><code>for (let key in object) { \n  // code to execute using key \n}</code> \n\n <strong>2. For of loop </strong> \n The for-of loop is designed to iterate arrays, strings, maps, sets, and other objects that implement the iterable protocol. When you use a for-of loop on an array, it directly gives you the values stored in the array rather than the keys or indices. This makes it much more intuitive and cleaner for iterating over arrays or other sequences. \n For example, if you use a for-of loop on an array of numbers, each iteration gives you one number from the array in order. Unlike for-in, for-of does not include properties from the prototype chain, and it cannot be used directly on plain objects unless you explicitly define them as iterable using methods like Object.entries() or by implementing a custom iterator. \n\n <strong>Syntax</strong> \n <code>for (let value of iterable) { \n  // code to execute using value \n} \n\n",
+    "example": "// ----- for-in-loop ----- \nconst person = { \n  name: 'Alice', \n  age: 30, \n  city: 'Berlin' \n}; \n\nfor (let key in person) { \n  console.log(key + ': ' + person[key]); \n} \n\n// -> name: Alice \n// -> age: 30 \n// -> city: Berlin \n\n// ---- for-of-loop ---- \nconst colors = ['red', 'green', 'blue']; \n\nfor (let color of colors) { \n  console.log(color); \n} \n\n// -> red // -> green // -> blue"
   },
   {
-    "id": 23,
+    "id": 25,
     "course_id": 3,
     "title": "Functions 1",
     "content": "",
     "example": ""
   },
   {
-    "id": 24,
-    "course_id": 3,
-    "title": "Functions 2",
-    "content": "",
-    "example": ""
-  },
-  {
-    "id": 25,
-    "course_id": 3,
-    "title": "Arrays",
-    "content": "",
-    "example": ""
-  },
-  {
     "id": 26,
     "course_id": 3,
-    "title": "Objects",
+    "title": "Functions 2",
     "content": "",
     "example": ""
   },
@@ -194,5 +194,5 @@
     "title": "JavaScript: FINAL",
     "content": "",
     "example": ""
-  }
+    }
 ]

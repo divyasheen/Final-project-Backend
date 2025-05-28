@@ -6,7 +6,8 @@
     "description": "Read the text!",
     "xp_reward": 5,
     "difficulty": "Easy",
-    "example": ""
+    "example": "",
+    "placeholder": ""
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "description": "Create a basic HTML page with: \n - a title that say: 'Save Coderealm!' \n - the page should show 'Hello World!'",
     "xp_reward": 10,
     "difficulty": "Easy",
-    "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n  <body> \n   Here is some text. \n  </body> \n </html>"
+    "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n  <body> \n   Here is some text. \n  </body> \n </html>",
+    "placeholder": ""
   },
   {
     "id": 3,
@@ -24,7 +26,8 @@
     "description": "Create a page with: \n - An `<h1>` with the text 'Learning Topics' \n - A paragraph using <strong> \n - An ordered list with “HTML”, “CSS”, “JavaScript” \n - A link to https://developer.mozilla.org \n - An image with the URL https://picsum.photos/200/300",
     "xp_reward": 10,
     "difficulty": "Easy",
-    "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title>This is the title!</title> \n  </head> \n  <body> \n   <h1> This is the first heading. </h1> \n   <p> This is a paragraph. </p> \n   <h2> This is the second heading, </h2> \n  </body> \n </html>"
+    "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title>This is the title!</title> \n  </head> \n  <body> \n   <h1> This is the first heading. </h1> \n   <p> This is a paragraph. </p> \n   <h2> This is the second heading, </h2> \n  </body> \n </html>",
+    "placeholder": ""
   },
   {
     "id": 4,
@@ -33,7 +36,8 @@
     "description": "Practice using an HTML attribute inside a <p> (paragraph) element. \n - Create a simple HTML file. \n - Inside the <body>, add a <p> element. \n - Use the align attribute to center the paragraph text. \n - Write any short sentence inside the paragraph. \n - The paragraph text should appear centered on the page.",
     "xp_reward": 10,
     "difficulty": "Easy",
-    "example": "<!DOCTYPE html> \n<html> \n<head> \n  <title>HTML Attribute Practice</title> \n</head> \n\n<body> \n  <p align='left'>This is a paragraph using the align attribute.</p> \n</body> \n</html>"
+    "example": "<!DOCTYPE html> \n<html> \n<head> \n  <title>HTML Attribute Practice</title> \n</head> \n\n<body> \n  <p align='left'>This is a paragraph using the align attribute.</p> \n</body> \n</html>",
+    "placeholder": ""
   },
   {
     "id": 5,
@@ -42,7 +46,8 @@
     "description": "Practice using <ul>, &ltol>, and <li> tags to create unordered and ordered lists. \n\n Create a basic HTML page. Inside the <body>, create: \n - An unordered list of 3 fruits (e.g. Apple, Banana, Orange). \n - An ordered list of 3 daily tasks (e.g. Wake up, Brush teeth, Eat breakfast). \n - The fruit list should appear with bullet points. \n - The task list should appear with letters or numbers, depending on the type.",
     "xp_reward": 10,
     "difficulty": "Easy",
-    "example": "<!DOCTYPE html> \n<html> \n<head> \n  <title>HTML List Practice</title> \n</head> \n<body> \n\n  <h2>Animals</h2> \n  <ul> \n    <li>Dog</li> \n    <li>Cat</li> \n    <li>Mouse</li> \n  </ul> \n\n  <h2>Jobs</h2> \n  <ol> \n  <li>Dentist</li> \n    <li>Webdev</li> \n    <li>Teacher</li> \n  </ol> \n\n</body> \n</html>"
+    "example": "<!DOCTYPE html> \n<html> \n<head> \n  <title>HTML List Practice</title> \n</head> \n<body> \n\n  <h2>Animals</h2> \n  <ul> \n    <li>Dog</li> \n    <li>Cat</li> \n    <li>Mouse</li> \n  </ul> \n\n  <h2>Jobs</h2> \n  <ol> \n  <li>Dentist</li> \n    <li>Webdev</li> \n    <li>Teacher</li> \n  </ol> \n\n</body> \n</html>",
+    "placeholder": ""
   },
   {
     "id": 6,
@@ -51,7 +56,8 @@
     "description": "Create a form with: \n - A name field (text) \n - An email field \n - A password field \n - A submit button labeled “Sign in”",
     "xp_reward": 10,
     "difficulty": "Easy",
-    "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n  <body> \n   <form> \n    <label for = 'name'> Name </label> \n    <input type = 'text' id = 'name' name = 'username'/> \n    <button type = 'submit'> Send </button> \n   </form> \n  </body> \n </html>"
+    "example": "<!DOCTYPE html> \n <html> \n  <head> \n   <title> This is the title! </title> \n  </head> \n  <body> \n   <form> \n    <label for = 'name'> Name </label> \n    <input type = 'text' id = 'name' name = 'username'/> \n    <button type = 'submit'> Send </button> \n   </form> \n  </body> \n </html>",
+    "placeholder": ""
   },
   {
     "id": 7,
@@ -60,7 +66,8 @@
     "description": "Practice creating clickable links using the anchor (<a>) tag in HTML. Inside the <body>, add the following: \n\n 1. Text Link: \n - Create a clickable text link that leads to https://www.wikipedia.org. \n - The link text should say: 'Visit Wikipedia'. \n - Make it open in a new tab using the target='_blank' attribute. \n\n 2. Image Link: \n - Use a placeholder image from https://placehold.co/150. \n - Wrap the image in a link so that when the image is clicked, it also goes to https://www.wikipedia.org. \n - Open the link in the same tab.",
     "xp_reward": 10,
     "difficulty": "Easy",
-    "example": "<!DOCTYPE html> \n<head> \n  <title>HTML Links Practice</title> \n</head> \n<body> \n\n  <h2>Text Link</h2> \n  <a href='https://www.google.com' target='_blank'>Visit Wikipedia</a> \n\n  <h2>Image Link</h2> \n  <a href='https://www.google.com' target='_self'> \n    <img src='https://via.placeholder.com/150' alt='Placeholder image'> \n  </a> \n\n</body> \n</html>"
+    "example": "<!DOCTYPE html> \n<head> \n  <title>HTML Links Practice</title> \n</head> \n<body> \n\n  <h2>Text Link</h2> \n  <a href='https://www.google.com' target='_blank'>Visit Wikipedia</a> \n\n  <h2>Image Link</h2> \n  <a href='https://www.google.com' target='_self'> \n    <img src='https://via.placeholder.com/150' alt='Placeholder image'> \n  </a> \n\n</body> \n</html>",
+    "placeholder": ""
   },
   {
     "id": 8,
@@ -69,7 +76,8 @@
     "description": "Now you know the basics of HTML and it's time to put theory into practice! \n\n Create your own small website. You can choose the topic yourself, it should only include the following points: \n - Give the page a suitable title \n - There should be at least one heading and one paragraph. \n - The paragraph should be align right. \n - Create an organised list on your topic \n - Insert an image that contains a link to the topic \n - For further questions there should be a contact form at the bottom of the page.",
     "xp_reward": 25,
     "difficulty": "Medium",
-    "example": "<!DOCTYPE html> \n<head> \n  <meta> \n  <title>My First HTML Page</title> \n</head> \n<body> \n\n  <h1 title='Main Heading'>Welcome to My HTML Page</h1> \n <p align='center'> \n    This is a paragraph with the <strong>align</strong> attribute set to 'center'. \n  </p> \n\n   <h2>My Favorite Fruits</h2> \n  <ul> \n    <li>Apple</li> \n    <li>Banana</li> \n    <li>Cherry</li> \n  </ul> \n\n  <h2>Useful Link</h2> \n  <p> \n    Visit \n    <a href='https://www.example.com' target='_blank' title='Example Website'>Example.com</a> \n    for more information. \n  </p> \n\n  <h2>Random Form</h2> \n  <form> \n    <label for='name'>Name:</label><br> \n    <input type='text' id='name' name='name'><br> \n\n    <label for='email'>Email:</label><br> \n    <input type='email' id='email' name='email'><br><br> \n  </form> \n\n </body> \n</html>"
+    "example": "<!DOCTYPE html> \n<head> \n  <meta> \n  <title>My First HTML Page</title> \n</head> \n<body> \n\n  <h1 title='Main Heading'>Welcome to My HTML Page</h1> \n <p align='center'> \n    This is a paragraph with the <strong>align</strong> attribute set to 'center'. \n  </p> \n\n   <h2>My Favorite Fruits</h2> \n  <ul> \n    <li>Apple</li> \n    <li>Banana</li> \n    <li>Cherry</li> \n  </ul> \n\n  <h2>Useful Link</h2> \n  <p> \n    Visit \n    <a href='https://www.example.com' target='_blank' title='Example Website'>Example.com</a> \n    for more information. \n  </p> \n\n  <h2>Random Form</h2> \n  <form> \n    <label for='name'>Name:</label><br> \n    <input type='text' id='name' name='name'><br> \n\n    <label for='email'>Email:</label><br> \n    <input type='email' id='email' name='email'><br><br> \n  </form> \n\n </body> \n</html>",
+    "placeholder": ""
   },
   {
     "id": 9,
@@ -78,7 +86,8 @@
     "description": "Write the following style in the correct place in the given HTML - so that it is internal CSS: \n\n h1 {color: red}",
     "xp_reward": 10,
     "difficulty": "Easy",
-    "example": "<!DOCTYPE html> \n<html> \n<head> \n  <title>My First CSS Exercise</title> \n</head> \n<body> \n   <h1>Hello CSS!</h1> \n   <p style = 'color: red'> This is a normal paragraph. </p> \n   <p>This is a special paragraph.</p> \n</body> \n</html>"
+    "example": "<!DOCTYPE html> \n<html> \n<head> \n  <title>My First CSS Exercise</title> \n</head> \n<body> \n   <h1>Hello CSS!</h1> \n   <p style = 'color: red'> This is a normal paragraph. </p> \n   <p>This is a special paragraph.</p> \n</body> \n</html>",
+    "placeholder": "<!DOCTYPE html> \n<head> \n  <meta> \n  <title>CSS Practice</title> \n</head> \n<body> \n  <h1>Welcome to the Exercise</h1> \n  <p class='info'>This is an informational paragraph.</p> \n  <p class='info'>This is another informational paragraph.</p> \n  <p id='important'>This is a very important paragraph!</p> \n</body> \n</html>"
   },
   {
     "id": 10,
@@ -87,7 +96,8 @@
     "description": "1. Use a tag selector to make all <p> elements have the font Arial and a font size of 16px. \n \n 2. Use a class selector to style all elements with the class info: \n - Text color: blue \n - Background color: #e0f0ff \n\n 3. Use an ID selector to style the element with the ID important: \n - Text color: white \n - Background color: red \n - Font weight: bold",
     "xp_reward": 10,
     "difficulty": "Easy",
-    "example": "h1 { \n    font-size: 2rem; \n}; \n\n.item { \n    color: blue; \n}; \n\n#wrapper { \n    border-color: red; \n};"
+    "example": "h1 { \n    font-size: 2rem; \n}; \n\n.item { \n    color: blue; \n}; \n\n#wrapper { \n    border-color: red; \n};",
+    "placeholder": "<!DOCTYPE html> \n<head> \n  <title>CSS Practice</title> \n  <style> \n    /* Write your code here */ \n  </style> \n</head> \n<body> \n  <h1>Welcome to the Exercise</h1> \n  <p class='info'>This is an informational paragraph.</p> \n  <p class='info'>This is another informational paragraph.</p> \n  <p id='important'>This is a very important paragraph!</p> \n</body> \n</html>"
   },
   {
     "id": 11,
@@ -96,7 +106,8 @@
     "description": "1. Style the .keyword class to: \n - Set the text color to green using a keyword. \n - Set the background color to lightgray. \n\n 2. Style the .rgb class to: \n - Set the text color to RGB (255, 0, 0). \n - Set the background color to RGB (230, 230, 230). \n\n 3. Style the .hex class to: \n - Set the text color to #0000ff (blue). \n - Set the background color to #f0f0f0.",
     "xp_reward": 10,
     "difficulty": "Easy",
-    "example": "p { \n    color: red; \n    background-color: rgb (255, 255, 0); \n    border-color: #00ff00; \n}"
+    "example": "p { \n    color: red; \n    background-color: rgb (255, 255, 0); \n    border-color: #00ff00; \n}",
+    "placeholder": "<!DOCTYPE html> \n  <title>Color Practice</title> \n  <style> \n    /* Write your color styles here */ \n  </style> \n</head> \n<body> \n  <h1 class='title'>Welcome!</h1> \n  <p class='keyword'>This paragraph uses a color keyword.</p> \n  <p class='rgb'>This paragraph uses RGB.</p> \n  <p class='hex'>This paragraph uses a hex color.</p> \n</body> \n</html>"
   },
   {
     "id": 12,
@@ -105,7 +116,8 @@
     "description": "1. Style .absolute-heading: \n - Set the font-size to 24pt (absolute unit). \n - Add 10px padding. \n\n 2. Style .relative-heading: \n - Set the font-size to 2em. \n - Add 2rem margin-top. \n\n 3. Style .box-absolute: \n - Set a width of 300px. \n - Set a height of 100px. \n - Use a background color like lightblue. \n\n 4. Style .box-relative: \n - Set a width of 50%. \n - Set a height of 10vh. \n - Use a background color like lightgreen.",
     "xp_reward": 10,
     "difficulty": "Easy",
-    "example": "p { \n    font-size: 2rem; \n    width: 150px; \n}"
+    "example": "p { \n    font-size: 2rem; \n    width: 150px; \n}",
+    "placeholder": "<!DOCTYPE html> /n<html> /n<head> /n  <title>CSS Units Practice</title> /n  <style> /n    /* Write your styles here */ /n  </style> /n</head> /n<body> /n  <h1 class='absolute-heading'>I use absolute units</h1> /n  <h2 class='relative-heading'>I use relative units</h2> /n  <div class='box-absolute'>Box with px width</div> /n  <div class='box-relative'>Box with % width</div> /n</body> /n</html>"
   },
   {
     "id": 13,
@@ -114,7 +126,8 @@
     "description": "Style the .box class to show all parts of the box model clearly: \n - Add padding of 20px on all sides (space between content and border). \n - Add a solid border of 2px and color it black. \n - Add a margin of 30px around the box (space between this and other elements). \n - Give the box a background color (e.g., lightblue) so the content area is visible. \n - Set a width of 300px to better observe the layout.",
     "xp_reward": 10,
     "difficulty": "Easy",
-    "example": "div \n    {padding: 30px; \n    border: 5px dotted red; \n    margin: 50px \n}"
+    "example": "div \n    {padding: 30px; \n    border: 5px dotted red; \n    margin: 50px \n}",
+    "placeholder": "<!DOCTYPE html> \n<html> \n<head> \n  <title>Box Model Practice</title> \n  <style> \n    /* Write your CSS here */ \n  </style> \n</head> \n<body> \n  <div class='box'>I am a box!</div> \n</body> \n</html>"
   },
   {
     "id": 14,
@@ -123,7 +136,8 @@
     "description": "In the .container class: \n - Set display to flex to turn it into a flex container. \n - Set flex-direction to row. \n - Use justify-content: space-between to spread the items. \n - Use align-items: center to vertically center them. \n - Add a gap of 20px between the items.",
     "xp_reward": 10,
     "difficulty": "Easy",
-    "example": ".bestDiv { \n  display: block; \n  justify-content: center; \n  align-items: flex-start; \n}"
+    "example": ".bestDiv { \n  display: block; \n  justify-content: center; \n  align-items: flex-start; \n}",
+    "placeholder": "<!DOCTYPE html> \n<html> <head> \n  <title>Flex Container Example</title> \n  <style> \n    /* Write your style here. */ \n  </style> \n</head> \n<body> \n\n  <div class='container'> \n    <div class='item'>Item 1</div> \n    <div class='item'>Item 2</div> \n    <div class='item'>Item 3</div> \n  </div> \n\n</body> \n</html>"
   },
   {
     "id": 15,
@@ -132,7 +146,8 @@
     "description": "1. Give '<body>' by default a white background color \n 2. If the screen size reaches less than 600px the background color should switch to yellow.",
     "xp_reward": 10,
     "difficulty": "Easy",
-    "example": "body { \n  color: red; \n} \n\n@media (max-width: 800px) { \n  body { \n   color: green; \n  } \n}"
+    "example": "body { \n  color: red; \n} \n\n@media (max-width: 800px) { \n  body { \n   color: green; \n  } \n}",
+    "placeholder": "<!DOCTYPE html> \n<html> \n<head> \n  <title>Media Queries Practice</title> \n  <style> \n    /* Write your CSS here */ \n  </style> \n</head> \n<body> \n  <div>I am a div!</div> \n</body> \n</html>"
   },
   {
     "id": 16,
@@ -141,7 +156,8 @@
     "description": "Create your own small HTML page about a topic of your choice (e.g. your favourite game, an animal, a hobby). The page should: \n 1. contain at least one heading, one paragraph, one image, one list, one link and one form, \n 2. and have a suitable CSS layout.",
     "xp_reward": 25,
     "difficulty": "Medium",
-    "example": "body { \n font-family: Arial, sans-serif; \n background-color: #f7f5f2; \n color: #333; \n padding: 20px; \n} \n\nh1 { \n color: #d94f30; \n text-align: center; \n} \n\nimg { \n display: block; \n margin: 0 auto; \n width: 300px; \n border-radius: 8px; \n} \n\nul { \n background-color: #fff3e6; \n padding: 15px; \n order-radius: 5px; \n max-width: 400px; \n margin: 20px auto; \n} \n\n form { \n background-color: #e0f7fa; \n padding: 15px; \n border-radius: 5px; \n max-width: 400px; \n margin: 20px auto; \n} \n label, input { \n display: block; \n margin-bottom: 10px; \n}"
+    "example": "body { \n font-family: Arial, sans-serif; \n background-color: #f7f5f2; \n color: #333; \n padding: 20px; \n} \n\nh1 { \n color: #d94f30; \n text-align: center; \n} \n\nimg { \n display: block; \n margin: 0 auto; \n width: 300px; \n border-radius: 8px; \n} \n\nul { \n background-color: #fff3e6; \n padding: 15px; \n order-radius: 5px; \n max-width: 400px; \n margin: 20px auto; \n} \n\n form { \n background-color: #e0f7fa; \n padding: 15px; \n border-radius: 5px; \n max-width: 400px; \n margin: 20px auto; \n} \n label, input { \n display: block; \n margin-bottom: 10px; \n}",
+    "placeholder": ""
   },
   {
     "id": 17,
@@ -150,7 +166,8 @@
     "description": "Type the following in the editor and press 'Run': \n\n  console.log('Hello, CodeRealm!')",
     "xp_reward": 10,
     "difficulty": "EASY",
-    "example": ""
+    "example": "",
+    "placeholder": ""
   },
   {
     "id": 18,
@@ -159,7 +176,8 @@
     "description": "1. Create a string variable to store your favorite city. Use console.log() to log it. \n 2. Create two number variables: one for your age and one for your height in cm. Use console.log() to log it.  \n 3. Create a boolean variable to say whether you like chocolate. Use console.log() to log it.",
     "xp_reward": 10,
     "difficulty": "EASY",
-    "example": "let favoriteColor = 'blue'; \nconsole.log(favoriteColor);\n\nlet day = 25; \nlet hour = 170; \nconsole.log(day, hour); \n\nlet likesBlue = true; \nconsole.log(likesBlue);"
+    "example": "let favoriteColor = 'blue'; \nconsole.log(favoriteColor);\n\nlet day = 25; \nlet hour = 170; \nconsole.log(day, hour); \n\nlet likesBlue = true; \nconsole.log(likesBlue);",
+    "placeholder": ""
   },
   {
     "id": 19,
@@ -168,7 +186,8 @@
     "description": "Console.log() each solution of: \n\n 5+5 \n 20-4 \n 3*7 \n 8/2 \n 10%2 \n 2**3 ",
     "xp_reward": 10,
     "difficulty": "EASY",
-    "example": "console.log(10+30) \n\nconsole.log(60*3)"
+    "example": "console.log(10+30) \n\nconsole.log(60*3)",
+    "placeholder": ""
   },
   {
     "id": 20,
@@ -177,63 +196,69 @@
     "description": "Create a programm that checks the temperature and gives a message.",
     "xp_reward": 10,
     "difficulty": "EASY",
-    "example": "let age = 15 \n\nif (age < 18) {\n console.log('You are a kid!') \n} else if (age = 18) { \n console.log('You are an adult now!) \n} else { \n console.log('You are an adult!') \n} \n\n// -> You are a kid!"
+    "example": "let age = 15 \n\nif (age < 18) {\n console.log('You are a kid!') \n} else if (age = 18) { \n console.log('You are an adult now!) \n} else { \n console.log('You are an adult!') \n} \n\n// -> You are a kid!",
+    "placeholder": ""
   },
   {
     "id": 21,
     "lesson_id": 21,
-    "title": "Loops 1",
-    "description": "",
+    "title": "Arrays",
+    "description": "You are building a simple to-do list app. \n 1. Create an array called tasks with the following items: 'Do homework', 'Wash dishes', and 'Buy groceries'. \n 2. Print out the first task in the list using its index. \n 3. You realize that instead of 'Wash dishes', you meant to write 'Clean the kitchen'. Log the new list. \n 4. Change that task in the array.  \n 5. Print the number of tasks you have now using the length property.",
     "xp_reward": 10,
-    "difficulty": "",
-    "example": ""
+    "difficulty": "EASY",
+    "example": "let food = ['taccos', 'soup', 'sandwiches'] \n\nconsole.log(food[1]) \n\nfood[2] = 'pasta' \nconsole.log(food); \n\nconsole.log(food.length);",
+    "placeholder": ""
   },
   {
     "id": 22,
     "lesson_id": 22,
-    "title": "Loops 2",
-    "description": "",
+    "title": "Objects",
+    "description": "You are writing code for a coffee shop system. \n 1. Create an object called coffeeOrder with the following properties: \n <code>customerName: 'Emma' \ndrink: 'Latte' \nsize: 'Medium'</code> \n 2. Print out the customer's name and drink using dot notation. \n 3. The customer changes their mind and wants a 'Large' instead of a 'Medium' drink. \n 4. Update the size property. \n 5. Add a new property called extraShot and set it to true. \n 6. Print the full updated order like this: 'Emma ordered a Large Latte with an extra shot: true'",
     "xp_reward": 10,
-    "difficulty": "",
-    "example": ""
+    "difficulty": "EASY",
+    "example": "let book = { \n    title: 'The book', \n    author: 'Stephanie Queen', \n    prize: 200 \n} \n\nconsole.log(book.author) \n\nbook.title = 'The best book' \nconsole.log(book.title); \n\nbook.isbn = 123456789 \n\nconsole.log(book.title + ' is written by ' + book.author + ' and costs ' + book.prize + ' €.');",
+    "placeholder": ""
   },
   {
     "id": 23,
     "lesson_id": 23,
-    "title": "Functions 1",
-    "description": "",
+    "title": "Loops 1",
+    "description": "Write a JavaScript program that does the following: \n\n 1. Declare a variable with a number between 1 and 10. \n 2. If your number is between 1 and 10, log a message saying ' Number is inside of range!' \n 3. If the number is less than 1 or greater than 10, print a message saying 'Number is out of range.'",
     "xp_reward": 10,
-    "difficulty": "",
-    "example": ""
+    "difficulty": "EASY",
+    "example": "let name = 'Otto'; \n\nif (name === 'Anna') { \n    console.log('Hello Anna'); \n} else if (name === 'Jack') { \n    console.log('Hello Jack') \n} else { \n    console.log('Hello stranger'); \n} \n\n// -> Hello stranger",
+    "placeholder": ""
   },
   {
     "id": 24,
     "lesson_id": 24,
-    "title": "Functions 2",
-    "description": "",
+    "title": "Loops 2",
+    "description": "Imagine you’re working on a simple online store. \n 1. You have an object called inventory that stores the quantity of products in stock. \n\n let inventory = { \n   apples: 10, \n   bananas: 5, \n   oranges: 8 \n}; \n\n 2. You also have a shopping cart, represented by an array. \n\n let cart = ['bananas', 'oranges']; \n\n Task: \n- Use a for-in loop to print out each product in the inventory and its quantity. \n - Then use a for-of loop to go through the shopping cart, and for each item print a message like 'You added bananas to your cart.'",
     "xp_reward": 10,
-    "difficulty": "",
-    "example": ""
+    "difficulty": "EASY",
+    "example": "// ----- for-in-loop ----- \nconst person = { \n  name: 'Alice', \n  age: 30, \n  city: 'Berlin' \n}; \n\nfor (let key in person) { \n  console.log(key + ': ' + person[key]); \n} \n\n// -> name: Alice \n// -> age: 30 \n// -> city: Berlin \n\n// ---- for-of-loop ---- \nconst colors = ['red', 'green', 'blue']; \n\nfor (let color of colors) { \n  console.log(color); \n} \n\n// -> red // -> green // -> blue",
+    "placeholder": "let inventory = { \n  apples: 10, \n  bananas: 5, \n  oranges: 8 \n}; \n\nlet cart = ['bananas', 'oranges'];"
   },
   {
     "id": 25,
     "lesson_id": 25,
-    "title": "Arrays",
+    "title": "Functions 1",
     "description": "",
     "xp_reward": 10,
     "difficulty": "",
-    "example": ""
+    "example": "",
+    "placeholder": ""
   },
   {
     "id": 26,
     "lesson_id": 26,
-    "title": "Objects",
+    "title": "Functions 2",
     "description": "",
     "xp_reward": 10,
     "difficulty": "",
-    "example": ""
-  }
-  ,
+    "example": "",
+    "placeholder": ""
+  },
   {
     "id": 27,
     "lesson_id": 27,
@@ -241,9 +266,9 @@
     "description": "",
     "xp_reward": 10,
     "difficulty": "",
-    "example": ""
-  }
-  ,
+    "example": "",
+    "placeholder": ""
+  },
   {
     "id": 28,
     "lesson_id": 28,
@@ -251,6 +276,7 @@
     "description": "",
     "xp_reward": 25,
     "difficulty": "",
-    "example": ""
+    "example": "",
+    "placeholder": ""
   }
 ]
