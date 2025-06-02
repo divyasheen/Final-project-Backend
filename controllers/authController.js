@@ -68,7 +68,6 @@ export const registerUser = async (req, res) => {
 // Email verification endpoint using token from URL params
 export const verifyUser = async (req, res) => {
   const { token } = req.params;
-  console.log("Received token:", token);
 
   const db = getDB();
 
