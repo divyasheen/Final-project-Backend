@@ -171,15 +171,15 @@
     "id": 25,
     "course_id": 3,
     "title": "Functions 1",
-    "content": "",
-    "example": ""
+    "content": "A function in JavaScript is a reusable block of code designed to perform a particular task. Functions help make code more modular, readable, and maintainable. \n You can think of a function as a machine that takes some input, does something with it, and (optionally) returns a result. \n\n <strong>1. Function Declaration (Named Function) </strong> \n <code>function greet(name) { \n  return `Hello, ${name}!`; \n}</code> \n\n - function = keyword to declare a function \n - greet = function name \n - (name) = parameter \n - { ... } = function body \n\n You can call the function like this: \n <code>greet('Alice'); // Returns: 'Hello, Alice!'</code> \n\n <strong>2. Function Expression</strong> \n You can also store a function in a variable: \n <code>const greet = function(name) { \n  return `Hello, ${name}!`; \n}; </code> \n\n This is called a function expression. The function here is anonymous (it has no name unless you give it one explicitly). \n\n <strong>Parameters and Arguments</strong> \n - Parameters are variables listed in the function definition. \n - Arguments are the actual values you pass when calling the function. \n\n <strong>Return Values</strong> \n Functions can return a value using the return keyword: \n <code>function multiply(x, y) { \n  return x * y; \n}</code> \n\n If there’s no return, the function returns undefined by default. \n\n",
+    "example": "// ----- Named function ----- \nfunction add(a, b) { \n  return a + b; \n} \nadd(5, 6) // -> 11 \n\n// ----- Function expression ----- \nconst add = function(a, b) { \n    return a + b; \n} \nadd(5, 6) // -> 11"
   },
   {
     "id": 26,
     "course_id": 3,
     "title": "Functions 2",
-    "content": "",
-    "example": ""
+    "content": "<strong>Arrow Functions</strong> \n In modern JavaScript (ES6 and newer), there is a shorter syntax for writing functions called arrow functions. \n\n <strong>Syntax</strong> \n <code>const functionName = (param) => { \n    ... logic ... \n} </code> \n\n If the function has only one expression and returns it directly, we can make it even shorter: \n <code>const functionName = param => ... logic ...; </code> \n\n This is exactly the same as the previous version, but more concise. \n\n <strong>Function Scope</strong> \n Variables defined inside a function only exist inside that function. This is called function scope. You cannot access these variables from outside the function. \n\n",
+    "example": "// ---- Arrow function ---- \nconst greet = (name) => { \n  return `Hello, ${name}!`; \n}; \n\n// ---- Scope ---- \nfunction sayHi() { \n  let message = 'Hi!'; \n  console.log(message); // This works \n} \n\nsayHi(); console.log(message); // ❌ Error: message is not defined"
   },
   {
     "id": 27,

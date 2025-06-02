@@ -243,20 +243,20 @@
     "id": 25,
     "lesson_id": 25,
     "title": "Functions 1",
-    "description": "",
+    "description": "Write a function called personalGreeting that takes two parameters: \n - <code>name</code> – a string representing the person's name \n - <code>timeOfDay</code> – a string like 'morning', 'afternoon', or 'evening' \n\n The function should return a sentence like: \n\n <code>'Good morning, Sarah!'</code> \n\n <strong>Requirements:</strong> \n\n - The function must return a string – not just log it to the console. \n - You should call the function at least twice with different arguments and log the returned result to the console.",
     "xp_reward": 10,
-    "difficulty": "",
-    "example": "",
+    "difficulty": "EASY",
+    "example": "const wear = function(color, clothes) { \n    return 'This is a ' + color + ' ' + clothes \n} \n\nconsole.log(wear('blue', 'shirt')); \n// -> This is a blue shirt",
     "placeholder": ""
   },
   {
     "id": 26,
     "lesson_id": 26,
     "title": "Functions 2",
-    "description": "",
+    "description": "Create an arrow function called doubleAndLog that takes one number as a parameter. \n Inside the function: \n - Declare a variable called doubled that holds the number multiplied by 2. \n - Log the value of doubled to the console. \n - Return the value of doubled. \n\n Then, try to log the variable doubled outside the function and observe what happens. \n\n Requirements: \n - Use an arrow function with a code block ({} and return). \n - Call the function with any number and print the result.",
     "xp_reward": 10,
-    "difficulty": "",
-    "example": "",
+    "difficulty": "EASY",
+    "example": "const add5 = num => { \n    const sum = num + 5; \n    console.log('sum: ', sum); \n    return sum; \n} \n\nadd5(6) // -> 11 \n\nconsole.log(sum); // -> Error",
     "placeholder": ""
   },
   {

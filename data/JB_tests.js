@@ -1,14 +1,9 @@
-let book = {
-    title: "The book",
-    author: "Stephanie Queen",
-    prize: 200
-}
+const add5 = num =>{
+    const sum = num + 5;
+    console.log("sum: ", sum);
+    return sum;
+} 
 
-console.log(book.author)
+add5(6) // -> 11
 
-book.title = "The best book"
-console.log(book.title);
-
-book.isbn = 123456789
-
-console.log(book.title + " is written by " + book.author + " and costs " + book.prize + " €.");
+console.log(sum); // -> Error
