@@ -1,9 +1,15 @@
-const add5 = num =>{
-    const sum = num + 5;
-    console.log("sum: ", sum);
-    return sum;
-} 
+class Animal {
+    constructor(name, breed) {
+      this.name = name;
+      this.breed = breed
+    }
+  
+    information() {
+      return this.name + ' is a ' + this.breed;
+    }
+  }
+  
+  const dog1 = new Animal("Emma", "poodle")
 
-add5(6) // -> 11
-
-console.log(sum); // -> Error
+  console.log(dog1.information()); // -> Emma is a poodle
+  

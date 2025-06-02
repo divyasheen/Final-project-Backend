@@ -263,10 +263,10 @@
     "id": 27,
     "lesson_id": 27,
     "title": "Classes",
-    "description": "",
+    "description": "Write a class named Book that represents a book in a library system. \n Each book should have the following properties: \n - title (string) \n - author (string) \n - year< (number) \n - Add one method to the class: \n getSummary() – This method should return a string like: 'The book '1984' was written by George Orwell in 1949.'< \n\n Requirements: \n - Use the class keyword to define the class. \n - Use a constructor() to initialize the properties. \n - Define the method getSummary() inside the class. \n - Create two instances of the Book class with different data. \n - Call getSummary() on both instances and log the result to the console.",
     "xp_reward": 10,
-    "difficulty": "",
-    "example": "",
+    "difficulty": "EASY",
+    "example": "class Animal { \n    constructor(name, breed) { \n      this.name = name; \n      this.breed = breed \n    } \n\n    information() { \n      return this.name + ' is a ' + this.breed; \n    } \n  } \n\n  const dog1 = new Animal('Emma', 'poodle') \n\n  console.log(dog1.information()); // -> Emma is a poodle",
     "placeholder": ""
   },
   {

@@ -7,7 +7,7 @@
 < === &lt
 > === &gt
 
-class Person { \n  constructor(name, age) { \n    this.name = name; \n    this.age = age; \n  } \n\n  greet() { \n    return `Hi, my name is ${this.name} and I am ${this.age} years old.`; \n  } \n} \n\nconst person1 = new Person('Alice', 30); \nconsole.log(person1.greet()); // Output: Hi, my name is Alice and I am 30 years old. \n\nconst person2 = new Person('Bob', 25); \nconsole.log(person2.greet()); // Output: Hi, my name is Bob and I am 25 years old.
+class Animal { \n    constructor(name, breed) { \n      this.name = name; \n      this.breed = breed \n    } \n\n    information() { \n      return this.name + ' is a ' + this.breed; \n    } \n  } \n\n  const dog1 = new Animal("Emma", "poodle") \n\n  console.log(dog1.information()); // -> Emma is a poodle
 
 
 # PLACEHOLDER HTML
