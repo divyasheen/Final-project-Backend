@@ -13,7 +13,6 @@ import evaluationsRouter from './routers/evaluations.js';
 import usersRouter from './routers/users.js';
 import coursesRouter from './routers/courses.js';
 import userRoutes from './routers/userRoutes.js';
-import uploadRoute from './routers/uploadRoute.js';
 import chatbotRouter from './routers/chatbot.js';
 
 dotenv.config();

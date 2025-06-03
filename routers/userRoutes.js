@@ -4,7 +4,6 @@ import {
   getUserProgress, 
   getUserById,
   getCurrentUser,
-  uploadPicture 
 } from '../controllers/userController.js';
 
 const router = express.Router();
