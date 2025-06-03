@@ -275,8 +275,8 @@
     "title": "JavaScript: FINAL",
     "description": "",
     "xp_reward": 25,
-    "difficulty": "",
-    "example": "",
+    "difficulty": "Medium",
+    "example": "You are given the task of creating a program to manage a list of students and their grades. Your program should: \n\n 1. Create a Student class with the following properties: \n - name (string) \n - grades (array of numbers) \n - A method getAverage() that returns the average of the student's grades. \n\n 2.   Create a function createStudent(name, grades) that returns a new Student object. \n\n 3. Store multiple students in an array called students. \n\n 4. Loop through the students array and: \n - Print each student's name and average grade. \n\n - Use a condition to label students: \n - 'Excellent' if average ≥ 90 \n - 'Good' if average ≥ 75 \n - 'Needs Improvement' if average < 75 \n\n 5. Create a function getTopStudent(students) that returns the student object with the highest average. \n 6. Use operators appropriately (e.g., arithmetic for averages, comparison for conditions).",
     "placeholder": ""
   }
 ]
