@@ -202,14 +202,6 @@
     "error_message": "h1 text color should be red"
   },
   {
-    "test_id": "ex9-2",
-    "exercise_id": 9,
-    "test_type": "css_location",
-    "selector": "style",
-    "expected_value": "head",
-    "error_message": "CSS should be in a <style> tag in the <head> section"
-  },
-  {
     "test_id": "ex10-1",
     "exercise_id": 10,
     "test_type": "css_property",
@@ -269,7 +261,7 @@
     "test_type": "css_property",
     "selector": ".hex",
     "property": "color",
-    "expected_value": "#0000ff",
+    "expected_value": "#0000ff || blue || rgb(0, 0, 255)",
     "error_message": ".hex text should be hex blue"
   },
   {
@@ -434,7 +426,7 @@
     "test_id": "ex16-7",
     "exercise_id": 16,
     "test_type": "css_property",
-    "selector": "*",
+    "selector": "* body",
     "property": "font-family",
     "expected_value": ".+",
     "error_message": "Your page should include some CSS styling"

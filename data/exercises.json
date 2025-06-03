@@ -117,7 +117,7 @@
     "xp_reward": 10,
     "difficulty": "Easy",
     "example": "p { \n    font-size: 2rem; \n    width: 150px; \n}",
-    "placeholder": "<!DOCTYPE html> /n<html> /n<head> /n  <title>CSS Units Practice</title> /n  <style> /n    /* Write your styles here */ /n  </style> /n</head> /n<body> /n  <h1 class='absolute-heading'>I use absolute units</h1> /n  <h2 class='relative-heading'>I use relative units</h2> /n  <div class='box-absolute'>Box with px width</div> /n  <div class='box-relative'>Box with % width</div> /n</body> /n</html>"
+    "placeholder": "<!DOCTYPE html> \n<html> \n<head> \n  <title>CSS Units Practice</title> \n  <style> \n    /* Write your styles here */ \n  </style> \n</head> \n<body> \n  <h1 class='absolute-heading'>I use absolute units</h1> \n  <h2 class='relative-heading'>I use relative units</h2> \n  <div class='box-absolute'>Box with px width</div> \n  <div class='box-relative'>Box with % width</div> \n</body> \n</html>"
   },
   {
     "id": 13,
