@@ -3,7 +3,8 @@ import { authenticateUser } from '../middlewares/authMiddleware.js';
 import { 
   getUserProgress, 
   getUserById,
-  getCurrentUser
+  getCurrentUser,
+  editUser
 } from '../controllers/userController.js';
 
 const router = express.Router();
@@ -16,5 +17,8 @@ router.get('/:id', getUserById);
 
 // Get current authenticated user's details
 router.get('/me', authenticateUser, getCurrentUser);
+
+//JB: Try-and-Error for edit user
+router.patch("/:id/edit", editUser)
 
 export default router;
