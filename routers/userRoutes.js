@@ -3,7 +3,7 @@ import { authenticateUser } from '../middlewares/authMiddleware.js';
 import { 
   getUserProgress, 
   getUserById,
-  getCurrentUser,
+  getCurrentUser
 } from '../controllers/userController.js';
 
 const router = express.Router();
