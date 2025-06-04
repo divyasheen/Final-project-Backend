@@ -142,57 +142,57 @@
   {
     "id": 21,
     "course_id": 3,
+    "title": "Arrays",
+    "content": "In JavaScript, an array is a special kind of object that allows you to store and manage multiple values in a single variable. Instead of creating many separate variables to hold related data, you can group them together inside one array. This makes it easier to organize, access, and manipulate the data. \n An array can hold values of any type, including numbers, strings, booleans, objects, other arrays, or even mixed types. Each value in the array is called an element, and every element has an associated index, which starts at 0. This means the first element is at position 0, the second at position 1, and so on. \n\n <strong>Creating an Array</strong> \n There are a few ways to create an array. The most common way is by using square brackets []. For example: \n <code>let colors = ['red', 'green', 'blue'];</code> \n This array has three elements. 'red' is at index 0, 'green' at index 1, and 'blue' at index 2. \n\n You can also create an empty array and add elements later: \n <code>let fruits = []; \nfruits[0] = 'apple'; \nfruits[1] = 'banana';</code> \n\n <strong>Accessing Array Elements</strong> \n To access a specific value in an array, you use its index: \n <code>let firstColor = colors[0]; // 'red' </code> \n If you try to access an index that doesn't exist, JavaScript returns undefined.\n\n <strong>Changing Array Elements</strong> \n You can change the value of an element by assigning a new value to its index: \n <code>colors[1] = 'yellow'; // colors is now ['red', 'yellow', 'blue'] \n\n <strong>Array Length </strong> \n Every array has a length property, which tells you how many elements are in the array: \n <code>let count = colors.length; // 3 </code> \n Note that the highest index in the array is always one less than the length. \n\n",
+    "example": "let colors = ['red', 'green', 'blue']; \n\nlet fruits = []; \nfruits[0] = 'apple'; \nfruits[1] = 'banana';"
+  },
+  {
+    "id": 22,
+    "course_id": 3,
+    "title": "Objects",
+    "content": "In JavaScript, an object is a data structure used to store data in the form of key-value pairs. It allows you to group related data and functions together in a single, organized unit. Objects are one of the most important and flexible parts of the JavaScript language. \n Each key in an object is called a property name, and it is always a string (or can be treated as one). The value assigned to that property can be anything: a number, a string, a boolean, an array, another object, or even a function. \n\n <strong>Creating an Object</strong> \n The most common way to create an object is by using curly braces {}. \n <code>let person = { \n  name: 'Alice', \n  age: 30, \n  city: 'Berlin' \n}; \n In this example, the object person has three properties: \n - 'name' with the value 'Alice' \n - 'age' with the value 30 \n - 'city' with the value 'Berlin' \n\n <strong>Accessing Object Properties</strong> \n You can access the values of object properties in two ways: \n\n 1. Dot notation: \n <code>console.log(person.name); // 'Alice'</code> \n 2. Bracket notation (useful when the property name is dynamic or has special characters): \n <code>console.log(person['city']); // 'Berlin'</code> \n\n <strong>Changing Property Values</strong> \n You can update the value of a property just by assigning a new value: \n <code>person.age = 31; </code> \n Now, person.age is 31. \n\n <strong>Adding New Properties</strong> \n You can also add new properties to an object at any time: \n <code>person.job = 'developer';</code> \n The object now also contains a 'job' property. \n\n",
+    "example": "let person = { \n  name: 'Alice', \n  age: 30, \n  city: 'Berlin' \n};"
+  },
+  {
+    "id": 23,
+    "course_id": 3,
     "title": "Loops 1",
     "content": "In programming, we often want to make decisions or repeat actions. JavaScript gives us tools to do both: \n\n - if-else is used for making decisions. \n - while and for are used for repeating (looping) actions. \n\n Let’s explore them in depth. \n\n <strong>1. The if-else Statement – Making Decisions</strong> \n The if-else structure lets your code choose between different paths based on a condition. You can also add multiple conditions using else if. \n <strong>Be careful!</strong> \n If the condition never becomes false, the loop runs forever! This is called an infinite loop, and it can crash your browser or program.\n\n <strong>Syntax:</strong> \n <code>if\n(condition) { \n  // do this \n} else { \n  // do this \n}</code> \n <strong>When to use:</strong> \n - Use if-else when you want your program to make a choice or take different actions based on some logic. \n\n <strong>2. The while Loop – Repeat Until False</strong> \n A while loop repeats a block of code as long as the condition is true. \n\n <strong>Syntax: </strong> \n <code>while (condition) { \n  // code to run again and again \n}</code> \n <strong>When to use:</strong> \n Use while when you don’t know exactly how many times you’ll need to repeat something — you just know the condition. \n\n <strong>3. The for Loop – Count and Repeat </strong> \n The for loop is a counting loop. It’s perfect when you know in advance how many times you want to repeat something. \n\n <strong>Syntax:</strong> \n <code>for (initialization; condition; update) { \n  // code to run in each loop \n}</code> \n\n <strong>When to use:</strong> \n Use for when you know how many times you need to loop. It’s compact and easy to read. \n\n",
     "example": "// ---- if-else ---- \nif (score >= 90) { \n  console.log('Excellent!'); \n} else if (score >= 75) { \n  console.log('Good job!'); \n} else { \n  console.log('Keep practicing.'); \n} \n\n // ---- while ---- \nlet i = 0; \nwhile (i < 5) { \n  console.log('Number: ' + i); \n  i++; \n} \n\n// ---- for ----- \nfor (let i = 0; i < 5; i++) { \n  console.log('Step ' + i); \n}"
   },
   {
-    "id": 22,
-    "course_id": 3,
-    "title": "Loops 2",
-    "content": "",
-    "example": ""
-  },
-  {
-    "id": 23,
-    "course_id": 3,
-    "title": "Functions 1",
-    "content": "",
-    "example": ""
-  },
-  {
     "id": 24,
     "course_id": 3,
-    "title": "Functions 2",
-    "content": "",
-    "example": ""
+    "title": "Loops 2",
+    "content": "In JavaScript, the for-in and for-of loops are both used to iterate through elements of a data structure, but they work in different ways and are used for different types of iteration. \n\n <strong>1. For in loop</strong> \n The for-in loop is primarily used for iterating over the enumerable properties of an object. When you use a for-in loop, JavaScript will iterate over all the keys in the object. \n For example, if you have an object representing a person, with properties like name, age, and city, the for-in loop will go through each of these property names as strings. Inside the loop, you can access the value associated with each property by using bracket notation (e.g., object[key]). \n\n <strong>Syntax</strong><code>for (let key in object) { \n  // code to execute using key \n}</code> \n\n <strong>2. For of loop </strong> \n The for-of loop is designed to iterate arrays, strings, maps, sets, and other objects that implement the iterable protocol. When you use a for-of loop on an array, it directly gives you the values stored in the array rather than the keys or indices. This makes it much more intuitive and cleaner for iterating over arrays or other sequences. \n For example, if you use a for-of loop on an array of numbers, each iteration gives you one number from the array in order. Unlike for-in, for-of does not include properties from the prototype chain, and it cannot be used directly on plain objects unless you explicitly define them as iterable using methods like Object.entries() or by implementing a custom iterator. \n\n <strong>Syntax</strong> \n <code>for (let value of iterable) { \n  // code to execute using value \n} \n\n",
+    "example": "// ----- for-in-loop ----- \nconst person = { \n  name: 'Alice', \n  age: 30, \n  city: 'Berlin' \n}; \n\nfor (let key in person) { \n  console.log(key + ': ' + person[key]); \n} \n\n// -> name: Alice \n// -> age: 30 \n// -> city: Berlin \n\n// ---- for-of-loop ---- \nconst colors = ['red', 'green', 'blue']; \n\nfor (let color of colors) { \n  console.log(color); \n} \n\n// -> red // -> green // -> blue"
   },
   {
     "id": 25,
     "course_id": 3,
-    "title": "Arrays",
-    "content": "",
-    "example": ""
+    "title": "Functions 1",
+    "content": "A function in JavaScript is a reusable block of code designed to perform a particular task. Functions help make code more modular, readable, and maintainable. \n You can think of a function as a machine that takes some input, does something with it, and (optionally) returns a result. \n\n <strong>1. Function Declaration (Named Function) </strong> \n <code>function greet(name) { \n  return `Hello, ${name}!`; \n}</code> \n\n - function = keyword to declare a function \n - greet = function name \n - (name) = parameter \n - { ... } = function body \n\n You can call the function like this: \n <code>greet('Alice'); // Returns: 'Hello, Alice!'</code> \n\n <strong>2. Function Expression</strong> \n You can also store a function in a variable: \n <code>const greet = function(name) { \n  return `Hello, ${name}!`; \n}; </code> \n\n This is called a function expression. The function here is anonymous (it has no name unless you give it one explicitly). \n\n <strong>Parameters and Arguments</strong> \n - Parameters are variables listed in the function definition. \n - Arguments are the actual values you pass when calling the function. \n\n <strong>Return Values</strong> \n Functions can return a value using the return keyword: \n <code>function multiply(x, y) { \n  return x * y; \n}</code> \n\n If there’s no return, the function returns undefined by default. \n\n",
+    "example": "// ----- Named function ----- \nfunction add(a, b) { \n  return a + b; \n} \nadd(5, 6) // -> 11 \n\n// ----- Function expression ----- \nconst add = function(a, b) { \n    return a + b; \n} \nadd(5, 6) // -> 11"
   },
   {
     "id": 26,
     "course_id": 3,
-    "title": "Objects",
-    "content": "",
-    "example": ""
+    "title": "Functions 2",
+    "content": "<strong>Arrow Functions</strong> \n In modern JavaScript (ES6 and newer), there is a shorter syntax for writing functions called arrow functions. \n\n <strong>Syntax</strong> \n <code>const functionName = (param) => { \n    ... logic ... \n} </code> \n\n If the function has only one expression and returns it directly, we can make it even shorter: \n <code>const functionName = param => ... logic ...; </code> \n\n This is exactly the same as the previous version, but more concise. \n\n <strong>Function Scope</strong> \n Variables defined inside a function only exist inside that function. This is called function scope. You cannot access these variables from outside the function. \n\n",
+    "example": "// ---- Arrow function ---- \nconst greet = (name) => { \n  return `Hello, ${name}!`; \n}; \n\n// ---- Scope ---- \nfunction sayHi() { \n  let message = 'Hi!'; \n  console.log(message); // This works \n} \n\nsayHi(); console.log(message); // ❌ Error: message is not defined"
   },
   {
     "id": 27,
     "course_id": 3,
     "title": "Classes",
-    "content": "",
-    "example": ""
+    "content": "In JavaScript, a class is a blueprint for creating objects with shared properties and methods. It’s a way to organize and structure your code when you're working with objects that have similar behavior. \n JavaScript classes provide a cleaner, more readable syntax for creating objects and dealing with inheritance compared to traditional constructor functions. \n\n Classes are useful when you want to: \n - Create multiple objects with the same structure and behavior. \n - Group related properties and methods together. \n - Use inheritance to share functionality between classes (more on that later). \n\n <strong>Syntax</strong> \n <code>class className { \n  constructor(param1, param2) { \n    this.param1 = param1; \n    this.param2 = param2; \n  } \n\n  method() { \n    ... logic ...; \n  } \n} </code> \n\n <em>Let's break it down: </em> \n - <code>class className</code> = declares a new class named Person. \n - <code>constructor(param1, param2)</code> = a special method that is called automatically when a new object is created from the class. \n - <code>this.name</code> and <code>this.age</code> = define properties on the object. \n - <code>greet()</code> = a method, which is just a function attached to objects of this class. \n\n <strong>Creating an Object from a Class</strong> \n Once the class is defined, you can create new objects (also called instances) using the new keyword: \n <code>const obj1 = new className('Anna', 30); </code> \n\n You can create as many instances as you like: \n <code>const obj2 = new ClassName('Bob', 25);</code> \n Each object (obj1, obj2, etc.) has its own parameters, but they all share the same method. \n\n",
+    "example": "class Person { \n  constructor(name, age) { \n    this.name = name; \n    this.age = age; \n  } \n\n  greet() { \n    return `Hi, my name is ${this.name} and I am ${this.age} years old.`; \n  } \n} \n\nconst person1 = new Person('Alice', 30); \nconsole.log(person1.greet()); // Output: Hi, my name is Alice and I am 30 years old. \n\nconst person2 = new Person('Bob', 25); \nconsole.log(person2.greet()); // Output: Hi, my name is Bob and I am 25 years old."
   },
   {
     "id": 28,
     "course_id": 3,
     "title": "JavaScript: FINAL",
-    "content": "",
+    "content": "Now you have a good basic knowledge of JavaScript - test it in the final task!",
     "example": ""
-  }
+    }
 ]
