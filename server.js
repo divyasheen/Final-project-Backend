@@ -3,18 +3,23 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import cookieParser from 'cookie-parser';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { createError } from "./utils/errors.js";
+import { connect2DB } from "./utils/db.js";
+
+// ------------- Import Routes ---------------
 import evaluationsRouter from './routers/evaluations.js';
 import usersRouter from './routers/users.js';
 import coursesRouter from './routers/courses.js';
 import userRoutes from './routers/userRoutes.js';
-import { createError } from "./utils/errors.js";
-import { connect2DB } from "./utils/db.js";
 import chatbotRouter from './routers/chatbot.js';
-import path from 'path';
-import { fileURLToPath } from 'url';
+
 dotenv.config();
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
 /* ------------ create application ------------ */
 const app = express();
 
@@ -36,8 +41,7 @@ const startServer = async () => {
     app.use('/api/evaluations', evaluationsRouter);
     app.use('/api/user', userRoutes);
     app.use("/chatbot", chatbotRouter); 
-  
-
+    app.use("/user", usersRouter);
 
     /* --------------- error handler -------------- */
     app.use((req, res, next) => {
