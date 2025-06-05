@@ -1,14 +1,15 @@
-let book = {
-    title: "The book",
-    author: "Stephanie Queen",
-    prize: 200
-}
+class Animal {
+    constructor(name, breed) {
+      this.name = name;
+      this.breed = breed
+    }
+  
+    information() {
+      return this.name + ' is a ' + this.breed;
+    }
+  }
+  
+  const dog1 = new Animal("Emma", "poodle")
 
-console.log(book.author)
-
-book.title = "The best book"
-console.log(book.title);
-
-book.isbn = 123456789
-
-console.log(book.title + " is written by " + book.author + " and costs " + book.prize + " €.");
+  console.log(dog1.information()); // -> Emma is a poodle
+  
