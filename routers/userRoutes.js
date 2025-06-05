@@ -4,8 +4,10 @@ import {
   getUserProgress, 
   getUserById,
   getCurrentUser,
-  editUser
+  editUser,
 } from '../controllers/userController.js';
+import { uploadPicture } from '../controllers/uploadController.js';
+import upload from '../middlewares/uploadFiles.js';
 
 const router = express.Router();
 
@@ -18,7 +20,10 @@ router.get('/:id', getUserById);
 // Get current authenticated user's details
 router.get('/me', authenticateUser, getCurrentUser);
 
-//JB: Try-and-Error for edit user
+//JB: edit User profile
 router.patch("/:id/edit", editUser)
+
+// JB: Try-and-Error pic uplaod
+router.post("/:id/upload", upload.single('image'), uploadPicture)
 
 export default router;
