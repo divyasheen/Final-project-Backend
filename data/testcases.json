@@ -430,5 +430,53 @@
     "property": "font-family",
     "expected_value": ".+",
     "error_message": "Your page should include some CSS styling"
-  }
+  },
+  {
+    "id": 1446, 
+    "test_id": "js-L20-temp-low", 
+    "exercise_id": 20,
+    "test_type": "javascript",
+    "selector": "",
+    "property": null,
+    "expected_value": "It's cold!",
+    "is_hidden": 0,
+    "weight": 1,
+    "viewport_size": null,
+    "error_message": "",
+    "time_limit": 1,
+    "description": "Checks message for low temperature (input 5).",
+    "input": "let temperature = 5;"
+  },
+  {
+    "id": 1447, 
+    "test_id": "js-L20-temp-moderate", 
+    "exercise_id": 20,
+    "test_type": "javascript",
+    "selector": "",
+    "property": null,
+    "expected_value": "It's moderate!",
+    "is_hidden": 0,
+    "weight": 1,
+    "viewport_size": null,
+    "error_message": "",
+    "time_limit": 1,
+    "description": "Checks message for moderate temperature (input 15).",
+    "input": "let temperature = 15;"
+  },
+  {
+    "id": 1448, 
+    "test_id": "js-L20-temp-high", 
+    "exercise_id": 20,
+    "test_type": "javascript",
+    "selector": "",
+    "property": null,
+    "expected_value": "It's hot!",
+    "is_hidden": 0,
+    "weight": 1,
+    "viewport_size": null,
+    "error_message": "",
+    "time_limit": 1,
+    "description": "Checks message for high temperature (input 25).",
+    "input": "let temperature = 25;"
+  } 
 ]

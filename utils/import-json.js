@@ -10,6 +10,7 @@ const __dirname = path.dirname(__filename);
 // Read JSON helper
 const readJsonFile = async (relativePath) => {
   const filePath = path.join(__dirname, relativePath);
+  console.log("Attempting to read JSON from:", filePath)
   const fileContent = await fs.readFile(filePath, "utf-8");
   return JSON.parse(fileContent);
 };
@@ -18,7 +19,7 @@ const importDataJson = async () => {
   await connect2DB();
   const db = getDB();
 
-/*   // ===== COURSES FIRST =====
+  /*   // ===== COURSES FIRST =====
   const courses = await readJsonFile("../data/courses.json");
   for (const course of courses) {
     await db.execute(
@@ -42,7 +43,13 @@ const importDataJson = async () => {
         title = VALUES(title),
         content = VALUES(content),
         example = VALUES(example)`,
-      [lesson.id, lesson.course_id, lesson.title, lesson.content, lesson.example]
+      [
+        lesson.id,
+        lesson.course_id,
+        lesson.title,
+        lesson.content,
+        lesson.example,
+      ]
     );
   }
 
@@ -68,68 +75,78 @@ const importDataJson = async () => {
         exercise.xp_reward,
         exercise.difficulty,
         exercise.example,
-        exercise.placeholder
+        exercise.placeholder,
       ]
     );
   }
 
     // ===== TEST CASES FOURTH =====
-  const testcases = await readJsonFile("../data/testcases.json");
-  for (const testcase of testcases) {
-    await db.execute(
-      `INSERT INTO testcases 
-        (test_id, exercise_id, test_type, selector, property, expected_value, is_hidden, weight, viewport_size, error_message)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-      ON DUPLICATE KEY UPDATE
-        exercise_id = VALUES(exercise_id),
-        test_type = VALUES(test_type),
-        selector = VALUES(selector),
-        property = VALUES(property),
-        expected_value = VALUES(expected_value),
-        is_hidden = VALUES(is_hidden),
-        weight = VALUES(weight),
-        viewport_size = VALUES(viewport_size),
-        error_message = VALUES(error_message)`,
-      [
-        testcase.test_id,
-        testcase.exercise_id,
-        testcase.test_type,
-        testcase.selector,
-        testcase.property || null,          // nullable
-        testcase.expected_value,
-        testcase.is_hidden || false,
-        testcase.weight || 1,
-        testcase.viewport_size || null,     // nullable
-        testcase.error_message
-      ]
-    );
-  }
-
-
- /* // ===== BADGES FIFTH =====
-  const badges = await readJsonFile("../data/badges.json");
-  for (const badge of badges) {
-    await db.execute(
-      `INSERT INTO badges (id, name, description, icon_url, dependency)
-      VALUES (?, ?, ?, ?, ?)
-      ON DUPLICATE KEY UPDATE
-        id = VALUES(id),
-        name = VALUES(name),
-        description = VALUES(description),
-        icon_url = VALUES(icon_url),
-        dependency = VALUES(dependency)`,
-      [
-        badge.id,
-        badge.name,
-        badge.description,
-        badge.icon_url,
-        badge.dependency
-      ]
-    );
-  } */
-
-  console.log("✅ All data imported successfully!");
-  await db.end();
-};
-
+    const testcases = await readJsonFile("../data/testcases.json");
+    for (const testcase of testcases) {
+      try {
+        await db.execute(
+          `INSERT INTO testcases
+            (test_id, exercise_id, test_type, selector, property, expected_value, input_value, is_hidden, weight, viewport_size, error_message, time_limit, description, input)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+          ON DUPLICATE KEY UPDATE
+            exercise_id = VALUES(exercise_id),
+            test_type = VALUES(test_type),
+            selector = VALUES(selector),
+            property = VALUES(property),
+            expected_value = VALUES(expected_value),
+            input_value = VALUES(input_value),  -- Add this
+            is_hidden = VALUES(is_hidden),
+            weight = VALUES(weight),
+            viewport_size = VALUES(viewport_size),
+            error_message = VALUES(error_message),
+            time_limit = VALUES(time_limit),    -- Add this
+            description = VALUES(description),  -- Add this
+            input = VALUES(input)               -- Ensure this is mapped correctly
+          `,
+          [
+            // Ensure parameters match the exact order of columns in the INSERT statement
+            testcase.test_id === undefined ? null : testcase.test_id,
+            testcase.exercise_id === undefined ? null : testcase.exercise_id,
+            testcase.test_type === undefined ? null : testcase.test_type,
+            testcase.selector === undefined ? null : testcase.selector,
+            testcase.property === undefined ? null : testcase.property,
+            testcase.expected_value === undefined ? null : testcase.expected_value,
+            // --- NEWLY ADDED/CORRECTED MAPPINGS ---
+            testcase.input_value === undefined ? null : testcase.input_value, // Assuming JSON *might* have this, otherwise null
+            testcase.is_hidden === undefined ? false : testcase.is_hidden,
+            testcase.weight === undefined ? 1 : testcase.weight,
+            testcase.viewport_size === undefined ? null : testcase.viewport_size,
+            testcase.error_message === undefined ? null : testcase.error_message,
+            testcase.time_limit === undefined ? 1 : testcase.time_limit, // JSON has this field
+            testcase.description === undefined ? null : testcase.description, // JSON has this field
+            testcase.input === undefined ? null : testcase.input, // This will now correctly map the code
+          ]
+        );
+      } catch (error) {
+        console.error("Error inserting/updating testcase:", testcase.test_id, error);
+      }
+    }
+}
 importDataJson();
+
+/* // ===== BADGES FIFTH =====
+const badges = await readJsonFile("../data/badges.json");
+for (const badge of badges) {
+  await db.execute(
+    `INSERT INTO badges (id, name, description, icon_url, dependency)
+    VALUES (?, ?, ?, ?, ?)
+    ON DUPLICATE KEY UPDATE
+      id = VALUES(id),
+      name = VALUES(name),
+      description = VALUES(description),
+      icon_url = VALUES(icon_url),
+      dependency = VALUES(dependency)`,
+    [
+      badge.id,
+      badge.name,
+      badge.description,
+      badge.icon_url,
+      badge.dependency
+    ]
+  );
+} */

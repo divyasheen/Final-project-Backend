@@ -193,7 +193,7 @@
     "id": 20,
     "lesson_id": 20,
     "title": "Conditions",
-    "description": "Create a programm that checks the temperature and gives a message.",
+    "description": "Create a program that uses a temperature variable to determine and log a specific message based on its value. If the temperature is below 10, log: It's cold! If the temperature is 10 or above, but less than 20, log: It's moderate! If the temperature is 20 or above, log: It's hot! Your program will be tested with different temperature values.",
     "xp_reward": 10,
     "difficulty": "EASY",
     "example": "let age = 15 \n\nif (age < 18) {\n console.log('You are a kid!') \n} else if (age = 18) { \n console.log('You are an adult now!) \n} else { \n console.log('You are an adult!') \n} \n\n// -> You are a kid!",

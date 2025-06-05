@@ -19,7 +19,7 @@ export async function getJavaScriptTestCases(exerciseId) {
             id,              -- Crucial for ordering and feedback
             description,     -- Useful for feedback to the user
             input_value AS input,
-            expected_value AS expected_output_or_regex, -- Can be a regex pattern or exact string
+            expected_value AS expected_output_or_regex, 
             time_limit
         FROM
             testcases
@@ -27,7 +27,7 @@ export async function getJavaScriptTestCases(exerciseId) {
             exercise_id = ?
         AND
             test_type = "javascript"
-        ORDER BY id ASC; -- IMPORTANT: Ensures test cases are processed in a consistent order
+        ORDER BY id ASC;
         `;
 
         const connection = getDB();
@@ -56,6 +56,10 @@ export async function getJavaScriptTestCases(exerciseId) {
 export async function evaluateJavaScript(code, exerciseId) {
     const testCases = await getJavaScriptTestCases(exerciseId);
 
+    console.log("--- DEBUG: Fetched testCases for Exercise", exerciseId, "---"); // New line for clarity
+    console.log(testCases); // <-- THIS IS THE CRITICAL LINE
+    console.log("------------------------------------------");
+
     if (testCases.length === 0) {
         console.warn(`No JavaScript test cases found for exerciseId: ${exerciseId}`);
         return []; // No tests to run
@@ -66,19 +70,22 @@ export async function evaluateJavaScript(code, exerciseId) {
     // and we'll use Judge0's built-in comparison (batch submission).
     const isIOBasedTest = testCases.some(tc => tc.input !== null && tc.input !== undefined && tc.input !== '');
 
+    console.log(isIOBasedTest)
+
     let finalResults = [];
 
     if (isIOBasedTest) {
         // Strategy 1: I/O Based Test (Judge0 does comparison for each input)
         console.log(`Evaluating JavaScript exercise ${exerciseId} with I/O based strategy.`);
         const submissions = testCases.map(testCase => ({
-            source_code: code,
+            // CRITICAL CHANGE HERE: Prepend the testCase.input to the user's code
+            source_code: testCase.input + '\n' + code, // This combines "let temperature = X;" with the actual logic
             language_id: 63, // JavaScript (Node.js)
-            stdin: testCase.input,
+            stdin: '', // CLEAR STDIN: We've now put the input directly into the source_code
             // For I/O tests, expected_output_or_regex IS the exact expected output for Judge0
             expected_output: testCase.expected_output_or_regex,
             cpu_time_limit: testCase.time_limit || 1
-        }));
+        }))
 
         try {
             const response = await axios.post(
