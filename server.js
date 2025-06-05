@@ -38,11 +38,12 @@ const startServer = async () => {
 
     /* ------------------ routers ----------------- */
     app.use("/users", usersRouter);
+    app.use("/user", usersRouter);
     app.use("/api/courses", coursesRouter);  
     app.use('/api/evaluations', evaluationsRouter);
     app.use('/api/user', userRoutes);
     app.use("/chatbot", chatbotRouter); 
-    app.use('/posts',postsRouter)  app.use("/user", usersRouter);
+    app.use('/posts',postsRouter)  
 
     /* --------------- error handler -------------- */
     app.use((req, res, next) => {
