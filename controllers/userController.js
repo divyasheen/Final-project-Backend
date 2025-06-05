@@ -40,7 +40,7 @@ export const getUserById = async (req, res) => {
 
     // Get user basic info
     const [users] = await db.execute(
-      `SELECT id, username, email, role, xp, created_at 
+      `SELECT *
        FROM users WHERE id = ?`,
       [userId]
     );
@@ -124,17 +124,40 @@ export const getCurrentUser = async (req, res) => {
 
 export const editUser = async (req, res) => {
 
+  console.log("Request body:", req.body);
+
   // JB: destructure the body
-  const { userId, location, info, social } = req.body;
+  const { id, location, info, social } = req.body;
   const db = getDB();
 
   try {
-    // JB: Say the db what it has to do with the informations from the body (update .. duuuh!)
-    await db.execute(
-      `UPDATE users SET location = ?, info = ?, social = ? WHERE id = ?`,
-      [location, info, social, userId]
-    );
-    //JB: Celebrate the victory ... right now only at postman! Ô.o
+    // JB: Say the db what it has to do with the informations from the body if they are longer than 0 (update .. duuuh!)
+    if (location && location.trim().length > 0) {
+      await db.execute(
+        `UPDATE users SET location = ? WHERE id = ?`,
+        [location, id]
+      );
+    }
+
+    if (social && social.trim().length > 0) {
+      await db.execute(
+        `UPDATE users SET social = ? WHERE id = ?`,
+        [social, id]
+      );
+    }
+
+    if (info && info.trim().length > 0) {
+      await db.execute(
+        `UPDATE users SET info = ? WHERE id = ?`,
+        [info, id]
+      );
+    }
+
+    if (!location && !social && !info) {
+      return res.status(400).send("No values to update");
+    }
+
+    //JB: Celebrate the victory!!
     res.status(200).send("Profil aktualisiert");
 
     //JB: Weak code will catch errors ... well ... yeah ... story of my backend life!
