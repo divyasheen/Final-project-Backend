@@ -100,7 +100,7 @@ export const getImage = async (req, res) => {
       //console.log(currentUser.image);
   
       const command = new GetObjectCommand(getObjectParams);
-      const url = await getSignedUrl(s3, command, {expiresIn: 3600});
+      const url = await getSignedUrl(s3, command);
       currentUser.image_url = url;
   
       res.send(currentUser);
