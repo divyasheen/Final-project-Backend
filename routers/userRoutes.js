@@ -1,29 +1,36 @@
-import express from 'express';
-import { authenticateUser } from '../middlewares/authMiddleware.js';
-import { 
-  getUserProgress, 
+import express from "express";
+import { authenticateUser } from "../middlewares/authMiddleware.js";
+import {
+  getUserProgress,
   getUserById,
   getCurrentUser,
   editUser,
-} from '../controllers/userController.js';
-import { uploadPicture } from '../controllers/uploadController.js';
-import upload from '../middlewares/uploadFiles.js';
+} from "../controllers/userController.js";
+import { getImage, uploadImage } from "../controllers/uploadController.js";
+import multer from "multer";
+
+// JB: I need this for the image uploader
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
 
 const router = express.Router();
 
 // Get user progress summary
-router.get('/progress', authenticateUser, getUserProgress);
+router.get("/progress", authenticateUser, getUserProgress);
 
 // Get user by ID (public info)
-router.get('/:id', getUserById);
+router.get("/:id", getUserById);
 
 // Get current authenticated user's details
-router.get('/me', authenticateUser, getCurrentUser);
+router.get("/me", authenticateUser, getCurrentUser);
 
 //JB: edit User profile
-router.patch("/:id/edit", editUser)
+router.patch("/:id/edit", editUser);
 
-// JB: Try-and-Error pic uplaod
-router.post("/:id/upload", upload.single('image'), uploadPicture)
+// JB: upload image into bucket and DB
+router.post("/:id/upload", upload.single("image"), uploadImage);
+
+// JB: get avatar
+router.get("/:id/getProfilPic", getImage);
 
 export default router;
