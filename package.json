@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/divyasheen/Final-project-Backend#readme",
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.826.0",
+    "@aws-sdk/s3-request-presigner": "^3.826.0",
     "axios": "^1.9.0",
     "bcryptjs": "^3.0.2",
     "body-parser": "^2.2.0",
@@ -36,6 +38,7 @@
     "multer": "^1.4.5-lts.2",
     "mysql2": "^3.14.1",
     "nodemailer": "^6.10.1",
+    "sharp": "^0.34.2",
     "uuid": "^11.1.0"
   }
 }

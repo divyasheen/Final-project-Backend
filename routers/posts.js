@@ -1,5 +1,3 @@
-
-
 import express from 'express';
 import { allPosts,createPost,addCommentToPost,getSinglePostWithComments } from '../controllers/postsController.js';
 import { authenticateUser } from '../middlewares/authMiddleware.js';
