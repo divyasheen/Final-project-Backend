@@ -146,6 +146,12 @@ export const loginUser = async (req, res) => {
 
 // Log out user (placeholder, no token blacklisting here)
 export const logoutUser = (req, res) => {
+  res.clearCookie("token", {
+    httpOnly: true,
+    sameSite: "lax",
+    secure: false,// Set true in production
+    path: '/'
+  });
   res.status(200).json({ message: "User logged out successfully" });
 };
 
@@ -169,6 +175,17 @@ export const googleLogin = async (req, res) => {
     let user;
     if (existingUsers.length > 0) {
       user = existingUsers[0];
+      // Update existing user to be verified since they've verified their email with Google
+      await db.execute(
+        `UPDATE users SET verified = 1 WHERE id = ?`,
+        [user.id]
+      );
+      // Refresh user data after update
+      const [updatedUsers] = await db.execute(
+        `SELECT * FROM users WHERE id = ?`,
+        [user.id]
+      );
+      user = updatedUsers[0];
     } else {
       const [result] = await db.execute(
         `INSERT INTO users (username, email, role, created_at, verified) VALUES (?, ?, ?, ?, 1)`,
@@ -178,9 +195,33 @@ export const googleLogin = async (req, res) => {
       user = { id: result.insertId, username: name, email, role: "student" };
     }
 
-    // Generate and return JWT
-    const token = jwt.sign({ id: user.id, email: user.email }, process.env.JWT_SECRET, { expiresIn: "1h" });
+    // Generate JWT token
+    const tokenPayload = { 
+      id: user.id, 
+      email: user.email,
+      role: user.role
+    };
 
+    console.log('Generating token with payload:', tokenPayload);
+    
+    const token = jwt.sign(tokenPayload, process.env.JWT_SECRET, { 
+      expiresIn: "1h",
+      algorithm: 'HS256'  // Explicitly specify algorithm
+    });
+
+    // Verify token was generated correctly
+    const tokenParts = token.split('.');
+    if (tokenParts.length !== 3) {
+      throw new Error('Generated token is invalid');
+    }
+
+    console.log('Token generated successfully:', {
+      header: tokenParts[0],
+      payload: tokenParts[1],
+      signature: tokenParts[2]
+    });
+
+    // Set cookie
     res.cookie("token", token, {
       httpOnly: true,
       secure: false,
@@ -188,15 +229,96 @@ export const googleLogin = async (req, res) => {
       maxAge: 3600000
     });
 
-    res.status(200).json({ message: "Google login successful", user });
+    // Send response
+    const response = { 
+      message: "Google login successful", 
+      user,
+      token  // Include token in response
+    };
+
+    console.log('Sending response:', {
+      ...response,
+      token: token ? 'present' : 'missing'
+    });
+
+    res.status(200).json(response);
   } catch (error) {
-    console.error("Google login error:", error);
-    res.status(401).json({ error: "Google login failed" });
+    console.error("Google login error details:", {
+      message: error.message,
+      stack: error.stack,
+      name: error.name
+    });
+    res.status(401).json({ 
+      error: "Google login failed",
+      details: error.message
+    });
   }
 };
 
 
 
+export const refreshToken = async (req, res) => {
+  try {
+    // Get token from either Authorization header or cookie
+    const authHeader = req.headers.authorization;
+    const cookieToken = req.cookies?.token;
+    
+    let token = null;
+    
+    if (authHeader && authHeader.startsWith("Bearer ")) {
+      token = authHeader.split(" ")[1];
+    } else if (cookieToken) {
+      token = cookieToken;
+    }
+
+    if (!token) {
+      console.log('No token provided for refresh');
+      return res.status(401).json({ error: "No token provided" });
+    }
+
+    // Basic token format validation
+    const parts = token.split('.');
+    if (parts.length !== 3) {
+      console.log('Invalid token format');
+      return res.status(401).json({ error: "Invalid token format" });
+    }
+
+    try {
+      // Verify the token
+      const decoded = jwt.verify(token, process.env.JWT_SECRET);
+      
+      // Generate new token
+      const newToken = jwt.sign(
+        { id: decoded.id, email: decoded.email },
+        process.env.JWT_SECRET,
+        { expiresIn: "1h" }
+      );
+
+      // Set the new token in cookie
+      res.cookie("token", newToken, {
+        httpOnly: true,
+        secure: false,
+        sameSite: "lax",
+        maxAge: 3600000
+      });
+
+      // Return the new token
+      res.status(200).json({ token: newToken });
+    } catch (verifyError) {
+      console.error('Token verification failed:', verifyError);
+      return res.status(401).json({ 
+        error: "Invalid or expired token",
+        details: verifyError.message
+      });
+    }
+  } catch (error) {
+    console.error("Refresh token error:", error);
+    return res.status(500).json({ 
+      error: "Token refresh failed",
+      details: error.message
+    });
+  }
+};
 
 
 
