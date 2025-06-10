@@ -79,7 +79,7 @@ export const uploadImage = async (req, res) => {
   }
 };
 
-// ------------- USRPICTURE - GETTER ----------------
+// ------------- USERPICTURE - GETTER ----------------
 export const getImage = async (req, res) => {
     const db = getDB();
     const userId = req.params.id;
