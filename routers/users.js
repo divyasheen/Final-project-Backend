@@ -1,5 +1,5 @@
 import express from 'express';
-import { loginUser, logoutUser, registerUser,verifyUser,googleLogin,forgotPassword,resetPassword, resendVerification } from '../controllers/authController.js';
+import { loginUser, logoutUser, registerUser,verifyUser,googleLogin,forgotPassword,resetPassword, resendVerification, refreshToken } from '../controllers/authController.js';
 import { validateUser,loginValidationUser } from '../middlewares/validateUser.js';
 
 const router = express.Router();
@@ -12,5 +12,6 @@ router.get('/verify/:token', verifyUser);
 router.post("/forgot-password", forgotPassword);
 router.post("/reset-password", resetPassword);
 router.post('/resend-verification',resendVerification)
+router.post('/refresh-token', refreshToken);
 
 export default router;
