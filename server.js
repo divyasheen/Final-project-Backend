@@ -13,6 +13,7 @@ import evaluationsRouter from './routers/evaluations.js';
 import usersRouter from './routers/users.js';
 import coursesRouter from './routers/courses.js';
 import userRoutes from './routers/userRoutes.js';
+import postsRouter from './routers/posts.js'
 import chatbotRouter from './routers/chatbot.js';
 
 dotenv.config();
@@ -31,17 +32,18 @@ const startServer = async () => {
 
     /* ---------------- middleware ---------------- */
     app.use(cookieParser());
-    app.use(cors({ origin: "http://localhost:5173", credentials: true, methods: ['GET', 'POST', 'PUT', 'DELETE']}));
+    app.use(cors({ origin: "http://localhost:5173", credentials: true, methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'] }));
     // app.use(morgan("dev"));
     app.use(express.json());
 
     /* ------------------ routers ----------------- */
     app.use("/users", usersRouter);
+    app.use("/user", usersRouter);
     app.use("/api/courses", coursesRouter);  
     app.use('/api/evaluations', evaluationsRouter);
     app.use('/api/user', userRoutes);
     app.use("/chatbot", chatbotRouter); 
-    app.use("/user", usersRouter);
+    app.use('/posts',postsRouter)  
 
     /* --------------- error handler -------------- */
     app.use((req, res, next) => {
