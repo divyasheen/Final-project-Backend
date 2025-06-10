@@ -22,17 +22,13 @@ export const getUserProgress = async (req, res) => {
        LIMIT 1`,
       [req.user.id]
     );
-
+/* 
     const [badgesNames] = await db.execute(
       `SELECT badge_id 
        FROM user_badges 
        WHERE id = ?`,
       [req.user.id]
-    );
-
-    
-
-
+    ); */
 
     res.json({
       totalExercises: total[0].count,
