@@ -35,9 +35,9 @@ export const uploadImage = async (req, res) => {
   const imageKey = randomImageName();
 
   try {
-    console.log("req.body", req.body);
-    console.log("req.file", req.file);
-    console.log("userId", req.body.userId);
+    //console.log("req.body", req.body);
+    //console.log("req.file", req.file);
+    //console.log("userId", req.body.userId);
 
     const buffer = await sharp(req.file.buffer)
       .resize({ height: 250, width: 250 })
@@ -100,7 +100,7 @@ export const getImage = async (req, res) => {
       //console.log(currentUser.image);
   
       const command = new GetObjectCommand(getObjectParams);
-      const url = await getSignedUrl(s3, command);
+      const url = await getSignedUrl(s3, command, {expiresIn: 3600});
       currentUser.image_url = url;
   
       res.send(currentUser);
