@@ -8,31 +8,31 @@
   },
   {
     "id": 2,
-    "name": "HTM'EL - Yeah!",
+    "name": "Warm-Up Wizard",
     "description": "You've linked it all together – like a true &lta&gt ce!",
     "icon_url": "",
-    "dependency": ""
+    "dependency": "solve_5_ex"
   },
   {
     "id": 3,
-    "name": "The Style awakens",
+    "name": "Double High-Five",
     "description": "You brought balance to the stylesheet - not chaos.",
     "icon_url": "",
-    "dependency": ""
+    "dependency": "solve_10_ex"
   },
   {
     "id": 4,
-    "name": "Array Sorcerer",
+    "name": "Mission Master",
     "description": "You've leveled up - from console.log to code wizardry.",
     "icon_url": "",
-    "dependency": ""
+    "dependency": "solve_15_ex"
   },
   {
     "id": 5,
-    "name": "The Rubber Duck Diplomat",
+    "name": "Twenty Tornado",
     "description": "You don't just fix bugs - you mentor the devs who face them.",
     "icon_url": "",
-    "dependency": ""
+    "dependency": "solve_20_ex"
   },
   {
     "id": 6,

@@ -1,28 +1,30 @@
-import { getDB } from '../utils/db.js';
+import { getDB } from "../utils/db.js";
 
 export const getCoursesWithLessons = async () => {
   const db = getDB();
-  
+
   // Get all courses
-  const [courses] = await db.query('SELECT id, title, description FROM courses ORDER BY id');
-  
+  const [courses] = await db.query(
+    "SELECT id, title, description FROM courses ORDER BY id"
+  );
+
   // Get lessons for each course
   for (const course of courses) {
     const [lessons] = await db.query(
-      'SELECT id, title, content, example FROM lessons WHERE course_id = ? ORDER BY id', // Removed position
+      "SELECT id, title, content, example FROM lessons WHERE course_id = ? ORDER BY id", // Removed position
       [course.id]
     );
-   
+
     course.lessons = lessons;
   }
-  
+
   return courses;
 };
 
 export const getExercisesForLesson = async (lessonId) => {
   const db = getDB();
   const [exercises] = await db.query(
-    'SELECT * FROM exercises WHERE lesson_id = ? ORDER BY id',
+    "SELECT * FROM exercises WHERE lesson_id = ? ORDER BY id",
     [lessonId]
   );
   return exercises;
@@ -31,7 +33,7 @@ export const getExercisesForLesson = async (lessonId) => {
 export const getLessonContent = async (lessonId) => {
   const db = getDB();
   const [lesson] = await db.query(
-    'SELECT id, title, content, example FROM lessons WHERE id = ?', // Removed position from SELECT *
+    "SELECT id, title, content, example FROM lessons WHERE id = ?", // Removed position from SELECT *
     [lessonId]
   );
   return lesson[0];
@@ -39,19 +41,18 @@ export const getLessonContent = async (lessonId) => {
 
 export const getExerciseById = async (exerciseId) => {
   const db = getDB();
-  const [exercise] = await db.query(
-    'SELECT * FROM exercises WHERE id = ?',
-    [exerciseId]
-  );
+  const [exercise] = await db.query("SELECT * FROM exercises WHERE id = ?", [
+    exerciseId,
+  ]);
   return exercise[0];
 };
 
 export const trackExerciseCompletion = async (userId, exerciseId) => {
   const db = getDB();
-  
+
   try {
     await db.beginTransaction();
-    
+
     // Mark exercise as completed
     await db.execute(
       `INSERT INTO user_exercise_progress 
@@ -60,36 +61,36 @@ export const trackExerciseCompletion = async (userId, exerciseId) => {
        ON DUPLICATE KEY UPDATE is_completed = TRUE, completed_at = NOW()`,
       [userId, exerciseId]
     );
-    
+
     // Get exercise details to award XP
     const [exercise] = await db.execute(
       `SELECT xp_reward, lesson_id FROM exercises WHERE id = ?`,
       [exerciseId]
     );
-    
+
     if (exercise.length > 0) {
       const xpReward = exercise[0].xp_reward;
       const lessonId = exercise[0].lesson_id;
-      
+
       // Update user's total XP (assuming you have a users table with xp column)
-      await db.execute(
-        `UPDATE users SET xp = xp + ? WHERE id = ?`,
-        [xpReward, userId]
-      );
-      
+      await db.execute(`UPDATE users SET xp = xp + ? WHERE id = ?`, [
+        xpReward,
+        userId,
+      ]);
+
       // Mark lesson as completed if all exercises are done
       const [allExercises] = await db.execute(
         `SELECT id FROM exercises WHERE lesson_id = ?`,
         [lessonId]
       );
-      
+
       const [completedExercises] = await db.execute(
         `SELECT COUNT(*) AS count FROM user_exercise_progress 
          WHERE user_id = ? AND exercise_id IN 
          (SELECT id FROM exercises WHERE lesson_id = ?) AND is_completed = TRUE`,
         [userId, lessonId]
       );
-      
+
       if (completedExercises[0].count === allExercises.length) {
         await db.execute(
           `INSERT INTO user_progress (user_id, lesson_id, xp_earned, completed_at)
@@ -98,8 +99,33 @@ export const trackExerciseCompletion = async (userId, exerciseId) => {
           [userId, lessonId, xpReward * allExercises.length]
         );
       }
+
+      // JB: Get your badges
+      const badgeConditions = [
+        { count: 1, badge_id: 1 },
+        { count: 5, badge_id: 2 },
+        { count: 10, bagde_id: 3 },
+        { count: 20, badge_id: 4 },
+      ];
+
+      // JB: Check for badges based on completed exercises
+      const [completedTotal] = await db.execute(
+        `SELECT COUNT(*) AS count FROM user_exercise_progress 
+   WHERE user_id = ? AND is_completed = TRUE`,
+        [userId]
+      );
+
+      for (const badge of badgeConditions) {
+        if (completedTotal[0].count >= badge.count) {
+          await db.execute(
+            `INSERT IGNORE INTO user_badges (user_id, badge_id, assigned_at) 
+            VALUES (?, ?, NOW())`,
+            [userId, badge.badge_id]
+          );
+        }
+      }
     }
-    
+
     await db.commit();
   } catch (err) {
     await db.rollback();
@@ -109,7 +135,7 @@ export const trackExerciseCompletion = async (userId, exerciseId) => {
 
 export const getUserExerciseProgress = async (userId, lessonId) => {
   const db = getDB();
-  
+
   const [progress] = await db.execute(
     `SELECT e.id, e.title, uep.is_completed, uep.completed_at
      FROM exercises e
@@ -118,13 +144,13 @@ export const getUserExerciseProgress = async (userId, lessonId) => {
      ORDER BY e.id`,
     [userId, lessonId]
   );
-  
+
   return progress;
 };
 
 export const getNextIncompleteExercise = async (userId, currentExerciseId) => {
   const db = getDB();
-  
+
   // Get current exercise's lesson and course
   const [currentExercise] = await db.execute(
     `SELECT e.lesson_id, l.course_id 
@@ -133,12 +159,12 @@ export const getNextIncompleteExercise = async (userId, currentExerciseId) => {
      WHERE e.id = ?`,
     [currentExerciseId]
   );
-  
+
   if (currentExercise.length === 0) return null;
-  
+
   const lessonId = currentExercise[0].lesson_id;
   const courseId = currentExercise[0].course_id;
-  
+
   // Find next incomplete exercise in same lesson
   const [nextExercise] = await db.execute(
     `SELECT e.id 
@@ -149,11 +175,11 @@ export const getNextIncompleteExercise = async (userId, currentExerciseId) => {
      LIMIT 1`,
     [userId, lessonId]
   );
-  
+
   if (nextExercise.length > 0) {
     return nextExercise[0].id;
   }
-  
+
   // If all exercises in lesson are completed, find next lesson's first exercise
   const [nextLesson] = await db.execute(
     `SELECT l.id 
@@ -163,22 +189,22 @@ export const getNextIncompleteExercise = async (userId, currentExerciseId) => {
      LIMIT 1`,
     [courseId, lessonId]
   );
-  
+
   if (nextLesson.length > 0) {
     const [firstExercise] = await db.execute(
       `SELECT id FROM exercises WHERE lesson_id = ? ORDER BY id LIMIT 1`,
       [nextLesson[0].id]
     );
-    
+
     if (firstExercise.length > 0) {
       return firstExercise[0].id;
     }
   }
-  
+
   return null; // No more exercises
 };
 
-export const completeCourse = async (userId, lessonId) => {
+/* export const completeCourse = async (userId, lessonId) => {
   try {
 
     // JB: Starts transaction - Which means that EVERY DB commands will start - all or none.  
@@ -219,4 +245,4 @@ export const completeCourse = async (userId, lessonId) => {
     await db.rollback();
     throw err;
   }
-}
+} */
