@@ -1,12 +1,19 @@
 import { getDB } from "../utils/db.js";
 
-// Get all posts with their comments and community names
+
 export const allPosts = async (req, res) => {
   const db = getDB();
 
+  let limit = parseInt(req.query.limit);
+  let offset = parseInt(req.query.offset);
+
+  if (isNaN(limit) || limit <= 0) limit = 10;
+  if (isNaN(offset) || offset < 0) offset = 0;
+
   try {
-    // Fetch posts joined with user and community info
-    const [posts] = await db.execute(`
+    // DO NOT use placeholders for LIMIT and OFFSET here
+    const [posts] = await db.query(
+      `
       SELECT 
         posts.id,
         posts.title,
@@ -19,23 +26,35 @@ export const allPosts = async (req, res) => {
       JOIN users ON posts.user_id = users.id
       LEFT JOIN communities ON posts.community_id = communities.id
       ORDER BY posts.created_at DESC
-    `);
+      LIMIT ${limit} OFFSET ${offset}
+      `
+    );
 
-    // Fetch all comments with commenter username
-    const [comments] = await db.execute(`
-      SELECT 
-        comments.id,
-        comments.content,
-        comments.post_id,
-        comments.user_id,
-        comments.created_at,
-        users.username AS commenter
-      FROM comments
-      JOIN users ON comments.user_id = users.id
-      ORDER BY comments.created_at ASC
-    `);
+    const postIds = posts.map((post) => post.id);
 
-    // Attach comments to each post by filtering on post_id
+    let comments = [];
+    if (postIds.length > 0) {
+      const placeholders = postIds.map(() => '?').join(', ');
+      const [commentRows] = await db.query(
+        `
+        SELECT 
+          comments.id,
+          comments.content,
+          comments.post_id,
+          comments.user_id,
+          comments.created_at,
+          users.username AS commenter
+        FROM comments
+        JOIN users ON comments.user_id = users.id
+        WHERE comments.post_id IN (${placeholders})
+        ORDER BY comments.created_at ASC
+        `,
+        postIds
+      );
+
+      comments = commentRows;
+    }
+
     const postsWithComments = posts.map((post) => {
       post.comments = comments.filter((c) => c.post_id === post.id);
       return post;
@@ -47,6 +66,7 @@ export const allPosts = async (req, res) => {
     res.status(500).json({ error: "Failed to fetch posts with comments" });
   }
 };
+
 
 // Create a new post with title, body, and community_id
 export const createPost = async (req, res) => {
