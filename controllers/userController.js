@@ -35,6 +35,7 @@ export const getUserProgress = async (req, res) => {
       completedExercises: completed[0].count,
       nextExercise: nextExercise[0] || null,
     });
+
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
@@ -77,12 +78,35 @@ export const getUserById = async (req, res) => {
       [userId]
     );
 
+    const badgeConditions = [
+      { count: 1, badge_id: 1 },
+      { count: 5, badge_id: 2 },
+      { count: 10, badge_id: 3 },
+      { count: 20, badge_id: 4 },
+    ];
+
+    const [completedTotal] = await db.execute(
+      `SELECT COUNT(*) AS count FROM user_exercise_progress
+      WHERE user_id = ? AND is_completed = TRUE`,
+      [userId]
+    );
+
+    for (const badge of badgeConditions) {
+      if (completedTotal[0].count >= badge.count) {
+        await db.execute(
+          `INSERT IGNORE INTO user_badges (user_id, badge_id, assigned_at) VALUES (?, ?, NOW())`,
+          [userId, badge.badge_id]
+        );
+      }
+    }
+
     res.json({
       ...user,
       level,
       badgesCount: badges[0].count,
       rank: rank[0].user_rank,
     });
+
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
@@ -122,6 +146,7 @@ export const getCurrentUser = async (req, res) => {
       badgesCount: badges[0].count,
       rank: rank[0].rank,
     });
+
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
