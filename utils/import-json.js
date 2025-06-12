@@ -32,7 +32,7 @@ const importDataJson = async () => {
   }*/
 
   // ===== LESSONS SECOND =====
-  const lessons = await readJsonFile("../data/lessons.json");
+/*   const lessons = await readJsonFile("../data/lessons.json");
   for (const lesson of lessons) {
     await db.execute(
       `INSERT INTO lessons (id, course_id, title, content, example) 
@@ -71,10 +71,10 @@ const importDataJson = async () => {
         exercise.placeholder
       ]
     );
-  }
+  } */
 
     // ===== TEST CASES FOURTH =====
-  const testcases = await readJsonFile("../data/testcases.json");
+/*   const testcases = await readJsonFile("../data/testcases.json");
   for (const testcase of testcases) {
     await db.execute(
       `INSERT INTO testcases 
@@ -105,8 +105,8 @@ const importDataJson = async () => {
     );
   }
 
-
- /* // ===== BADGES FIFTH =====
+ */
+ // ===== BADGES FIFTH =====
   const badges = await readJsonFile("../data/badges.json");
   for (const badge of badges) {
     await db.execute(
@@ -126,7 +126,7 @@ const importDataJson = async () => {
         badge.dependency
       ]
     );
-  } */
+  }
 
   console.log("✅ All data imported successfully!");
   await db.end();

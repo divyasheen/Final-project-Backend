@@ -22,6 +22,13 @@ export const getUserProgress = async (req, res) => {
        LIMIT 1`,
       [req.user.id]
     );
+/* 
+    const [badgesNames] = await db.execute(
+      `SELECT badge_id 
+       FROM user_badges 
+       WHERE id = ?`,
+      [req.user.id]
+    ); */
 
     res.json({
       totalExercises: total[0].count,
@@ -59,7 +66,7 @@ export const getUserById = async (req, res) => {
       `SELECT COUNT(*) as count FROM user_badges WHERE user_id = ?`,
       [userId]
     );
-
+    
     // Get user rank (simplified example - you might need a more complex query)
     const [rank] = await db.execute(
       `SELECT 
@@ -120,10 +127,7 @@ export const getCurrentUser = async (req, res) => {
   }
 };
 
-// JB: Try-and-Error to edit the user
-
 export const editUser = async (req, res) => {
-
   console.log("Request body:", req.body);
 
   // JB: destructure the body
@@ -133,24 +137,21 @@ export const editUser = async (req, res) => {
   try {
     // JB: Say the db what it has to do with the informations from the body if they are longer than 0 (update .. duuuh!)
     if (location && location.trim().length > 0) {
-      await db.execute(
-        `UPDATE users SET location = ? WHERE id = ?`,
-        [location, id]
-      );
+      await db.execute(`UPDATE users SET location = ? WHERE id = ?`, [
+        location,
+        id,
+      ]);
     }
 
     if (social && social.trim().length > 0) {
-      await db.execute(
-        `UPDATE users SET social = ? WHERE id = ?`,
-        [social, id]
-      );
+      await db.execute(`UPDATE users SET social = ? WHERE id = ?`, [
+        social,
+        id,
+      ]);
     }
 
     if (info && info.trim().length > 0) {
-      await db.execute(
-        `UPDATE users SET info = ? WHERE id = ?`,
-        [info, id]
-      );
+      await db.execute(`UPDATE users SET info = ? WHERE id = ?`, [info, id]);
     }
 
     if (!location && !social && !info) {
