@@ -6,9 +6,12 @@ import {
   getSinglePostWithComments,
   deletePost,
   deleteComment,
-  editComment
+  editComment,
 } from "../controllers/postsController.js";
 import { authenticateUser } from "../middlewares/authMiddleware.js";
+
+//JB : import for testing controller
+import { getDB } from "../utils/db.js";
 
 const router = express.Router();
 
@@ -28,4 +31,21 @@ router.patch("/comments/:id", authenticateUser, editComment);
 
 // Delete a comment
 router.delete("/comments/:id", authenticateUser, deleteComment);
+
+// JB: fetch posts by id
+router.get("/userPosts/:id", async (req, res) => {
+  try {
+    const db = getDB();
+    const [posts] = await db.execute(
+      `SELECT * FROM posts WHERE user_id = ? ORDER BY created_at DESC LIMIT 3`,
+      [req.params.id]
+    );
+
+    res.json(posts);
+
+  } catch (error) {
+    console.error("BE - Error at fetching user posts: ", error)
+  }
+});
+
 export default router;

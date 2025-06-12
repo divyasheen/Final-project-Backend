@@ -81,36 +81,36 @@ export const uploadImage = async (req, res) => {
 
 // ------------- USRPICTURE - GETTER ----------------
 export const getImage = async (req, res) => {
-    const db = getDB();
-    const userId = req.params.id;
-  
-    try {
-      const user = await db.execute(
-        "SELECT * FROM user_images WHERE user_id = ?",
-        [userId]
-      );
-  
-      const currentUser = user[0][0]
-  
-      const getObjectParams = {
-        Bucket: bucketName,
-        Key: currentUser.image,
-      };
-  
-      //console.log(currentUser.image);
-  
-      const command = new GetObjectCommand(getObjectParams);
-      const url = await getSignedUrl(s3, command, {expiresIn: 3600});
-      currentUser.image_url = url;
-  
-      res.send(currentUser);
-  
-      if (!user) {
-        return res.status(404).json({ message: "No avatar found for this user" });
-      }
-  
-    } catch (error) {
-      console.error("Error fetching avatar:", error);
-      res.status(500).json({ message: "Failed to fetch avatar" });
+  const db = getDB();
+  const userId = req.params.id;
+
+  try {
+    const user = await db.execute(
+      "SELECT * FROM user_images WHERE user_id = ?",
+      [userId]
+    );
+
+    const currentUser = user[0][0];
+
+    const getObjectParams = {
+      Bucket: bucketName,
+      Key: currentUser.image,
+    };
+
+    //console.log(currentUser.image);
+
+    const command = new GetObjectCommand(getObjectParams);
+    const url = await getSignedUrl(s3, command, { expiresIn: 3600 });
+
+    currentUser.image_url = url;
+
+    res.send(currentUser);
+
+    if (!user) {
+      return res.status(404).json({ message: "No avatar found for this user" });
     }
+  } catch (error) {
+    console.error("Error fetching avatar:", error);
+    res.status(500).json({ message: "Failed to fetch avatar" });
   }
+};
