@@ -22,6 +22,13 @@ export const getUserProgress = async (req, res) => {
        LIMIT 1`,
       [req.user.id]
     );
+/* 
+    const [badgesNames] = await db.execute(
+      `SELECT badge_id 
+       FROM user_badges 
+       WHERE id = ?`,
+      [req.user.id]
+    ); */
 
     res.json({
       totalExercises: total[0].count,
@@ -60,7 +67,7 @@ export const getUserById = async (req, res) => {
       `SELECT COUNT(*) as count FROM user_badges WHERE user_id = ?`,
       [userId]
     );
-
+    
     // Get user rank (simplified example - you might need a more complex query)
     const [rank] = await db.execute(
       `SELECT 
