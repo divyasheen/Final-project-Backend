@@ -192,3 +192,35 @@ export const editUser = async (req, res) => {
     res.status(500).send("Fehler beim Aktualisieren");
   }
 };
+
+export const getBadges = async(req, res) => {
+  const db = getDB(); 
+  const id = req.params.id;
+
+  try {
+    const [userBadges] = await db.execute(
+      `SELECT badge_id 
+       FROM user_badges 
+       WHERE user_id = ?`,
+       [id]
+    );
+
+     const badgeDetails = [];
+
+    for (let badge of userBadges) {
+
+      const [badgeInfo] = await db.execute(
+        `SELECT name, description
+        FROM badges 
+        WHERE id = ?`,
+        [badge.badge_id]
+      )
+          badgeDetails.push(badgeInfo[0]);
+      }
+
+      res.json({badges: badgeDetails});
+
+  } catch (error) {
+    throw err;
+  }
+}

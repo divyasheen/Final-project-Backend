@@ -7,6 +7,7 @@ import {
   deletePost,
   deleteComment,
   editComment,
+  getPostsbyId,
 } from "../controllers/postsController.js";
 import { authenticateUser } from "../middlewares/authMiddleware.js";
 
@@ -33,19 +34,6 @@ router.patch("/comments/:id", authenticateUser, editComment);
 router.delete("/comments/:id", authenticateUser, deleteComment);
 
 // JB: fetch posts by id
-router.get("/userPosts/:id", async (req, res) => {
-  try {
-    const db = getDB();
-    const [posts] = await db.execute(
-      `SELECT * FROM posts WHERE user_id = ? ORDER BY created_at DESC LIMIT 3`,
-      [req.params.id]
-    );
-
-    res.json(posts);
-
-  } catch (error) {
-    console.error("BE - Error at fetching user posts: ", error)
-  }
-});
+router.get("/userPosts/:id", getPostsbyId );
 
 export default router;

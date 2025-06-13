@@ -1,6 +1,5 @@
 import { getDB } from "../utils/db.js";
 
-
 export const allPosts = async (req, res) => {
   const db = getDB();
 
@@ -66,7 +65,6 @@ export const allPosts = async (req, res) => {
     res.status(500).json({ error: "Failed to fetch posts with comments" });
   }
 };
-
 
 // Create a new post with title, body, and community_id
 export const createPost = async (req, res) => {
@@ -139,8 +137,8 @@ export const addCommentToPost = async (req, res) => {
     res.status(500).json({ message: "Error adding comment" });
   }
 };
-//Delete a comment by ID
 
+//Delete a comment by ID
 export const deleteComment = async (req, res) => {
   const db = getDB();
   const commentId = req.params.id;
@@ -168,8 +166,8 @@ export const deleteComment = async (req, res) => {
     res.status(500).json({ message: "Error deleting comment" });
   }
 };
-//Edit comment by ID
 
+//Edit comment by ID
 export const editComment = async (req, res) => {
   const db= getDB();
   const id = req.params.id;
@@ -203,8 +201,6 @@ export const editComment = async (req, res) => {
     res.status(500).json({ message: "Error updating comment" });
   }
 }
-
-
 
 // Get a single post by ID along with its comments and community name
 export const getSinglePostWithComments = async (req, res) => {
@@ -244,8 +240,8 @@ export const getSinglePostWithComments = async (req, res) => {
     res.status(500).json({ message: "Error retrieving post" });
   }
 };
-//Delete a post by ID
 
+//Delete a post by ID
 export const deletePost = async (req, res) => {
   const db = getDB();
   const postId = req.params.id;
@@ -278,3 +274,19 @@ export const deletePost = async (req, res) => {
     res.status(500).json({ message: "Error deleting post" });
   }
 };
+
+// JB: Get posts by Id and limit the latest to 3
+export const getPostsbyId = async (req, res) => {
+  try {
+    const db = getDB();
+    const [posts] = await db.execute(
+      `SELECT * FROM posts WHERE user_id = ? ORDER BY created_at DESC LIMIT 3`,
+      [req.params.id]
+    );
+
+    res.json(posts);
+
+  } catch (error) {
+    console.error("BE - Error at fetching user posts: ", error)
+  }
+}
