@@ -33,7 +33,7 @@ const importDataJson = async () => {
   }*/
 
   // ===== LESSONS SECOND =====
-  const lessons = await readJsonFile("../data/lessons.json");
+/*   const lessons = await readJsonFile("../data/lessons.json");
   for (const lesson of lessons) {
     await db.execute(
       `INSERT INTO lessons (id, course_id, title, content, example) 
@@ -80,7 +80,7 @@ const importDataJson = async () => {
         safe(exercise.placeholder),
       ]
     );
-  }
+  } */
 
   // ===== TEST CASES FOURTH =====
   const testcases = await readJsonFile("../data/testcases.json");

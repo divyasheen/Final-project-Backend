@@ -22,12 +22,20 @@ export const getUserProgress = async (req, res) => {
        LIMIT 1`,
       [req.user.id]
     );
+/* 
+    const [badgesNames] = await db.execute(
+      `SELECT badge_id 
+       FROM user_badges 
+       WHERE id = ?`,
+      [req.user.id]
+    ); */
 
     res.json({
       totalExercises: total[0].count,
       completedExercises: completed[0].count,
       nextExercise: nextExercise[0] || null,
     });
+
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
@@ -59,7 +67,7 @@ export const getUserById = async (req, res) => {
       `SELECT COUNT(*) as count FROM user_badges WHERE user_id = ?`,
       [userId]
     );
-
+    
     // Get user rank (simplified example - you might need a more complex query)
     const [rank] = await db.execute(
       `SELECT 
@@ -70,12 +78,35 @@ export const getUserById = async (req, res) => {
       [userId]
     );
 
+    const badgeConditions = [
+      { count: 1, badge_id: 1 },
+      { count: 5, badge_id: 2 },
+      { count: 10, badge_id: 3 },
+      { count: 20, badge_id: 4 },
+    ];
+
+    const [completedTotal] = await db.execute(
+      `SELECT COUNT(*) AS count FROM user_exercise_progress
+      WHERE user_id = ? AND is_completed = TRUE`,
+      [userId]
+    );
+
+    for (const badge of badgeConditions) {
+      if (completedTotal[0].count >= badge.count) {
+        await db.execute(
+          `INSERT IGNORE INTO user_badges (user_id, badge_id, assigned_at) VALUES (?, ?, NOW())`,
+          [userId, badge.badge_id]
+        );
+      }
+    }
+
     res.json({
       ...user,
       level,
       badgesCount: badges[0].count,
       rank: rank[0].user_rank,
     });
+
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
@@ -115,15 +146,13 @@ export const getCurrentUser = async (req, res) => {
       badgesCount: badges[0].count,
       rank: rank[0].rank,
     });
+
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 };
 
-// JB: Try-and-Error to edit the user
-
 export const editUser = async (req, res) => {
-
   console.log("Request body:", req.body);
 
   // JB: destructure the body
@@ -133,24 +162,21 @@ export const editUser = async (req, res) => {
   try {
     // JB: Say the db what it has to do with the informations from the body if they are longer than 0 (update .. duuuh!)
     if (location && location.trim().length > 0) {
-      await db.execute(
-        `UPDATE users SET location = ? WHERE id = ?`,
-        [location, id]
-      );
+      await db.execute(`UPDATE users SET location = ? WHERE id = ?`, [
+        location,
+        id,
+      ]);
     }
 
     if (social && social.trim().length > 0) {
-      await db.execute(
-        `UPDATE users SET social = ? WHERE id = ?`,
-        [social, id]
-      );
+      await db.execute(`UPDATE users SET social = ? WHERE id = ?`, [
+        social,
+        id,
+      ]);
     }
 
     if (info && info.trim().length > 0) {
-      await db.execute(
-        `UPDATE users SET info = ? WHERE id = ?`,
-        [info, id]
-      );
+      await db.execute(`UPDATE users SET info = ? WHERE id = ?`, [info, id]);
     }
 
     if (!location && !social && !info) {
