@@ -93,11 +93,7 @@
     "id": 10,
     "lesson_id": 10,
     "title": "Selectors",
-    "description": "1. Use a tag selector to make all <p> elements have the font Arial and a font size of 16px. \n \n 2. Use a class selector to style all elements with the class info: \n - Text color: blue \n - Background color: #e0f0ff \n\n 3. Use an ID selector to style the element with the ID important: \n - Text color: white \n - Background color: red \n - Font weight: bold",
-    "xp_reward": 10,
-    "difficulty": "Easy",
-    "example": "h1 { \n    font-size: 2rem; \n}; \n\n.item { \n    color: blue; \n}; \n\n#wrapper { \n    border-color: red; \n};",
-    "placeholder": "<!DOCTYPE html> \n<head> \n  <title>CSS Practice</title> \n  <style> \n    /* Write your code here */ \n  </style> \n</head> \n<body> \n  <h1>Welcome to the Exercise</h1> \n  <p class='info'>This is an informational paragraph.</p> \n  <p class='info'>This is another informational paragraph.</p> \n  <p id='important'>This is a very important paragraph!</p> \n</body> \n</html>"
+    "description": "1. Use a tag selector to make all <p> elements have the font Arial and a font size of 16px. \n \n 2. Use a class selector to style all elements with the class info: \n - Text color: blue \n - Background color: #e0f0ff \n\n 3. Use an ID selector to style the element with the ID important: \n - Text color: white \n - Background color: js-28-line3ur code here */ \n  </style> \n</head> \n<body> \n  <h1>Welcome to the Exercise</h1> \n  <p class='info'>This is an informational paragraph.</p> \n  <p class='info'>This is another informational paragraph.</p> \n  <p id='important'>This is a very important paragraph!</p> \n</body> \n</html>"
   },
   {
     "id": 11,
@@ -161,122 +157,122 @@
   },
   {
     "id": 17,
+    "title": "Hello World",
     "lesson_id": 17,
-    "title": "JavaScript basics",
-    "description": "Type the following in the editor and press 'Run': \n\n  console.log('Hello, CodeRealm!')",
-    "xp_reward": 10,
-    "difficulty": "EASY",
-    "example": "",
-    "placeholder": ""
+    "type": "javascript",
+    "difficulty": "easy",
+    "description": "Print the message 'Hello, CodeRealm!' to the console.",
+    "placeholder": "console.log('Hello, CodeRealm!');",
+    "example": "console.log('Hello, CodeRealm!');"
   },
   {
     "id": 18,
+    "title": "Variables",
     "lesson_id": 18,
-    "title": "Variables and values",
-    "description": "1. Create a string variable to store your favorite city. Use console.log() to log it. \n 2. Create two number variables: one for your age and one for your height in cm. Use console.log() to log it.  \n 3. Create a boolean variable to say whether you like chocolate. Use console.log() to log it.",
-    "xp_reward": 10,
-    "difficulty": "EASY",
-    "example": "let favoriteColor = 'blue'; \nconsole.log(favoriteColor);\n\nlet day = 25; \nlet hour = 170; \nconsole.log(day, hour); \n\nlet likesBlue = true; \nconsole.log(likesBlue);",
-    "placeholder": ""
+    "type": "javascript",
+    "difficulty": "easy",
+    "description": "Declare and log your favorite city, age and height, and a boolean about your preference.",
+    "placeholder": "let favoriteCity = 'Berlin';\nconsole.log(favoriteCity);\n\nlet age = 25;\nlet height = 180;\nconsole.log(age, height);\n\nlet likesChocolate = true;\nconsole.log(likesChocolate);",
+    "example": "let favoriteCity = 'Berlin';\nconsole.log(favoriteCity);\n\nlet age = 25;\nlet height = 180;\nconsole.log(age, height);\n\nlet likesChocolate = true;\nconsole.log(likesChocolate);"
   },
   {
     "id": 19,
+    "title": "Math Operators",
     "lesson_id": 19,
-    "title": "Operators",
-    "description": "Console.log() each solution of: \n\n 5+5 \n 20-4 \n 3*7 \n 8/2 \n 10%2 \n 2**3 ",
-    "xp_reward": 10,
-    "difficulty": "EASY",
-    "example": "console.log(10+30) \n\nconsole.log(60*3)",
-    "placeholder": ""
+    "type": "javascript",
+    "difficulty": "easy",
+    "description": "Use basic math operators and log each result to the console.",
+    "placeholder": "console.log(5 + 5);\nconsole.log(20 - 4);\nconsole.log(3 * 7);\nconsole.log(8 / 2);\nconsole.log(10 % 2);\nconsole.log(2 ** 3);",
+    "example": "console.log(5 + 5);\nconsole.log(20 - 4);\nconsole.log(3 * 7);\nconsole.log(8 / 2);\nconsole.log(10 % 2);\nconsole.log(2 ** 3);"
   },
   {
     "id": 20,
-    "lesson_id": 20,
     "title": "Conditions",
-    "description": "Create a programm that checks the temperature and gives a message.",
-    "xp_reward": 10,
-    "difficulty": "EASY",
-    "example": "let age = 15 \n\nif (age < 18) {\n console.log('You are a kid!') \n} else if (age = 18) { \n console.log('You are an adult now!) \n} else { \n console.log('You are an adult!') \n} \n\n// -> You are a kid!",
-    "placeholder": ""
+    "lesson_id": 20,
+    "type": "javascript",
+    "difficulty": "easy",
+    "description": "Decide what message to show based on a temperature variable.\n\n1. A variable called `temperature` will be provided.\n2. Use `if`, `else if`, and `else` to assign a message to a variable called `message`.\n3. The program should log the final `message` to the console.\n\nMessages:\n- \"It's cold!\" (if temperature < 10)\n- \"It's moderate!\" (if temperature is between 10 and 19)\n- \"It's hot!\" (if temperature is 20 or above)\n\nNote: Do not declare `temperature` yourself — it will be set automatically during testing.",
+    "placeholder": "let message;\n\nif (/* condition */) {\n  message = \"\";\n} else if (/* condition */) {\n  message = \"\";\n} else {\n  message = \"\";\n}\n\nconsole.log(message);",
+    "example": "let temperature = 15;\nlet message;\n\nif (temperature < 10) {\n  message = \"It's cold!\";\n} else if (temperature < 20) {\n  message = \"It's moderate!\";\n} else {\n  message = \"It's hot!\";\n}\n\nconsole.log(message);"
   },
   {
     "id": 21,
-    "lesson_id": 21,
     "title": "Arrays",
-    "description": "You are building a simple to-do list app. \n 1. Create an array called tasks with the following items: 'Do homework', 'Wash dishes', and 'Buy groceries'. \n 2. Print out the first task in the list using its index. \n 3. You realize that instead of 'Wash dishes', you meant to write 'Clean the kitchen'. Log the new list. \n 4. Change that task in the array.  \n 5. Print the number of tasks you have now using the length property.",
-    "xp_reward": 10,
-    "difficulty": "EASY",
-    "example": "let food = ['taccos', 'soup', 'sandwiches'] \n\nconsole.log(food[1]) \n\nfood[2] = 'pasta' \nconsole.log(food); \n\nconsole.log(food.length);",
-    "placeholder": ""
+    "lesson_id": 21,
+    "type": "javascript",
+    "difficulty": "easy",
+    "description": "Access, update, and count items in an array.",
+    "placeholder": "let tasks = ['Do homework', 'Wash dishes', 'Buy groceries'];\n\n// Log the first task here\n\n// Replace the second task with 'Clean the kitchen'\n\n// Log the updated tasks array\n\n// Log the number of tasks",
+    "example": "let tasks = ['Do homework', 'Wash dishes', 'Buy groceries'];\nconsole.log(tasks[0]);\n\ntasks[1] = 'Clean the kitchen';\nconsole.log(tasks);\nconsole.log(tasks.length);"
   },
   {
     "id": 22,
-    "lesson_id": 22,
     "title": "Objects",
-    "description": "You are writing code for a coffee shop system. \n 1. Create an object called coffeeOrder with the following properties: \n <code>customerName: 'Emma' \ndrink: 'Latte' \nsize: 'Medium'</code> \n 2. Print out the customer's name and drink using dot notation. \n 3. The customer changes their mind and wants a 'Large' instead of a 'Medium' drink. \n 4. Update the size property. \n 5. Add a new property called extraShot and set it to true. \n 6. Print the full updated order like this: 'Emma ordered a Large Latte with an extra shot: true'",
-    "xp_reward": 10,
-    "difficulty": "EASY",
-    "example": "let book = { \n    title: 'The book', \n    author: 'Stephanie Queen', \n    prize: 200 \n} \n\nconsole.log(book.author) \n\nbook.title = 'The best book' \nconsole.log(book.title); \n\nbook.isbn = 123456789 \n\nconsole.log(book.title + ' is written by ' + book.author + ' and costs ' + book.prize + ' €.');",
-    "placeholder": ""
+    "lesson_id": 22,
+    "type": "javascript",
+    "difficulty": "easy",
+    "description": "Access and modify properties of an object, and log a message using its values.",
+    "placeholder": "let coffeeOrder = {\n  customerName: 'Emma',\n  drink: 'Latte',\n  size: 'Medium'\n};\n\n// Log the customer's name\n// Log the drink name\n// Change the size to 'Large'\n// Add an 'extraShot' property set to true\n// Log a sentence about the order",
+    "example": "let coffeeOrder = {\n  customerName: 'Emma',\n  drink: 'Latte',\n  size: 'Medium'\n};\nconsole.log(coffeeOrder.customerName);\nconsole.log(coffeeOrder.drink);\ncoffeeOrder.size = 'Large';\ncoffeeOrder.extraShot = true;\nconsole.log(`${coffeeOrder.customerName} ordered a ${coffeeOrder.size} ${coffeeOrder.drink} with an extra shot: ${coffeeOrder.extraShot}`);"
   },
   {
     "id": 23,
+    "title": "Logical Operators",
     "lesson_id": 23,
-    "title": "Loops 1",
-    "description": "Write a JavaScript program that does the following: \n\n 1. Declare a variable with a number between 1 and 10. \n 2. If your number is between 1 and 10, log a message saying ' Number is inside of range!' \n 3. If the number is less than 1 or greater than 10, print a message saying 'Number is out of range.'",
-    "xp_reward": 10,
-    "difficulty": "EASY",
-    "example": "let name = 'Otto'; \n\nif (name === 'Anna') { \n    console.log('Hello Anna'); \n} else if (name === 'Jack') { \n    console.log('Hello Jack') \n} else { \n    console.log('Hello stranger'); \n} \n\n// -> Hello stranger",
-    "placeholder": ""
+    "type": "javascript",
+    "difficulty": "easy",
+    "description": "Use logical operators to check if a number is between 1 and 10.",
+    "placeholder": "let number = 7;\n\n// Use logical operators to check if number is between 1 and 10 (inclusive)\n// Log 'Number is inside of range!' or 'Number is out of range.'",
+    "example": "let number = 7;\n\nif (number >= 1 && number <= 10) {\n  console.log('Number is inside of range!');\n} else {\n  console.log('Number is out of range.');\n}"
   },
   {
     "id": 24,
+    "title": "For...in / For...of",
     "lesson_id": 24,
-    "title": "Loops 2",
-    "description": "Imagine you’re working on a simple online store. \n 1. You have an object called inventory that stores the quantity of products in stock. \n\n let inventory = { \n   apples: 10, \n   bananas: 5, \n   oranges: 8 \n}; \n\n 2. You also have a shopping cart, represented by an array. \n\n let cart = ['bananas', 'oranges']; \n\n Task: \n- Use a for-in loop to print out each product in the inventory and its quantity. \n - Then use a for-of loop to go through the shopping cart, and for each item print a message like 'You added bananas to your cart.'",
-    "xp_reward": 10,
-    "difficulty": "EASY",
-    "example": "// ----- for-in-loop ----- \nconst person = { \n  name: 'Alice', \n  age: 30, \n  city: 'Berlin' \n}; \n\nfor (let key in person) { \n  console.log(key + ': ' + person[key]); \n} \n\n// -> name: Alice \n// -> age: 30 \n// -> city: Berlin \n\n// ---- for-of-loop ---- \nconst colors = ['red', 'green', 'blue']; \n\nfor (let color of colors) { \n  console.log(color); \n} \n\n// -> red // -> green // -> blue",
-    "placeholder": "let inventory = { \n  apples: 10, \n  bananas: 5, \n  oranges: 8 \n}; \n\nlet cart = ['bananas', 'oranges'];"
+    "type": "javascript",
+    "difficulty": "easy",
+    "description": "Loop through an object and an array to log details.",
+    "placeholder": "let inventory = { apples: 10, bananas: 5, oranges: 8 };\nlet cart = ['bananas', 'oranges'];\n\n// Loop through the inventory using for...in\n// Log each item and quantity\n\n// Loop through the cart using for...of\n// Log what the user added to their cart",
+    "example": "let inventory = { apples: 10, bananas: 5, oranges: 8 };\nlet cart = ['bananas', 'oranges'];\n\nfor (let item in inventory) {\n  console.log(item + ': ' + inventory[item]);\n}\n\nfor (let product of cart) {\n  console.log('You added ' + product + ' to your cart.');\n}"
   },
   {
     "id": 25,
+    "title": "Functions (Intro)",
     "lesson_id": 25,
-    "title": "Functions 1",
-    "description": "Write a function called personalGreeting that takes two parameters: \n - <code>name</code> – a string representing the person's name \n - <code>timeOfDay</code> – a string like 'morning', 'afternoon', or 'evening' \n\n The function should return a sentence like: \n\n <code>'Good morning, Sarah!'</code> \n\n <strong>Requirements:</strong> \n\n - The function must return a string – not just log it to the console. \n - You should call the function at least twice with different arguments and log the returned result to the console.",
-    "xp_reward": 10,
-    "difficulty": "EASY",
-    "example": "const wear = function(color, clothes) { \n    return 'This is a ' + color + ' ' + clothes \n} \n\nconsole.log(wear('blue', 'shirt')); \n// -> This is a blue shirt",
-    "placeholder": ""
+    "type": "javascript",
+    "difficulty": "easy",
+    "description": "Create a function that returns a personalized greeting.",
+    "placeholder": "// Write a function called personalGreeting that takes a name and timeOfDay\n// It should return a string like 'Good morning, Sarah!'\n\n// Call your function with at least two different sets of arguments",
+    "example": "function personalGreeting(name, timeOfDay) {\n  return `Good ${timeOfDay}, ${name}!`;\n}\n\nconsole.log(personalGreeting('Sarah', 'morning'));\nconsole.log(personalGreeting('Tom', 'evening'));"
   },
   {
     "id": 26,
+    "title": "Scope",
     "lesson_id": 26,
-    "title": "Functions 2",
-    "description": "Create an arrow function called doubleAndLog that takes one number as a parameter. \n Inside the function: \n - Declare a variable called doubled that holds the number multiplied by 2. \n - Log the value of doubled to the console. \n - Return the value of doubled. \n\n Then, try to log the variable doubled outside the function and observe what happens. \n\n Requirements: \n - Use an arrow function with a code block ({} and return). \n - Call the function with any number and print the result.",
-    "xp_reward": 10,
-    "difficulty": "EASY",
-    "example": "const add5 = num => { \n    const sum = num + 5; \n    console.log('sum: ', sum); \n    return sum; \n} \n\nadd5(6) // -> 11 \n\nconsole.log(sum); // -> Error",
-    "placeholder": ""
+    "type": "javascript",
+    "difficulty": "easy",
+    "description": "Demonstrate scope by declaring a variable inside a function and logging it.",
+    "placeholder": "// Define a function that doubles a number and logs it\n// Inside the function, declare a local variable called doubled\n\n// Call the function\n",
+    "example": "const doubleAndLog = (number) => {\n  const doubled = number * 2;\n  console.log(doubled);\n  return doubled;\n};\n\ndoubleAndLog(4);\n\n"
   },
   {
     "id": 27,
-    "lesson_id": 27,
     "title": "Classes",
-    "description": "Write a class named Book that represents a book in a library system. \n Each book should have the following properties: \n - title (string) \n - author (string) \n - year< (number) \n - Add one method to the class: \n getSummary() – This method should return a string like: 'The book '1984' was written by George Orwell in 1949.'< \n\n Requirements: \n - Use the class keyword to define the class. \n - Use a constructor() to initialize the properties. \n - Define the method getSummary() inside the class. \n - Create two instances of the Book class with different data. \n - Call getSummary() on both instances and log the result to the console.",
-    "xp_reward": 10,
-    "difficulty": "EASY",
-    "example": "class Animal { \n    constructor(name, breed) { \n      this.name = name; \n      this.breed = breed \n    } \n\n    information() { \n      return this.name + ' is a ' + this.breed; \n    } \n  } \n\n  const dog1 = new Animal('Emma', 'poodle') \n\n  console.log(dog1.information()); // -> Emma is a poodle",
-    "placeholder": ""
+    "lesson_id": 27,
+    "type": "javascript",
+    "difficulty": "easy",
+    "description": "Create a class `Book` and a method that returns a summary string.",
+    "placeholder": "// Create a class called Book with title, author, and year in the constructor\n// Add a method called getSummary that returns a summary string\n\n// Create an instance of Book and log the result of getSummary",
+    "example": "class Book {\n  constructor(title, author, year) {\n    this.title = title;\n    this.author = author;\n    this.year = year;\n  }\n\n  getSummary() {\n    return `The book '${this.title}' was written by ${this.author} in ${this.year}.`;\n  }\n}\n\nconst b1 = new Book('1984', 'George Orwell', 1949);\nconsole.log(b1.getSummary());"
   },
   {
     "id": 28,
+    "title": "Classes + Loops",
     "lesson_id": 28,
-    "title": "JavaScript: FINAL",
-    "description": "",
-    "xp_reward": 25,
-    "difficulty": "Medium",
-    "example": "You are given the task of creating a program to manage a list of students and their grades. Your program should: \n\n 1. Create a Student class with the following properties: \n - name (string) \n - grades (array of numbers) \n - A method getAverage() that returns the average of the student's grades. \n\n 2.   Create a function createStudent(name, grades) that returns a new Student object. \n\n 3. Store multiple students in an array called students. \n\n 4. Loop through the students array and: \n - Print each student's name and average grade. \n\n - Use a condition to label students: \n - 'Excellent' if average ≥ 90 \n - 'Good' if average ≥ 75 \n - 'Needs Improvement' if average < 75 \n\n 5. Create a function getTopStudent(students) that returns the student object with the highest average. \n 6. Use operators appropriately (e.g., arithmetic for averages, comparison for conditions).",
-    "placeholder": ""
+    "type": "javascript",
+    "difficulty": "easy",
+    "description": "Create a class Student and show average scores and top student.",
+    "placeholder": "// Define a class called Student with name and grades\n// Add a method getAverage that returns the average grade\n\n// Create two students and store them in an array\n// Loop over the students, log each average, and find the top student",
+    "example": "class Student {\n  constructor(name, grades) {\n    this.name = name;\n    this.grades = grades;\n  }\n\n  getAverage() {\n    return this.grades.reduce((a, b) => a + b) / this.grades.length;\n  }\n}\n\nfunction createStudent(name, grades) {\n  return new Student(name, grades);\n}\n\nconst students = [\n  createStudent('Alice', [90, 85, 95]),\n  createStudent('Bob', [70, 60, 65])\n];\n\nfor (let s of students) {\n  const avg = s.getAverage();\n  console.log(`${s.name} average: ${avg}`);\n  if (avg >= 90) console.log('Excellent');\n  else if (avg >= 75) console.log('Good');\n  else console.log('Needs Improvement');\n}\n\nfunction getTopStudent(students) {\n  return students.reduce((top, current) => current.getAverage() > top.getAverage() ? current : top);\n}\n\nconsole.log('Top student: ' + getTopStudent(students).name);"
   }
 ]
