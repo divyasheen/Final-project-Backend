@@ -93,11 +93,7 @@
     "id": 10,
     "lesson_id": 10,
     "title": "Selectors",
-    "description": "1. Use a tag selector to make all <p> elements have the font Arial and a font size of 16px. \n \n 2. Use a class selector to style all elements with the class info: \n - Text color: blue \n - Background color: #e0f0ff \n\n 3. Use an ID selector to style the element with the ID important: \n - Text color: white \n - Background color: red \n - Font weight: bold",
-    "xp_reward": 10,
-    "difficulty": "Easy",
-    "example": "h1 { \n    font-size: 2rem; \n}; \n\n.item { \n    color: blue; \n}; \n\n#wrapper { \n    border-color: red; \n};",
-    "placeholder": "<!DOCTYPE html> \n<head> \n  <title>CSS Practice</title> \n  <style> \n    /* Write your code here */ \n  </style> \n</head> \n<body> \n  <h1>Welcome to the Exercise</h1> \n  <p class='info'>This is an informational paragraph.</p> \n  <p class='info'>This is another informational paragraph.</p> \n  <p id='important'>This is a very important paragraph!</p> \n</body> \n</html>"
+    "description": "1. Use a tag selector to make all <p> elements have the font Arial and a font size of 16px. \n \n 2. Use a class selector to style all elements with the class info: \n - Text color: blue \n - Background color: #e0f0ff \n\n 3. Use an ID selector to style the element with the ID important: \n - Text color: white \n - Background color: js-28-line3ur code here */ \n  </style> \n</head> \n<body> \n  <h1>Welcome to the Exercise</h1> \n  <p class='info'>This is an informational paragraph.</p> \n  <p class='info'>This is another informational paragraph.</p> \n  <p id='important'>This is a very important paragraph!</p> \n</body> \n</html>"
   },
   {
     "id": 11,
@@ -255,9 +251,9 @@
     "lesson_id": 26,
     "type": "javascript",
     "difficulty": "easy",
-    "description": "Demonstrate scope by declaring a variable inside a function and logging both inside and outside.",
-    "placeholder": "// Define a function that doubles a number and logs it\n// Inside the function, declare a local variable called doubled\n\n// Call the function\n// Try to log 'doubled' outside the function \u2014 what happens?",
-    "example": "const doubleAndLog = (number) => {\n  const doubled = number * 2;\n  console.log(doubled);\n  return doubled;\n};\n\ndoubleAndLog(4);\n\nconsole.log(doubled); // should throw ReferenceError"
+    "description": "Demonstrate scope by declaring a variable inside a function and logging it.",
+    "placeholder": "// Define a function that doubles a number and logs it\n// Inside the function, declare a local variable called doubled\n\n// Call the function\n",
+    "example": "const doubleAndLog = (number) => {\n  const doubled = number * 2;\n  console.log(doubled);\n  return doubled;\n};\n\ndoubleAndLog(4);\n\n"
   },
   {
     "id": 27,
