@@ -6,6 +6,7 @@ import {
   getExerciseById,
   trackExerciseCompletion,
   getNextIncompleteExercise,
+  getNextLesson,
   getUserExerciseProgress,
   //completeCourse,
 } from "../controllers/courseController.js";
@@ -67,12 +68,19 @@ router.get("/exercises/:exerciseId", async (req, res, next) => {
     next(error);
   }
 });
-
 router.post("/exercises/:id/complete", authenticateUser, async (req, res) => {
   try {
+    if (!req.user?.id) {
+      return res.status(401).json({ error: "User not authenticated" });
+    }
+    if (!req.params.id) {
+      return res.status(400).json({ error: "Exercise ID is required" });
+    }
+
     await trackExerciseCompletion(req.user.id, req.params.id);
     res.json({ success: true });
   } catch (err) {
+    console.error("Error in completion endpoint:", err);
     res.status(500).json({ error: err.message });
   }
 });
@@ -84,6 +92,15 @@ router.get("/exercises/:id/next", authenticateUser, async (req, res) => {
       req.params.id
     );
     res.json({ nextExerciseId });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+router.get("/lessons/:id/next", authenticateUser, async (req, res) => {
+  try {
+    const nextLesson = await getNextLesson(req.user.id, req.params.id);
+    res.json({ nextLessonId: nextLesson });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
