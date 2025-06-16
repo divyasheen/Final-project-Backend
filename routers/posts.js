@@ -8,6 +8,7 @@ import {
   deleteComment,
   editComment,
   getPostsbyId,
+  communityPosts
 } from "../controllers/postsController.js";
 import { authenticateUser } from "../middlewares/authMiddleware.js";
 
@@ -18,6 +19,9 @@ const router = express.Router();
 
 //Get all Posts with comments
 router.get("/", allPosts);
+//Get all Posts with comments for one community
+router.get("/communities/:communityId", communityPosts); // for posts in a specific community
+
 //Get Posts with comments for one user or one post
 router.get("/:id", getSinglePostWithComments);
 //Delete a Post by id
