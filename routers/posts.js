@@ -11,9 +11,6 @@ import {
 } from "../controllers/postsController.js";
 import { authenticateUser } from "../middlewares/authMiddleware.js";
 
-//JB : import for testing controller
-import { getDB } from "../utils/db.js";
-
 const router = express.Router();
 
 //Get all Posts with comments
