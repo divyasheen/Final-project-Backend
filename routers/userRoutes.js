@@ -5,6 +5,7 @@ import {
   getUserById,
   getCurrentUser,
   editUser,
+  getBadges,
 } from "../controllers/userController.js";
 import { getImage, uploadImage } from "../controllers/uploadController.js";
 import multer from "multer";
@@ -34,37 +35,7 @@ router.post("/:id/upload", upload.single("image"), uploadImage);
 // JB: get avatar
 router.get("/:id/getProfilPic", getImage);
 
-router.get("/:id/getBadges", async(req, res) => {
-
-  const db = getDB(); 
-  const id = req.params.id;
-
-  try {
-    const [userBadges] = await db.execute(
-      `SELECT badge_id 
-       FROM user_badges 
-       WHERE user_id = ?`,
-       [id]
-    );
-
-     const badgeDetails = [];
-
-    for (let badge of userBadges) {
-
-      const [badgeInfo] = await db.execute(
-        `SELECT name, description
-        FROM badges 
-        WHERE id = ?`,
-        [badge.badge_id]
-      )
-          badgeDetails.push(badgeInfo[0]);
-      }
-
-      res.json({badges: badgeDetails});
-
-  } catch (error) {
-    throw err;
-  }
-})
+// JB: get the badges of an user
+router.get("/:id/getBadges", getBadges)
 
 export default router;

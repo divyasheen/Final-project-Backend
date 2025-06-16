@@ -6,11 +6,6 @@ import {verifyEmailTemplate, verifyUserByEmail, passwordResetTemplate } from "..
 
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
-
-
-
-
-
 // Register a new user and send a verification email
 export const registerUser = async (req, res) => {
   const { username, email, password, role = "student" } = req.body;
@@ -44,7 +39,6 @@ export const registerUser = async (req, res) => {
       { expiresIn: "1h" }
     );
 
-
     // Send verification email
     const html = verifyEmailTemplate(username, verifyToken);
     await verifyUserByEmail(normalizedEmail, "Verify your account", html);
@@ -53,17 +47,12 @@ export const registerUser = async (req, res) => {
       message: "User registered. Please check your email to verify your account.",
     
     });
+
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal server error" });
   }
 };
-
-
-
-
-
-
 
 // Email verification endpoint using token from URL params
 export const verifyUser = async (req, res) => {
@@ -80,24 +69,12 @@ export const verifyUser = async (req, res) => {
     await db.execute(`UPDATE users SET verified = 1 WHERE id = ?`, [decoded.id]);
 
     return res.redirect("http://localhost:5173/verification-success"); // Redirect on successful verification
+
   } catch (error) {
     console.error("Verification error:", error);
     res.redirect("http://localhost:5173/verification-error"); // Redirect on error
   }
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Login a user with email & password
 export const loginUser = async (req, res) => {
@@ -129,20 +106,12 @@ export const loginUser = async (req, res) => {
     });
 
     res.status(200).json({ message: "Login successful", token, id: user.id });
+
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal server error" });
   }
 };
-
-
-
-
-
-
-
-
-
 
 // Log out user (placeholder, no token blacklisting here)
 export const logoutUser = (req, res) => {
@@ -242,6 +211,7 @@ export const googleLogin = async (req, res) => {
     });
 
     res.status(200).json(response);
+
   } catch (error) {
     console.error("Google login error details:", {
       message: error.message,
@@ -254,8 +224,6 @@ export const googleLogin = async (req, res) => {
     });
   }
 };
-
-
 
 export const refreshToken = async (req, res) => {
   try {
@@ -311,6 +279,7 @@ export const refreshToken = async (req, res) => {
         details: verifyError.message
       });
     }
+
   } catch (error) {
     console.error("Refresh token error:", error);
     return res.status(500).json({ 
@@ -319,14 +288,6 @@ export const refreshToken = async (req, res) => {
     });
   }
 };
-
-
-
-
-
-
-
-
 
 // Send password reset link to user's email
 export const forgotPassword = async (req, res) => {
@@ -353,18 +314,12 @@ export const forgotPassword = async (req, res) => {
     } else {
       res.status(500).json({ error: "Email could not be sent" });
     }
+
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Server error" });
   }
 };
-
-
-
-
-
-
-
 
 // Handle password reset with a new password and token
 export const resetPassword = async (req, res) => {
@@ -382,18 +337,14 @@ export const resetPassword = async (req, res) => {
     await db.execute(`UPDATE users SET password_hash = ? WHERE id = ?`, [hashedPassword, decoded.id]);
 
     res.status(200).json({ message: "Password updated successfully" });
+
   } catch (error) {
     console.error("Reset error:", error);
     res.status(400).json({ error: "Invalid or expired token" });
   }
 };
 
-
-
 //Send the user a Verification  button to his/her email
-
-
-
 export const resendVerification = async (req, res) => {
   const { email } = req.body;
   const db = getDB();
@@ -423,6 +374,7 @@ export const resendVerification = async (req, res) => {
     await verifyUserByEmail(normalizedEmail, "Verify your account", html);
 
     res.status(200).json({ message: "Verification email resent" });
+
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Server error" });
