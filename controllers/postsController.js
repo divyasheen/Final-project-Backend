@@ -1,6 +1,6 @@
 import { getDB } from "../utils/db.js";
 
-
+//Getting all posts with pagination and comments
 export const allPosts = async (req, res) => {
   const db = getDB();
 
@@ -34,7 +34,7 @@ export const allPosts = async (req, res) => {
 
     let comments = [];
     if (postIds.length > 0) {
-      const placeholders = postIds.map(() => '?').join(', ');
+      const placeholders = postIds.map(() => "?").join(", ");
       const [commentRows] = await db.query(
         `
         SELECT 
@@ -67,6 +67,74 @@ export const allPosts = async (req, res) => {
   }
 };
 
+// Get all posts in a specific community with pagination and comments
+export const communityPosts = async (req, res) => {
+  const db = getDB();
+  const { communityId } = req.params;
+
+  let limit = parseInt(req.query.limit);
+  let offset = parseInt(req.query.offset);
+
+  if (isNaN(limit) || limit <= 0) limit = 10;
+  if (isNaN(offset) || offset < 0) offset = 0;
+
+  try {
+    const [posts] = await db.query(
+      `
+      SELECT 
+        posts.id,
+        posts.title,
+        posts.body,
+        posts.created_at,
+        posts.user_id,  
+        users.username AS author,
+        communities.name AS community
+      FROM posts
+      JOIN users ON posts.user_id = users.id
+      JOIN communities ON posts.community_id = communities.id
+      WHERE posts.community_id = ?
+      ORDER BY posts.created_at DESC
+      LIMIT ${limit} OFFSET ${offset}
+      `,
+      [communityId]
+    );
+
+    const postIds = posts.map((post) => post.id);
+
+    let comments = [];
+    if (postIds.length > 0) {
+      const placeholders = postIds.map(() => "?").join(", ");
+      const [commentRows] = await db.query(
+        `
+        SELECT 
+          comments.id,
+          comments.content,
+          comments.post_id,
+          comments.user_id,
+          comments.created_at,
+          users.username AS commenter
+        FROM comments
+        JOIN users ON comments.user_id = users.id
+        WHERE comments.post_id IN (${placeholders})
+        ORDER BY comments.created_at ASC
+        `,
+        postIds
+      );
+
+      comments = commentRows;
+    }
+
+    const postsWithComments = posts.map((post) => {
+      post.comments = comments.filter((c) => c.post_id === post.id);
+      return post;
+    });
+
+    res.json(postsWithComments);
+  } catch (err) {
+    console.error("Error fetching community posts:", err);
+    res.status(500).json({ error: "Failed to fetch community posts" });
+  }
+};
 
 // Create a new post with title, body, and community_id
 export const createPost = async (req, res) => {
@@ -128,10 +196,20 @@ export const addCommentToPost = async (req, res) => {
       [postId, user_id, content]
     );
 
-    // Retrieve the newly inserted comment to send back
-    const [newComment] = await db.query(`SELECT * FROM comments WHERE id = ?`, [
-      insertResult.insertId,
-    ]);
+    // Retrieve the newly inserted comment along with the commenter name
+    const [newComment] = await db.query(
+      `SELECT 
+         comments.id,
+         comments.post_id,
+         comments.user_id,
+         comments.content,
+         comments.created_at,
+         users.username AS commenter
+       FROM comments
+       JOIN users ON comments.user_id = users.id
+       WHERE comments.id = ?`,
+      [insertResult.insertId]
+    );
 
     res.status(201).json(newComment[0]);
   } catch (error) {
@@ -171,7 +249,7 @@ export const deleteComment = async (req, res) => {
 //Edit comment by ID
 
 export const editComment = async (req, res) => {
-  const db= getDB();
+  const db = getDB();
   const id = req.params.id;
   const { content } = req.body;
   const user_id = req.user.id; // Get user ID from token
@@ -202,9 +280,7 @@ export const editComment = async (req, res) => {
     console.error("Error updating comment:", error);
     res.status(500).json({ message: "Error updating comment" });
   }
-}
-
-
+};
 
 // Get a single post by ID along with its comments and community name
 export const getSinglePostWithComments = async (req, res) => {
