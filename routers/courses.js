@@ -8,6 +8,7 @@ import {
   getNextIncompleteExercise,
   getNextLesson,
   getUserExerciseProgress,
+  getExercisesForCourse,
   //completeCourse,
 } from "../controllers/courseController.js";
 import { authenticateUser } from "../middlewares/authMiddleware.js";
@@ -42,7 +43,21 @@ router.get("/:courseId/lessons/:lessonId/exercises", async (req, res, next) => {
     next(error);
   }
 });
-
+router.get("/:courseId/exercises", authenticateUser, async (req, res, next) => {
+  try {
+    const exercises = await getExercisesForCourse(
+      req.params.courseId, 
+      req.user.id
+    );
+    if (!exercises || exercises.length === 0) {
+      return res.status(404).json({ message: "No exercises found for this course" });
+    }
+    res.json(exercises);
+  } catch (error) {
+    console.error("Error fetching exercises:", error);
+    next(error);
+  }
+});
 router.get("/lessons/:lessonId", async (req, res, next) => {
   try {
     const lesson = await getLessonContent(req.params.lessonId);

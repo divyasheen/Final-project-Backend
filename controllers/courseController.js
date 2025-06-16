@@ -46,7 +46,39 @@ export const getExerciseById = async (exerciseId) => {
   ]);
   return exercise[0];
 };
+export const getExercisesForCourse = async (courseId, userId) => {
+  const db = getDB();
+  try {
+    // Get all lessons for the course
+    const [lessons] = await db.query(
+      `SELECT id FROM lessons WHERE course_id = ? ORDER BY id`,
+      [courseId]
+    );
 
+    // Get exercises for each lesson with completion status
+    const exercises = [];
+    for (const lesson of lessons) {
+      const [lessonExercises] = await db.query(
+        `SELECT e.*, uep.is_completed 
+         FROM exercises e
+         LEFT JOIN user_exercise_progress uep ON e.id = uep.exercise_id AND uep.user_id = ?
+         WHERE e.lesson_id = ? 
+         ORDER BY e.id`,
+        [userId, lesson.id]
+      );
+      exercises.push(...lessonExercises.map(ex => ({
+        ...ex,
+        lesson_id: lesson.id,
+        completed: Boolean(ex.is_completed)
+      })));
+    }
+
+    return exercises;
+  } catch (err) {
+    console.error("Error fetching exercises for course:", err);
+    throw err;
+  }
+};
 export const trackExerciseCompletion = async (userId, exerciseId) => {
   // Validate inputs
   if (!userId) throw new Error("User ID is required");
