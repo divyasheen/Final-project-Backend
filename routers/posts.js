@@ -8,22 +8,25 @@ import {
   deleteComment,
   editComment,
   getPostsbyId,
-  communityPosts
+  communityPosts,
+  countAllPosts,
 } from "../controllers/postsController.js";
 import { authenticateUser } from "../middlewares/authMiddleware.js";
 
-//JB : import for testing controller
+// JB: For try-and-error
 import { getDB } from "../utils/db.js";
 
 const router = express.Router();
 
 //Get all Posts with comments
 router.get("/", allPosts);
+
 //Get all Posts with comments for one community
 router.get("/communities/:communityId", communityPosts); // for posts in a specific community
 
 //Get Posts with comments for one user or one post
 router.get("/:id", getSinglePostWithComments);
+
 //Delete a Post by id
 router.delete("/:id", authenticateUser, deletePost);
 
@@ -32,12 +35,17 @@ router.post("/", authenticateUser, createPost);
 
 //Adding Comments to the Post
 router.post("/:id/comments", authenticateUser, addCommentToPost);
+
+// JB: edit comments
 router.patch("/comments/:id", authenticateUser, editComment);
 
 // Delete a comment
 router.delete("/comments/:id", authenticateUser, deleteComment);
 
 // JB: fetch posts by id
-router.get("/userPosts/:id", getPostsbyId );
+router.get("/userPosts/:id", getPostsbyId);
+
+// JB: count all Posts
+router.get("/count/allPosts", countAllPosts);
 
 export default router;
