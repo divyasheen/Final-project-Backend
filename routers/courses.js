@@ -6,7 +6,9 @@ import {
   getExerciseById,
   trackExerciseCompletion,
   getNextIncompleteExercise,
+  getNextLesson,
   getUserExerciseProgress,
+  getExercisesForCourse,
   //completeCourse,
 } from "../controllers/courseController.js";
 import { authenticateUser } from "../middlewares/authMiddleware.js";
@@ -41,7 +43,21 @@ router.get("/:courseId/lessons/:lessonId/exercises", async (req, res, next) => {
     next(error);
   }
 });
-
+router.get("/:courseId/exercises", authenticateUser, async (req, res, next) => {
+  try {
+    const exercises = await getExercisesForCourse(
+      req.params.courseId, 
+      req.user.id
+    );
+    if (!exercises || exercises.length === 0) {
+      return res.status(404).json({ message: "No exercises found for this course" });
+    }
+    res.json(exercises);
+  } catch (error) {
+    console.error("Error fetching exercises:", error);
+    next(error);
+  }
+});
 router.get("/lessons/:lessonId", async (req, res, next) => {
   try {
     const lesson = await getLessonContent(req.params.lessonId);
@@ -67,12 +83,19 @@ router.get("/exercises/:exerciseId", async (req, res, next) => {
     next(error);
   }
 });
-
 router.post("/exercises/:id/complete", authenticateUser, async (req, res) => {
   try {
+    if (!req.user?.id) {
+      return res.status(401).json({ error: "User not authenticated" });
+    }
+    if (!req.params.id) {
+      return res.status(400).json({ error: "Exercise ID is required" });
+    }
+
     await trackExerciseCompletion(req.user.id, req.params.id);
     res.json({ success: true });
   } catch (err) {
+    console.error("Error in completion endpoint:", err);
     res.status(500).json({ error: err.message });
   }
 });
@@ -84,6 +107,15 @@ router.get("/exercises/:id/next", authenticateUser, async (req, res) => {
       req.params.id
     );
     res.json({ nextExerciseId });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+router.get("/lessons/:id/next", authenticateUser, async (req, res) => {
+  try {
+    const nextLesson = await getNextLesson(req.user.id, req.params.id);
+    res.json({ nextLessonId: nextLesson });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
