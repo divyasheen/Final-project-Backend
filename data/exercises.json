@@ -160,7 +160,7 @@
     "title": "Hello World",
     "lesson_id": 17,
     "type": "javascript",
-    "difficulty": "easy",
+    "difficulty": "Easy",
     "description": "Print the message 'Hello, CodeRealm!' to the console.",
     "placeholder": "console.log('Hello, CodeRealm!');",
     "example": "console.log('Hello, CodeRealm!');"
@@ -170,7 +170,7 @@
     "title": "Variables",
     "lesson_id": 18,
     "type": "javascript",
-    "difficulty": "easy",
+    "difficulty": "Easy",
     "description": "Declare and log your favorite city, age and height, and a boolean about your preference.",
     "placeholder": "let favoriteCity = 'Berlin';\nconsole.log(favoriteCity);\n\nlet age = 25;\nlet height = 180;\nconsole.log(age, height);\n\nlet likesChocolate = true;\nconsole.log(likesChocolate);",
     "example": "let favoriteCity = 'Berlin';\nconsole.log(favoriteCity);\n\nlet age = 25;\nlet height = 180;\nconsole.log(age, height);\n\nlet likesChocolate = true;\nconsole.log(likesChocolate);"
@@ -180,7 +180,7 @@
     "title": "Math Operators",
     "lesson_id": 19,
     "type": "javascript",
-    "difficulty": "easy",
+    "difficulty": "Easy",
     "description": "Use basic math operators and log each result to the console.",
     "placeholder": "console.log(5 + 5);\nconsole.log(20 - 4);\nconsole.log(3 * 7);\nconsole.log(8 / 2);\nconsole.log(10 % 2);\nconsole.log(2 ** 3);",
     "example": "console.log(5 + 5);\nconsole.log(20 - 4);\nconsole.log(3 * 7);\nconsole.log(8 / 2);\nconsole.log(10 % 2);\nconsole.log(2 ** 3);"
@@ -190,7 +190,7 @@
     "title": "Conditions",
     "lesson_id": 20,
     "type": "javascript",
-    "difficulty": "easy",
+    "difficulty": "Easy",
     "description": "Decide what message to show based on a temperature variable.\n\n1. A variable called `temperature` will be provided.\n2. Use `if`, `else if`, and `else` to assign a message to a variable called `message`.\n3. The program should log the final `message` to the console.\n\nMessages:\n- \"It's cold!\" (if temperature < 10)\n- \"It's moderate!\" (if temperature is between 10 and 19)\n- \"It's hot!\" (if temperature is 20 or above)\n\nNote: Do not declare `temperature` yourself — it will be set automatically during testing.",
     "placeholder": "let message;\n\nif (/* condition */) {\n  message = \"\";\n} else if (/* condition */) {\n  message = \"\";\n} else {\n  message = \"\";\n}\n\nconsole.log(message);",
     "example": "let temperature = 15;\nlet message;\n\nif (temperature < 10) {\n  message = \"It's cold!\";\n} else if (temperature < 20) {\n  message = \"It's moderate!\";\n} else {\n  message = \"It's hot!\";\n}\n\nconsole.log(message);"
@@ -200,7 +200,7 @@
     "title": "Arrays",
     "lesson_id": 21,
     "type": "javascript",
-    "difficulty": "easy",
+    "difficulty": "Easy",
     "description": "Access, update, and count items in an array.",
     "placeholder": "let tasks = ['Do homework', 'Wash dishes', 'Buy groceries'];\n\n// Log the first task here\n\n// Replace the second task with 'Clean the kitchen'\n\n// Log the updated tasks array\n\n// Log the number of tasks",
     "example": "let tasks = ['Do homework', 'Wash dishes', 'Buy groceries'];\nconsole.log(tasks[0]);\n\ntasks[1] = 'Clean the kitchen';\nconsole.log(tasks);\nconsole.log(tasks.length);"
@@ -210,7 +210,7 @@
     "title": "Objects",
     "lesson_id": 22,
     "type": "javascript",
-    "difficulty": "easy",
+    "difficulty": "Easy",
     "description": "Access and modify properties of an object, and log a message using its values.",
     "placeholder": "let coffeeOrder = {\n  customerName: 'Emma',\n  drink: 'Latte',\n  size: 'Medium'\n};\n\n// Log the customer's name\n// Log the drink name\n// Change the size to 'Large'\n// Add an 'extraShot' property set to true\n// Log a sentence about the order",
     "example": "let coffeeOrder = {\n  customerName: 'Emma',\n  drink: 'Latte',\n  size: 'Medium'\n};\nconsole.log(coffeeOrder.customerName);\nconsole.log(coffeeOrder.drink);\ncoffeeOrder.size = 'Large';\ncoffeeOrder.extraShot = true;\nconsole.log(`${coffeeOrder.customerName} ordered a ${coffeeOrder.size} ${coffeeOrder.drink} with an extra shot: ${coffeeOrder.extraShot}`);"
@@ -220,7 +220,7 @@
     "title": "Logical Operators",
     "lesson_id": 23,
     "type": "javascript",
-    "difficulty": "easy",
+    "difficulty": "Easy",
     "description": "Use logical operators to check if a number is between 1 and 10.",
     "placeholder": "let number = 7;\n\n// Use logical operators to check if number is between 1 and 10 (inclusive)\n// Log 'Number is inside of range!' or 'Number is out of range.'",
     "example": "let number = 7;\n\nif (number >= 1 && number <= 10) {\n  console.log('Number is inside of range!');\n} else {\n  console.log('Number is out of range.');\n}"
@@ -230,7 +230,7 @@
     "title": "For...in / For...of",
     "lesson_id": 24,
     "type": "javascript",
-    "difficulty": "easy",
+    "difficulty": "Easy",
     "description": "Loop through an object and an array to log details.",
     "placeholder": "let inventory = { apples: 10, bananas: 5, oranges: 8 };\nlet cart = ['bananas', 'oranges'];\n\n// Loop through the inventory using for...in\n// Log each item and quantity\n\n// Loop through the cart using for...of\n// Log what the user added to their cart",
     "example": "let inventory = { apples: 10, bananas: 5, oranges: 8 };\nlet cart = ['bananas', 'oranges'];\n\nfor (let item in inventory) {\n  console.log(item + ': ' + inventory[item]);\n}\n\nfor (let product of cart) {\n  console.log('You added ' + product + ' to your cart.');\n}"
@@ -240,7 +240,7 @@
     "title": "Functions (Intro)",
     "lesson_id": 25,
     "type": "javascript",
-    "difficulty": "easy",
+    "difficulty": "Easy",
     "description": "Create a function that returns a personalized greeting.",
     "placeholder": "// Write a function called personalGreeting that takes a name and timeOfDay\n// It should return a string like 'Good morning, Sarah!'\n\n// Call your function with at least two different sets of arguments",
     "example": "function personalGreeting(name, timeOfDay) {\n  return `Good ${timeOfDay}, ${name}!`;\n}\n\nconsole.log(personalGreeting('Sarah', 'morning'));\nconsole.log(personalGreeting('Tom', 'evening'));"
@@ -250,7 +250,7 @@
     "title": "Scope",
     "lesson_id": 26,
     "type": "javascript",
-    "difficulty": "easy",
+    "difficulty": "Easy",
     "description": "Demonstrate scope by declaring a variable inside a function and logging it.",
     "placeholder": "// Define a function that doubles a number and logs it\n// Inside the function, declare a local variable called doubled\n\n// Call the function\n",
     "example": "const doubleAndLog = (number) => {\n  const doubled = number * 2;\n  console.log(doubled);\n  return doubled;\n};\n\ndoubleAndLog(4);\n\n"
@@ -260,7 +260,7 @@
     "title": "Classes",
     "lesson_id": 27,
     "type": "javascript",
-    "difficulty": "easy",
+    "difficulty": "Easy",
     "description": "Create a class `Book` and a method that returns a summary string.",
     "placeholder": "// Create a class called Book with title, author, and year in the constructor\n// Add a method called getSummary that returns a summary string\n\n// Create an instance of Book and log the result of getSummary",
     "example": "class Book {\n  constructor(title, author, year) {\n    this.title = title;\n    this.author = author;\n    this.year = year;\n  }\n\n  getSummary() {\n    return `The book '${this.title}' was written by ${this.author} in ${this.year}.`;\n  }\n}\n\nconst b1 = new Book('1984', 'George Orwell', 1949);\nconsole.log(b1.getSummary());"
@@ -270,7 +270,7 @@
     "title": "Classes + Loops",
     "lesson_id": 28,
     "type": "javascript",
-    "difficulty": "easy",
+    "difficulty": "Easy",
     "description": "Create a class Student and show average scores and top student.",
     "placeholder": "// Define a class called Student with name and grades\n// Add a method getAverage that returns the average grade\n\n// Create two students and store them in an array\n// Loop over the students, log each average, and find the top student",
     "example": "class Student {\n  constructor(name, grades) {\n    this.name = name;\n    this.grades = grades;\n  }\n\n  getAverage() {\n    return this.grades.reduce((a, b) => a + b) / this.grades.length;\n  }\n}\n\nfunction createStudent(name, grades) {\n  return new Student(name, grades);\n}\n\nconst students = [\n  createStudent('Alice', [90, 85, 95]),\n  createStudent('Bob', [70, 60, 65])\n];\n\nfor (let s of students) {\n  const avg = s.getAverage();\n  console.log(`${s.name} average: ${avg}`);\n  if (avg >= 90) console.log('Excellent');\n  else if (avg >= 75) console.log('Good');\n  else console.log('Needs Improvement');\n}\n\nfunction getTopStudent(students) {\n  return students.reduce((top, current) => current.getAverage() > top.getAverage() ? current : top);\n}\n\nconsole.log('Top student: ' + getTopStudent(students).name);"

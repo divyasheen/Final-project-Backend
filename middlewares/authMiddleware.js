@@ -32,6 +32,7 @@ export const authenticateUser = async (req, res, next) => {
 
     // 4. Attach user to request object
     req.user = users[0];
+    console.log("Authenticated user:", req.user);
     next();
   } catch (err) {
     console.error('Authentication error:', err);
