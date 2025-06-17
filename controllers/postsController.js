@@ -428,7 +428,6 @@ export const likePost = async (req, res) => {
   const post_id = req.params.id;
 
   try {
-    // Remove dislike if exists to prevent both like+dislike at the same time
     await db.execute(
       `DELETE FROM dislikes WHERE user_id = ? AND post_id = ?`,
       [user_id, post_id]
@@ -443,8 +442,12 @@ export const likePost = async (req, res) => {
       `SELECT COUNT(*) AS like_count FROM likes WHERE post_id = ?`,
       [post_id]
     );
+    const [[{ dislike_count }]] = await db.execute(
+      `SELECT COUNT(*) AS dislike_count FROM dislikes WHERE post_id = ?`,
+      [post_id]
+    );
 
-    res.json({ like_count });
+    res.json({ like_count, dislike_count });
   } catch (error) {
     console.error("Error liking post:", error);
     res.status(500).json({ message: "Error liking post" });
@@ -467,8 +470,12 @@ export const unlikePost = async (req, res) => {
       `SELECT COUNT(*) AS like_count FROM likes WHERE post_id = ?`,
       [post_id]
     );
+    const [[{ dislike_count }]] = await db.execute(
+      `SELECT COUNT(*) AS dislike_count FROM dislikes WHERE post_id = ?`,
+      [post_id]
+    );
 
-    res.json({ like_count });
+    res.json({ like_count, dislike_count });
   } catch (error) {
     console.error("Error unliking post:", error);
     res.status(500).json({ message: "Error unliking post" });
@@ -482,7 +489,6 @@ export const dislikePost = async (req, res) => {
   const post_id = req.params.id;
 
   try {
-    // Remove like if exists to prevent both like+dislike at the same time
     await db.execute(
       `DELETE FROM likes WHERE user_id = ? AND post_id = ?`,
       [user_id, post_id]
@@ -497,8 +503,12 @@ export const dislikePost = async (req, res) => {
       `SELECT COUNT(*) AS dislike_count FROM dislikes WHERE post_id = ?`,
       [post_id]
     );
+    const [[{ like_count }]] = await db.execute(
+      `SELECT COUNT(*) AS like_count FROM likes WHERE post_id = ?`,
+      [post_id]
+    );
 
-    res.json({ dislike_count });
+    res.json({ like_count, dislike_count });
   } catch (error) {
     console.error("Error disliking post:", error);
     res.status(500).json({ message: "Error disliking post" });
@@ -521,8 +531,12 @@ export const removeDislike = async (req, res) => {
       `SELECT COUNT(*) AS dislike_count FROM dislikes WHERE post_id = ?`,
       [post_id]
     );
+    const [[{ like_count }]] = await db.execute(
+      `SELECT COUNT(*) AS like_count FROM likes WHERE post_id = ?`,
+      [post_id]
+    );
 
-    res.json({ dislike_count });
+    res.json({ like_count, dislike_count });
   } catch (error) {
     console.error("Error removing dislike:", error);
     res.status(500).json({ message: "Error removing dislike" });
