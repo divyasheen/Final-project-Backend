@@ -11,7 +11,7 @@ export const getCoursesWithLessons = async () => {
   // Get lessons for each course
   for (const course of courses) {
     const [lessons] = await db.query(
-      "SELECT id, title, content, example FROM lessons WHERE course_id = ? ORDER BY id", // Removed position
+      "SELECT id, title, content, example, course_id FROM lessons WHERE course_id = ? ORDER BY id",
       [course.id]
     );
 
@@ -33,17 +33,20 @@ export const getExercisesForLesson = async (lessonId) => {
 export const getLessonContent = async (lessonId) => {
   const db = getDB();
   const [lesson] = await db.query(
-    "SELECT id, title, content, example FROM lessons WHERE id = ?", // Removed position from SELECT *
+    "SELECT id, title, content, example, course_id FROM lessons WHERE id = ?",
     [lessonId]
   );
   return lesson[0];
 };
-
 export const getExerciseById = async (exerciseId) => {
   const db = getDB();
-  const [exercise] = await db.query("SELECT * FROM exercises WHERE id = ?", [
-    exerciseId,
-  ]);
+  const [exercise] = await db.query(
+    `SELECT e.*, l.course_id 
+     FROM exercises e
+     JOIN lessons l ON e.lesson_id = l.id
+     WHERE e.id = ?`,
+    [exerciseId]
+  );
   return exercise[0];
 };
 export const getExercisesForCourse = async (courseId, userId) => {
@@ -259,7 +262,10 @@ export const getNextIncompleteExercise = async (userId, currentExerciseId) => {
     }
   }
 
-  return null; // No more exercises
+   return next.length > 0 ? { 
+    id: next[0].id,
+    course_id: current[0].course_id
+  } : null;
 };
 
 export const getNextLesson = async (userId, currentLessonId) => {
@@ -296,7 +302,10 @@ export const getNextLesson = async (userId, currentLessonId) => {
     [current[0].course_id, currentLessonId]
   );
 
-  return next.length > 0 ? next[0].id : null;
+   return next.length > 0 ? { 
+    id: next[0].id,
+    course_id: current[0].course_id
+  } : null;
 };
 /* export const completeCourse = async (userId, lessonId) => {
   try {
