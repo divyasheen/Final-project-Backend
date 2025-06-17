@@ -3,11 +3,11 @@
     "id": 1,
     "lesson_id": 1,
     "title": "Congratz - First lesson learnt!",
-    "description": "Read the text!",
+    "description": "See the comment in the Code Editor.",
     "xp_reward": 5,
     "difficulty": "Easy",
     "example": "",
-    "placeholder": ""
+    "placeholder": "// Click on run.."
   },
   {
     "id": 2,
@@ -162,7 +162,7 @@
     "type": "javascript",
     "difficulty": "easy",
     "description": "Print the message 'Hello, CodeRealm!' to the console.",
-    "placeholder": "console.log('Hello, CodeRealm!');",
+    "placeholder": "// Your code here..",
     "example": "console.log('Hello, CodeRealm!');"
   },
   {
@@ -172,7 +172,7 @@
     "type": "javascript",
     "difficulty": "easy",
     "description": "Declare and log your favorite city, age and height, and a boolean about your preference.",
-    "placeholder": "let favoriteCity = 'Berlin';\nconsole.log(favoriteCity);\n\nlet age = 25;\nlet height = 180;\nconsole.log(age, height);\n\nlet likesChocolate = true;\nconsole.log(likesChocolate);",
+    "placeholder": "// Your code here..",
     "example": "let favoriteCity = 'Berlin';\nconsole.log(favoriteCity);\n\nlet age = 25;\nlet height = 180;\nconsole.log(age, height);\n\nlet likesChocolate = true;\nconsole.log(likesChocolate);"
   },
   {
@@ -182,7 +182,7 @@
     "type": "javascript",
     "difficulty": "easy",
     "description": "Use basic math operators and log each result to the console.",
-    "placeholder": "console.log(5 + 5);\nconsole.log(20 - 4);\nconsole.log(3 * 7);\nconsole.log(8 / 2);\nconsole.log(10 % 2);\nconsole.log(2 ** 3);",
+    "placeholder": "// Your code here..",
     "example": "console.log(5 + 5);\nconsole.log(20 - 4);\nconsole.log(3 * 7);\nconsole.log(8 / 2);\nconsole.log(10 % 2);\nconsole.log(2 ** 3);"
   },
   {

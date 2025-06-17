@@ -33,25 +33,25 @@ const importDataJson = async () => {
   }*/
 
   // ===== LESSONS SECOND =====
-/*   const lessons = await readJsonFile("../data/lessons.json");
-  for (const lesson of lessons) {
-    await db.execute(
-      `INSERT INTO lessons (id, course_id, title, content, example) 
-      VALUES (?, ?, ?, ?, ?) 
-      ON DUPLICATE KEY UPDATE
-        course_id = VALUES(course_id),
-        title = VALUES(title),
-        content = VALUES(content),
-        example = VALUES(example)`,
-      [
-        lesson.id,
-        lesson.course_id,
-        lesson.title,
-        lesson.content,
-        lesson.example,
-      ]
-    );
-  }
+  //  const lessons = await readJsonFile("../data/lessons.json");
+  // for (const lesson of lessons) {
+  //   await db.execute(
+  //     `INSERT INTO lessons (id, course_id, title, content, example) 
+  //     VALUES (?, ?, ?, ?, ?) 
+  //     ON DUPLICATE KEY UPDATE
+  //       course_id = VALUES(course_id),
+  //       title = VALUES(title),
+  //       content = VALUES(content),
+  //       example = VALUES(example)`,
+  //     [
+  //       lesson.id,
+  //       lesson.course_id,
+  //       lesson.title,
+  //       lesson.content,
+  //       lesson.example,
+  //     ]
+  //   );
+  // }
 
   // ===== EXERCISES THIRD =====
   const exercises = await readJsonFile("../data/exercises.json");
@@ -80,7 +80,7 @@ const importDataJson = async () => {
         safe(exercise.placeholder),
       ]
     );
-  } */
+  } 
 
   // ===== TEST CASES FOURTH =====
   const testcases = await readJsonFile("../data/testcases.json");
