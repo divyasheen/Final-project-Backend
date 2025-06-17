@@ -210,7 +210,7 @@ export const getBadges = async(req, res) => {
     for (let badge of userBadges) {
 
       const [badgeInfo] = await db.execute(
-        `SELECT name, description
+        `SELECT *
         FROM badges 
         WHERE id = ?`,
         [badge.badge_id]
