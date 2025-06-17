@@ -8,7 +8,11 @@ import {
   deleteComment,
   editComment,
   getPostsbyId,
-  communityPosts
+  communityPosts,
+  likePost,
+  unlikePost,
+  dislikePost,
+  removeDislike
 } from "../controllers/postsController.js";
 import { authenticateUser } from "../middlewares/authMiddleware.js";
 
@@ -24,6 +28,13 @@ router.get("/communities/:communityId", communityPosts); // for posts in a speci
 
 //Get Posts with comments for one user or one post
 router.get("/:id", getSinglePostWithComments);
+
+// 
+router.post("/:id/like",authenticateUser, likePost);
+router.delete("/:id/like",authenticateUser, unlikePost);
+ 
+router.post("/:id/dislike", authenticateUser, dislikePost);
+router.delete("/:id/dislike", authenticateUser, removeDislike);
 //Delete a Post by id
 router.delete("/:id", authenticateUser, deletePost);
 
