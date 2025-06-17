@@ -19,7 +19,8 @@ const importDataJson = async () => {
   await connect2DB();
   const db = getDB();
 
-  /*   // ===== COURSES FIRST =====
+  // ===== COURSES FIRST =====
+  /*
   const courses = await readJsonFile("../data/courses.json");
   for (const course of courses) {
     await db.execute(
@@ -30,10 +31,11 @@ const importDataJson = async () => {
         description = VALUES(description)`,
       [course.id, course.title, course.description]
     );
-  }*/
+  }
+  */
 
   // ===== LESSONS SECOND =====
-/*   const lessons = await readJsonFile("../data/lessons.json");
+  const lessons = await readJsonFile("../data/lessons.json");
   for (const lesson of lessons) {
     await db.execute(
       `INSERT INTO lessons (id, course_id, title, content, example) 
@@ -54,21 +56,22 @@ const importDataJson = async () => {
   }
 
   // ===== EXERCISES THIRD =====
+  
   const exercises = await readJsonFile("../data/exercises.json");
   for (const exercise of exercises) {
     const safe = (val, fallback = null) => (val === undefined ? fallback : val);
 
     await db.execute(
       `INSERT INTO exercises (id, lesson_id, title, description, xp_reward, difficulty, example, placeholder)
-  VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-  ON DUPLICATE KEY UPDATE
-    lesson_id = VALUES(lesson_id),
-    title = VALUES(title),
-    description = VALUES(description),
-    xp_reward = VALUES(xp_reward),
-    difficulty = VALUES(difficulty),
-    example = VALUES(example),
-    placeholder = VALUES(placeholder)`,
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+      ON DUPLICATE KEY UPDATE
+        lesson_id = VALUES(lesson_id),
+        title = VALUES(title),
+        description = VALUES(description),
+        xp_reward = VALUES(xp_reward),
+        difficulty = VALUES(difficulty),
+        example = VALUES(example),
+        placeholder = VALUES(placeholder)`,
       [
         safe(exercise.id),
         safe(exercise.lesson_id),
@@ -80,9 +83,11 @@ const importDataJson = async () => {
         safe(exercise.placeholder),
       ]
     );
-  } */
+  }
+  
 
   // ===== TEST CASES FOURTH =====
+  /*
   const testcases = await readJsonFile("../data/testcases.json");
   for (const testcase of testcases) {
     try {
@@ -96,17 +101,16 @@ const importDataJson = async () => {
             selector = VALUES(selector),
             property = VALUES(property),
             expected_value = VALUES(expected_value),
-            input_value = VALUES(input_value),  -- Add this
+            input_value = VALUES(input_value),
             is_hidden = VALUES(is_hidden),
             weight = VALUES(weight),
             viewport_size = VALUES(viewport_size),
             error_message = VALUES(error_message),
-            time_limit = VALUES(time_limit),    -- Add this
-            description = VALUES(description),  -- Add this
-            input = VALUES(input)               -- Ensure this is mapped correctly
+            time_limit = VALUES(time_limit),
+            description = VALUES(description),
+            input = VALUES(input)
           `,
         [
-          // Ensure parameters match the exact order of columns in the INSERT statement
           testcase.test_id === undefined ? null : testcase.test_id,
           testcase.exercise_id === undefined ? null : testcase.exercise_id,
           testcase.test_type === undefined ? null : testcase.test_type,
@@ -115,15 +119,14 @@ const importDataJson = async () => {
           testcase.expected_value === undefined
             ? null
             : testcase.expected_value,
-          // --- NEWLY ADDED/CORRECTED MAPPINGS ---
-          testcase.input_value === undefined ? "" : testcase.input_value, // Assuming JSON *might* have this, otherwise null
+          testcase.input_value === undefined ? "" : testcase.input_value,
           testcase.is_hidden === undefined ? false : testcase.is_hidden,
           testcase.weight === undefined ? 1 : testcase.weight,
           testcase.viewport_size === undefined ? null : testcase.viewport_size,
           testcase.error_message === undefined ? "" : testcase.error_message,
-          testcase.time_limit === undefined ? 1 : testcase.time_limit, // JSON has this field
-          testcase.description === undefined ? "" : testcase.description, // JSON has this field
-          testcase.input === undefined ? "" : testcase.input, // This will now correctly map the code
+          testcase.time_limit === undefined ? 1 : testcase.time_limit,
+          testcase.description === undefined ? "" : testcase.description,
+          testcase.input === undefined ? "" : testcase.input,
         ]
       );
     } catch (error) {
@@ -134,27 +137,31 @@ const importDataJson = async () => {
       );
     }
   }
-};
-importDataJson();
+  */
 
-/* // ===== BADGES FIFTH =====
-const badges = await readJsonFile("../data/badges.json");
-for (const badge of badges) {
-  await db.execute(
-    `INSERT INTO badges (id, name, description, icon_url, dependency)
-    VALUES (?, ?, ?, ?, ?)
-    ON DUPLICATE KEY UPDATE
-      id = VALUES(id),
-      name = VALUES(name),
-      description = VALUES(description),
-      icon_url = VALUES(icon_url),
-      dependency = VALUES(dependency)`,
-    [
-      badge.id,
-      badge.name,
-      badge.description,
-      badge.icon_url,
-      badge.dependency
-    ]
-  );
-} */
+  // ===== BADGES FIFTH =====
+  /*
+  const badges = await readJsonFile("../data/badges.json");
+  for (const badge of badges) {
+    await db.execute(
+      `INSERT INTO badges (id, name, description, icon_url, dependency)
+      VALUES (?, ?, ?, ?, ?)
+      ON DUPLICATE KEY UPDATE
+        id = VALUES(id),
+        name = VALUES(name),
+        description = VALUES(description),
+        icon_url = VALUES(icon_url),
+        dependency = VALUES(dependency)`,
+      [
+        badge.id,
+        badge.name,
+        badge.description,
+        badge.icon_url,
+        badge.dependency
+      ]
+    );
+  }
+  */
+};
+
+importDataJson();

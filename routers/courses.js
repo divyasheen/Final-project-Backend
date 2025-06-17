@@ -64,9 +64,12 @@ router.get("/lessons/:lessonId", async (req, res, next) => {
     if (!lesson) {
       return res.status(404).json({ message: "Lesson not found" });
     }
-    res.json(lesson);
+   // Return course_id with lesson data
+    res.json({
+      ...lesson,
+      course_id: lesson.course_id
+    });
   } catch (error) {
-    console.error("Error fetching lesson:", error);
     next(error);
   }
 });
@@ -77,9 +80,12 @@ router.get("/exercises/:exerciseId", async (req, res, next) => {
     if (!exercise) {
       return res.status(404).json({ message: "Exercise not found" });
     }
-    res.json(exercise);
+   // Return course_id with exercise data
+    res.json({
+      ...exercise,
+      course_id: exercise.course_id
+    });
   } catch (error) {
-    console.error("Error fetching exercise:", error);
     next(error);
   }
 });
@@ -115,9 +121,28 @@ router.get("/exercises/:id/next", authenticateUser, async (req, res) => {
 router.get("/lessons/:id/next", authenticateUser, async (req, res) => {
   try {
     const nextLesson = await getNextLesson(req.user.id, req.params.id);
-    res.json({ nextLessonId: nextLesson });
+    
+    // Get course ID for the current lesson
+    const currentLesson = await getLessonContent(req.params.id);
+    
+    res.json({ 
+      nextLessonId: nextLesson?.id || nextLesson,
+      course_id: currentLesson.course_id
+    });
   } catch (err) {
     res.status(500).json({ error: err.message });
+  }
+});
+// New endpoint: Get course ID by exercise ID
+router.get("/exercises/:exerciseId/course", async (req, res) => {
+  try {
+    const exercise = await getExerciseById(req.params.exerciseId);
+    if (!exercise) {
+      return res.status(404).json({ message: "Exercise not found" });
+    }
+    res.json({ course_id: exercise.course_id });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
 });
 
