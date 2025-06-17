@@ -542,3 +542,19 @@ export const removeDislike = async (req, res) => {
     res.status(500).json({ message: "Error removing dislike" });
   }
 };
+
+
+
+
+export const countAllPosts = async (req, res) => {
+  try {
+    const db = getDB();
+    const [amountPosts] = await db.query("SELECT COUNT(*) as count FROM posts");
+    if (!amountPosts) {
+      return res.status(404).json({ message: "BE - No posts found, while counting." });
+    }
+    res.json(amountPosts);
+  } catch (error) {
+    console.error("BE - Error counting all posts; ", error);
+  }
+}
