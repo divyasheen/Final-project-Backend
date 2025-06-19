@@ -55,11 +55,11 @@ const startServer = async () => {
     });
 
     /* ------------------- port ------------------- */
-    // const port = process.env.PORT || 5001;
-    // app.listen(
-    //   port,
-    //   console.log(`🚀 Server is running on: https://final-project-backend-fza2.onrender.com:${port}`)
-    // );
+    const port = process.env.PORT || 5001;
+    app.listen(
+      port,
+      console.log(`🚀 Server is running on: https://final-project-backend-fza2.onrender.com:${port}`)
+    );
   } catch (error) {
     console.error("❌ Failed to start the server:", error.message);
     process.exit(1); // Exit the process with a failure code
