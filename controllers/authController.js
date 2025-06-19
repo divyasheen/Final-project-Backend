@@ -99,8 +99,8 @@ export const loginUser = async (req, res) => {
     const token = jwt.sign({ id: user.id, email: user.email }, process.env.JWT_SECRET, { expiresIn: "1h" });
 
     res.cookie('token', token, {
-      httpOnly: true,
-      secure: false,
+      httpOnly: false,
+      secure: true,
       sameSite: 'lax',
       maxAge: 3600000
     });
@@ -116,9 +116,9 @@ export const loginUser = async (req, res) => {
 // Log out user (placeholder, no token blacklisting here)
 export const logoutUser = (req, res) => {
   res.clearCookie("token", {
-    httpOnly: true,
+    httpOnly: false,
     sameSite: "lax",
-    secure: false,// Set true in production
+    secure: true,// Set true in production
     path: '/'
   });
   res.status(200).json({ message: "User logged out successfully" });
@@ -192,8 +192,8 @@ export const googleLogin = async (req, res) => {
 
     // Set cookie
     res.cookie("token", token, {
-      httpOnly: true,
-      secure: false,
+      httpOnly: false,
+      secure: true,
       sameSite: "lax",
       maxAge: 3600000
     });
@@ -264,8 +264,8 @@ export const refreshToken = async (req, res) => {
 
       // Set the new token in cookie
       res.cookie("token", newToken, {
-        httpOnly: true,
-        secure: false,
+        httpOnly: false,
+        secure: true,
         sameSite: "lax",
         maxAge: 3600000
       });
