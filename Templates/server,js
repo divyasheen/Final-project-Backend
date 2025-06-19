@@ -41,5 +41,5 @@ app.use((error, req, res, next) => {
 const port = process.env.PORT || 5001;
 app.listen(
   port,
-  console.log(`🚀 Server is running on: http://localhost:${port}`)
+  console.log(`🚀 Server is running on: https://final-project-backend-fza2.onrender.com:${port}`)
 );

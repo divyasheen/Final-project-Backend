@@ -68,11 +68,11 @@ export const verifyUser = async (req, res) => {
     // Mark user as verified in DB
     await db.execute(`UPDATE users SET verified = 1 WHERE id = ?`, [decoded.id]);
 
-    return res.redirect("http://localhost:5173/verification-success"); // Redirect on successful verification
+    return res.redirect("https://final-project-backend-fza2.onrender.com/verification-success"); // Redirect on successful verification
 
   } catch (error) {
     console.error("Verification error:", error);
-    res.redirect("http://localhost:5173/verification-error"); // Redirect on error
+    res.redirect("https://final-project-backend-fza2.onrender.com/verification-error"); // Redirect on error
   }
 };
 
