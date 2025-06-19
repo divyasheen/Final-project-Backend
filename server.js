@@ -32,7 +32,7 @@ const startServer = async () => {
 
     /* ---------------- middleware ---------------- */
     app.use(cookieParser());
-    app.use(cors({ origin: "https://final-project-backend-fza2.onrender.com", credentials: true, methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'] }));
+    app.use(cors({ origin: "https://coderealm-fddy.onrender.com", credentials: true, methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'] }));
     // app.use(morgan("dev"));
     app.use(express.json());
 
