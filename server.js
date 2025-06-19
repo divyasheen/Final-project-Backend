@@ -54,6 +54,10 @@ const startServer = async () => {
       res.status(error.status || 500).json({ msg: error.message });
     });
 
+    app.get("./api/test", (req, res) => {
+      res.json({msg: "I arrived"})
+    })
+
     /* ------------------- port ------------------- */
     const port = process.env.PORT || 5001;
     app.listen(
