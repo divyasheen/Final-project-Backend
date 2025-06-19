@@ -23,7 +23,7 @@ export const loginUser = async (req, res, next) => {
     // 4. send res if credentials match
     res
       .cookie("jwt_token", token, {
-        httpOnly: true,
+        httpOnly: false,
         expiresIn: new Date(Date.now() + 9000),
       })
       .json({ msg: "successful login", user: user.clean() });
